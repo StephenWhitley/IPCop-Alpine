@@ -2,13 +2,52 @@
 
 A modern, modular reimplementation of IPCop firewall as Alpine Linux packages.
 
+> **Acknowledgements:** This project builds upon the excellent work of the original [IPCop project](https://www.ipcop.org/) team. We also acknowledge [IPFire](https://www.ipfire.org/), an actively maintained community-driven firewall distribution that evolved from IPCop and continues to be developed with regular updates and security patches.
+
+---
+
+## Project Status
+
+### Current State
+
+✅ **Architectural Migration: Complete**  
+The fundamental shift from monolithic ISO to modular APK packages is complete. The build system, package structure, and deployment methodology are operational.
+
+⚠️ **Testing Status: Pre-Alpha**  
+Most packages have achieved **deployment and smoke testing** on development systems. Core functionality (firewall rules, web interface, networking) is operational. However:
+
+- **Comprehensive testing is ongoing** - The entire implementation (build process, source organization, and deployment) requires extensive validation
+- **Regressions are commonplace** - This is an active porting effort and breaking changes can occur
+- **Not recommended for production** - Use in lab/development environments only at this time
+
+### Known Limitations
+
+📦 **Language Packaging**  
+The localization system (`ipcop-lang`) remains **monolithic** - all language files are bundled into a single package. The modular packaging approach has not yet been applied to split languages into individual packages (e.g., `ipcop-lang-en`, `ipcop-lang-de`).
+
+🎨 **Web Interface Modernization**  
+The web UI remains **primarily CGI-based** to maintain stability during the porting process:
+- **JavaScript enhancements** are being explored for specific features (e.g., interactive charts using modern charting libraries)
+- **Core CGI framework maintained** - The Perl CGI architecture is preserved to avoid introducing reliability issues and potential vulnerabilities during the architectural transition
+- **Incremental improvements** - UI enhancements are introduced carefully and selectively
+
+### Development Philosophy
+
+Our current focus prioritizes:
+1. **Stability over features** - Ensure the core port is solid before adding enhancements
+2. **Testing and validation** - Identify and fix regressions from the architectural shift
+3. **Incremental modernization** - Improve components (like charts) without wholesale rewrites
+4. **Security-conscious porting** - Avoid introducing new attack surfaces during migration
+
+> **For Developers:** Expect breaking changes. Test thoroughly. Report issues. This is an active development project.
+
 ---
 
 ## Project Overview
 
 ### Motivation
 
-**IPCop-Alpine** represents a fundamental architectural shift from the original IPCop distribution model. Where IPCop (and its derivative IPFire) were designed as **monolithic, pre-integrated ISO packages** with tightly coupled Linux distributions, IPCop-Alpine adopts a **layered, package-based approach** that separates the firewall functionality from the underlying operating system.
+**IPCop-Alpine** represents a fundamental architectural shift from the original IPCop distribution model. Where IPCop (and its derivative IPFire) were designed as **monolithic, pre-integrated ISO packages** with coupled Linux distributions, IPCop-Alpine adopts a **layered, package-based approach** that separates the firewall functionality from the underlying operating system.
 
 #### From Monolithic to Modular
 
@@ -36,7 +75,7 @@ This architectural change introduces **integration risks** but provides signific
 
 ### Key Differences from IPFire
 
-While IPFire continued the monolithic ISO approach with enhanced features, IPCop-Alpine diverges by:
+While IPFire continued the ISO approach with enhanced features, IPCop-Alpine diverges by:
 
 - **Package-based distribution** instead of ISO-based installation
 - **Alpine Linux foundation** instead of custom Linux build
@@ -472,11 +511,34 @@ See `LICENSE` file for details.
 
 ## Resources
 
-- **Original IPCop:** https://www.ipcop.org
-- **Alpine Linux:** https://www.alpinelinux.org
-- **IPFire (Alternative):** https://www.ipfire.org
+### Related Projects
+
+- **[IPCop Project](https://www.ipcop.org/)** - The original IPCop firewall project that inspired this work. IPCop pioneered the user-friendly Linux firewall distribution concept, providing enterprise-class security features with a simple web interface.
+
+- **[IPFire](https://www.ipfire.org/)** - A community-maintained firewall distribution that forked from IPCop and continues active development. IPFire has evolved significantly with regular security updates, modern features, and an active developer community. If you need a production-ready, actively maintained monolithic firewall distribution, IPFire is an excellent choice.
+
+- **[Alpine Linux](https://www.alpinelinux.org/)** - The lightweight, security-oriented Linux distribution that serves as the foundation for IPCop-Alpine. Alpine's use of musl libc, BusyBox, and apk package manager makes it ideal for embedded and security-focused applications.
+
+### Key Differences
+
+**IPCop-Alpine** vs. **IPFire**:
+- IPCop-Alpine: Package-based, layered architecture, independent OS updates
+- IPFire: Monolithic ISO, tightly integrated system, comprehensive feature set, active community
+
+**When to use IPCop-Alpine:**
+- You want to leverage Alpine's package ecosystem
+- You need independent OS and firewall updates
+- You prefer modular service installation
+- You're comfortable with Alpine Linux
+
+**When to use IPFire:**
+- You want a complete, tested, production-ready solution
+- You need active community support and regular updates
+- You prefer an integrated system with comprehensive documentation
+- You want a turnkey firewall appliance
 
 ---
 
 **Last Updated:** January 2026  
-**Version:** 2.2.0-modular
+**Version:** 2.2.0-modular  
+**License:** GNU GPL v2.0
