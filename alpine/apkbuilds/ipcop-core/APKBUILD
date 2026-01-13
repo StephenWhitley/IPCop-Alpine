@@ -1,0 +1,192 @@
+# Maintainer: IPCop Development Team <ipcop-dev@lists.sourceforge.net>
+pkgname=ipcop-core
+pkgver=2.2.0
+pkgrel=3
+pkgdesc="IPCop Firewall - Core system"
+url="https://www.ipcop.org"
+arch="x86_64"
+license="GPL-2.0-or-later"
+options="!check"
+install="$pkgname.post-install"
+subpackages=""
+provides="dnsmasq-openrc"
+replaces="dnsmasq-openrc"
+depends="lighttpd bash coreutils util-linux openrc collectd collectd-rrdtool perl perl-cgi perl-locale-gettext perl-dbi perl-dbd-sqlite perl-net-dns perl-netaddr-ip perl-archive-zip perl-xml-simple perl-json openssl perl-io-socket-ssl perl-net-ip iptables nftables dnsmasq vnstat perl-app-cpanminus tzdata ethtool iproute2 perl-rrd net-tools conntrack-tools bind-tools rsyslog perl-net-ssleay lighttpd-mod_auth"
+makedepends="dos2unix build-base linux-headers newt-dev slang-dev pciutils-dev libusb-dev zlib-dev gettext-dev"
+
+builddir="$startdir/../../.."
+
+build() {
+	cd "$builddir/source/core/progs"
+	
+	# Build all C programs
+	make all || return 1
+    
+
+}
+
+package() {
+	cd "$builddir"
+
+    # --- 1. Base Structure ---
+    install -d "$pkgdir"/var/ipcop
+    install -d "$pkgdir"/var/www/ipcop/cgi-bin
+    install -d "$pkgdir"/var/www/ipcop/html
+    install -d "$pkgdir"/var/log/ipcop
+    chown lighttpd:lighttpd "$pkgdir"/var/log/ipcop
+    install -d "$pkgdir"/var/log/traffic
+    chown lighttpd:lighttpd "$pkgdir"/var/log/traffic
+    install -d "$pkgdir"/var/log/rrd
+    # Collectd runs as 'collectd' user and needs write access, lighttpd needs read
+    chown collectd:lighttpd "$pkgdir"/var/log/rrd
+    chmod 2775 "$pkgdir"/var/log/rrd  # setgid so subdirs inherit group
+    install -d "$pkgdir"/var/cache/lighttpd/uploads
+    chown lighttpd:lighttpd "$pkgdir"/var/cache/lighttpd/uploads
+    install -d "$pkgdir"/etc/collectd
+    if [ -f "source/core/etc/collectd.conf" ]; then
+        install -m 0644 source/core/etc/collectd.conf "$pkgdir"/etc/collectd/collectd.conf.ipcop
+    fi
+    install -d "$pkgdir"/etc/init.d
+    install -d "$pkgdir"/etc/rc.d
+
+    # --- 2. Install Core CGIs ---
+    install -m 0755 source/core/html/cgi-bin/*.cgi "$pkgdir"/var/www/ipcop/cgi-bin/
+    
+    # --- 3. Install HTML/Images/Includes ---
+    cp -r source/core/html/* "$pkgdir"/var/www/ipcop/html/ 2>/dev/null || true
+    # Ensure correct ownership for web content
+    chown -R lighttpd:lighttpd "$pkgdir"/var/www/ipcop
+    # (Assuming includes are inside html based on previous structure, or verify if separate)
+    # populate-source-tree handles separate includes if present, but usually they are under html.
+    
+    # --- 4. Install Initial Configuration (Hierarchy) ---
+    # Copy prepared hierarchy from source/core/var/ipcop to /var/ipcop
+    if [ -d "source/core/var/ipcop" ]; then
+        cp -r source/core/var/ipcop/* "$pkgdir"/var/ipcop/
+    fi
+        
+    # --- 5. Install Init & RC Scripts ---
+    install -m 0755 source/core/etc/init.d/* "$pkgdir"/etc/init.d/
+    if [ -d "source/core/etc/rc.d" ]; then
+        install -m 0755 source/core/etc/rc.d/* "$pkgdir"/etc/rc.d/
+    fi
+    
+    # Install Sysctl (avoid overwriting /etc/sysctl.conf managed by alpine-baselayout)
+    install -d "$pkgdir"/etc/sysctl.d
+    if [ -f "source/core/etc/sysctl.conf" ]; then
+        install -m 0644 source/core/etc/sysctl.conf "$pkgdir"/etc/sysctl.d/10-ipcop.conf
+    fi
+    
+    # Install rsyslog.conf (as .ipcop to avoid conflict with rsyslog package)
+    if [ -f "source/core/etc/rsyslog.conf" ]; then
+        install -m 0644 source/core/etc/rsyslog.conf "$pkgdir"/etc/rsyslog.conf.ipcop
+    fi
+    
+    # Install lighttpd.conf (as .ipcop to avoid conflict with lighttpd package)
+    if [ -f "source/core/etc/lighttpd.conf" ]; then
+        install -d "$pkgdir"/etc/lighttpd
+        install -m 0644 source/core/etc/lighttpd.conf "$pkgdir"/etc/lighttpd/lighttpd.conf.ipcop
+    fi
+    # sysctlpostinit.conf seems custom, verify destination or leave as is if no conflict
+    if [ -f "source/core/etc/sysctlpostinit.conf" ]; then
+        install -m 0644 source/core/etc/sysctlpostinit.conf "$pkgdir"/etc/sysctlpostinit.conf
+    fi
+    
+    # Install Lists to /etc
+    if [ -f "source/core/etc/isdn-card-list" ]; then
+        install -m 0644 source/core/etc/isdn-card-list "$pkgdir"/etc/isdn-card-list
+    fi
+    if [ -f "source/core/etc/nic-modules-list" ]; then
+        install -m 0644 source/core/etc/nic-modules-list "$pkgdir"/etc/nic-modules-list
+    fi
+
+    # --- 6. Install Libs/Scripts ---
+    install -d "$pkgdir"/usr/lib/ipcop
+    install -d "$pkgdir"/usr/bin
+    install -m 0644 source/core/lib/*.pl "$pkgdir"/usr/lib/ipcop/
+    install -m 0755 source/core/scripts/*.pl "$pkgdir"/usr/bin/
+    install -m 0755 source/core/scripts/*.sh "$pkgdir"/usr/bin/
+    # Install readhash specifically without .sh extension
+    if [ -f "source/core/scripts/readhash.sh" ]; then
+        install -m 0755 source/core/scripts/readhash.sh "$pkgdir"/usr/bin/readhash
+    fi
+    
+    # --- 7. Install Crontab ---
+    # IPCop crontab for periodic tasks (makegraphs, logwatch, etc.)
+    if [ -f "source/core/etc/cron/crontab" ]; then
+        install -d "$pkgdir"/var/spool/cron/crontabs
+        install -m 0600 source/core/etc/cron/crontab "$pkgdir"/var/spool/cron/crontabs/root
+    fi
+    
+    # --- 8. Install Email Templates ---
+    if [ -d "source/core/etc/email/templates" ]; then
+       install -d -m 0770 "$pkgdir"/var/ipcop/email/templates
+       for tpl in source/core/etc/email/templates/*; do
+           if [ -f "$tpl" ]; then
+              install -m 0660 "$tpl" "$pkgdir"/var/ipcop/email/templates/$(basename "$tpl")
+           fi
+       done
+    fi
+    
+    # --- 9. Install Additional Configs ---
+    # OpenSSL config for VPN certificate generation
+    if [ -f "source/core/etc/ssl/openssl.cnf" ]; then
+        install -D -m 0644 source/core/etc/ssl/openssl.cnf "$pkgdir"/var/ipcop/vpn/openssl.cnf
+    fi
+    
+    # dhcpcd config (to defaults to avoid conflict)
+    if [ -f "source/core/etc/dhcpcd.conf" ]; then
+        install -d "$pkgdir"/usr/share/ipcop/defaults
+        install -m 0644 source/core/etc/dhcpcd.conf "$pkgdir"/usr/share/ipcop/defaults/dhcpcd.conf
+    fi
+    
+    # Ulogd config (as .ipcop to avoid conflict with ulogd package)
+    if [ -f "source/core/etc/ulogd/ulogd.conf" ]; then
+        install -m 0640 source/core/etc/ulogd/ulogd.conf "$pkgdir"/etc/ulogd.conf.ipcop
+    fi
+    
+    # Traffic database schemas
+    if [ -f "source/core/etc/traffic/sqlite3.table" ]; then
+        install -d "$pkgdir"/var/ipcop/traffic
+        install -m 0644 source/core/etc/traffic/sqlite3.table "$pkgdir"/var/ipcop/traffic/sqlite3.table
+    fi
+    if [ -f "source/core/etc/traffic/aggregate.table" ]; then
+        install -d "$pkgdir"/var/ipcop/traffic
+        install -m 0644 source/core/etc/traffic/aggregate.table "$pkgdir"/var/ipcop/traffic/aggregate.table
+    fi
+    
+    # --- 7. Install Compiled Programs ---
+    if [ -d "source/core/progs" ]; then
+        cd "$builddir/source/core/progs"
+        # Regular programs
+        install -m 0755 iowrap logwatch "$pkgdir"/usr/bin/ 2>/dev/null || true
+        # SUID programs (need special permissions)
+        for prog in accountingctrl setfwrules emailhelper restartdhcp restartssh \
+            ipcopreboot ipcopbkcfg installpackage installfcdsl ipsecctrl red setaliases \
+            ipcopbackup restartshaping restartntpd setdate rebuildhosts rebuildlangtexts \
+            conntrack_helper restartsyslogd sysinfo iptableswrapper; do
+            
+            if [ -f "$prog" ]; then
+               install -m 4750 -g lighttpd "$prog" "$pkgdir"/usr/bin/
+            fi
+        done
+        # Backup restore program
+        if [ -f "ipcoprestore" ]; then
+            install -m 4750 -g lighttpd ipcoprestore "$pkgdir"/usr/bin/
+        fi
+    fi
+    
+
+    
+    # --- 8. Permissions (SGID for web-writable) ---
+    # /var/ipcop SGID set in post-install usually, but we set base permissions here
+    
+    # Ensure ownership of installed files
+    chown -R root:lighttpd "$pkgdir"/var/ipcop
+    chmod -R u=rwX,g=rwX,o= "$pkgdir"/var/ipcop
+    # Remove execute permission from files (fixes 770 vs 660 mismatch)
+    find "$pkgdir"/var/ipcop -type f -exec chmod -x {} +
+    
+    # Ensure ownership of web files
+    chown -R root:root "$pkgdir"/var/www/ipcop
+}

@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+# IPCop override for Suricata init script
+# Uses /var/run/suricata.pid instead of /var/run/suricata/suricata.pid
+
+name="suricata"
+description="Suricata IDS/IPS"
+command=/usr/bin/suricata
+pidfile=/var/run/suricata.pid
+# Use conf.d variable SURICATA_OPTS if available, otherwise default to IPCop path
+command_args="--pidfile ${pidfile} -D -c /var/ipcop/suricata/suricata.yaml --af-packet"
+retry="TERM/20/KILL/5"
+
+depend() {
+	need net
+	after firewall
+}
+
+start_pre() {
+	# Validate configuration before starting
+	if [ ! -f /var/ipcop/suricata/suricata.yaml ]; then
+		eerror "Configuration file /var/ipcop/suricata/suricata.yaml not found"
+		return 1
+	fi
+	
+	# Create log directory if missing
+	mkdir -p /var/log/suricata
+	chown root:lighttpd /var/log/suricata
+	chmod 0750 /var/log/suricata
+}

@@ -1,0 +1,65 @@
+# Maintainer: IPCop Development Team <ipcop-dev@lists.sourceforge.net>
+pkgname=ipcop-openvpn
+pkgver=2.2.0
+pkgrel=1
+pkgdesc="IPCop VPN (OpenVPN)"
+url="https://www.ipcop.org"
+arch="all"
+license="GPL"
+depends="ipcop-core openvpn"
+install="$pkgname.post-install"
+builddir="$startdir/../../.."
+
+build() {
+    if [ -d "source/services/openvpn/progs" ]; then
+        cd "$builddir/source/services/openvpn/progs"
+        make restartopenvpn || return 1
+    fi
+}
+
+package() {
+	cd "$builddir"
+    
+    # Install Helper binaries and scripts
+    install -d "$pkgdir"/usr/bin
+    if [ -f "source/services/openvpn/progs/restartopenvpn" ]; then
+        install -m 4750 -g lighttpd source/services/openvpn/progs/restartopenvpn "$pkgdir"/usr/bin/
+    fi
+    if [ -f "source/services/openvpn/scripts/openvpn.sh" ]; then
+        install -m 0755 source/services/openvpn/scripts/openvpn.sh "$pkgdir"/usr/bin/
+    fi
+    if [ -f "source/services/openvpn/scripts/openvpnverify" ]; then
+        install -m 0755 source/services/openvpn/scripts/openvpnverify "$pkgdir"/usr/bin/
+    fi
+
+    install -d "$pkgdir"/var/www/ipcop/cgi-bin
+    install -m 0755 source/services/openvpn/html/cgi-bin/*.cgi "$pkgdir"/var/www/ipcop/cgi-bin/
+    
+    install -d "$pkgdir"/var/ipcop
+    # Install Initial Configuration (Hierarchy)
+    if [ -d "source/services/openvpn/var/ipcop" ]; then
+        cp -r source/services/openvpn/var/ipcop/* "$pkgdir"/var/ipcop/
+    fi
+    
+    # Symlink moved to post-install to avoid "Operation not permitted" on shared filesystem builds
+    
+    install -d "$pkgdir"/etc/conf.d
+    cat > "$pkgdir"/etc/conf.d/openvpn <<EOF
+# IPCop OpenVPN Configuration Override
+command_args="--config /var/ipcop/openvpn/server.conf --daemon"
+EOF
+    chmod 644 "$pkgdir"/etc/conf.d/openvpn
+    
+    # Enforce permissions
+    chown -R root:lighttpd "$pkgdir"/var/ipcop
+    chmod -R u=rwX,g=rwX,o= "$pkgdir"/var/ipcop
+    # Explicitly allow everyone to read server.conf (init might need it, or openvpn user)
+    if [ -f "$pkgdir/var/ipcop/openvpn/server.conf" ]; then
+        chmod 644 "$pkgdir/var/ipcop/openvpn/server.conf"
+    fi
+    # Remove execute permission from files (but keep dirs searchable)
+    find "$pkgdir"/var/ipcop -type f -exec chmod -x {} +
+    
+    install -d "$pkgdir"/var/log/openvpn
+    chown -R root:lighttpd "$pkgdir"/var/log/openvpn
+}

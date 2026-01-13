@@ -1,0 +1,4 @@
+DOMAINNAME=IPCop
+TIMEZONE=/usr/share/zoneinfo/US/Central
+LOCALE=en_GB
+HOSTNAME=Alpine

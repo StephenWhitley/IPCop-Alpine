@@ -1,0 +1,63 @@
+#!/sbin/openrc-run
+# IPCop dnsmasq DNS/DHCP server init script
+# Copyright (c) IPCop Development Team
+# Distributed under the terms of the GNU General Public License v2
+
+name="dnsmasq"
+description="DNS and DHCP server for IPCop firewall"
+
+# Use IPCop's configuration file
+: ${DNSMASQ_CONFFILE:=/var/ipcop/dhcp/dnsmasq.conf}
+: ${DNSMASQ_OPTS:=}
+
+command="/usr/sbin/dnsmasq"
+command_args="--conf-file=${DNSMASQ_CONFFILE} ${DNSMASQ_OPTS}"
+pidfile="/var/run/dnsmasq.pid"
+retry="TERM/5/KILL/1"
+
+required_files="${DNSMASQ_CONFFILE}"
+
+depend() {
+	need net
+	after ipcop-firewall
+	provide dns dhcp
+	use logger
+}
+
+start_pre() {
+	# Ensure required files exist
+	if [ ! -f /var/ipcop/dhcp/dnsmasq.statichosts ]; then
+		touch /var/ipcop/dhcp/dnsmasq.statichosts
+	fi
+	if [ ! -f /var/ipcop/dhcp/dnsmasq.staticopts ]; then
+		touch /var/ipcop/dhcp/dnsmasq.staticopts
+	fi
+	if [ ! -f /var/ipcop/dhcp/dnsmasq.local ]; then
+		touch /var/ipcop/dhcp/dnsmasq.local
+	fi
+
+	# Test configuration before starting
+	${command} --test --conf-file=${DNSMASQ_CONFFILE} >/dev/null 2>&1 || {
+		eerror "Configuration file ${DNSMASQ_CONFFILE} test failed"
+		return 1
+	}
+}
+
+stop_post() {
+	# Clean up PID file if it still exists
+	[ -f "${pidfile}" ] && rm -f "${pidfile}"
+	# Give process time to fully exit
+	sleep 1
+}
+
+reload() {
+	ebegin "Reloading ${name}"
+	if [ -f "${pidfile}" ]; then
+		start-stop-daemon --signal HUP --pidfile "${pidfile}"
+	else
+		eerror "${name} is not running"
+		eend 1
+		return 1
+	fi
+	eend $?
+}

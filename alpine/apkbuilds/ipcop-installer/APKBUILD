@@ -1,0 +1,41 @@
+# Maintainer: IPCop Development Team <ipcop-dev@lists.sourceforge.net>
+pkgname=ipcop-installer
+pkgver=2.2.0
+pkgrel=1
+pkgdesc="IPCop Firewall - Installer and Setup Tools"
+url="https://www.ipcop.org"
+arch="x86_64"
+license="GPL-2.0-or-later"
+options="!check"
+depends="ipcop-core newt slang pciutils libusb zlib parted"
+makedepends="newt-dev slang-dev pciutils-dev libusb-dev zlib-dev gettext-dev parted-dev build-base"
+
+builddir="$startdir/../../.."
+
+build() {
+	cd "$builddir/source/core/installer"
+	
+	# Build installer and setup programs
+	# Set NAME, SNAME, KVER, VERSION for the build
+	export NAME="IPCop"
+	export SNAME="ipcop"
+	export KVER="$(uname -r)"
+	export VERSION="$pkgver"
+	
+	# Add proper integer type definitions for old code
+	export CFLAGS="$CFLAGS -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC"
+	# Fix PIE-related linker warnings
+	export LDFLAGS="$LDFLAGS -no-pie"
+	
+	# Clean previous build artifacts (stale objects from source copy)
+	rm -f *.o installer setup
+	make all || return 1
+}
+
+package() {
+	cd "$builddir/source/core/installer"
+	
+	# Install setup program only
+	install -d "$pkgdir"/usr/sbin
+	install -m 0755 setup "$pkgdir"/usr/sbin/setup-ipcop
+}

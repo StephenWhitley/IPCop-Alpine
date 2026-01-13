@@ -1,0 +1,34 @@
+#!/bin/sh
+# ipcop-suricata.post-install
+echo "Configuring Suricata..."
+
+# 1. Directories & Permissions
+# Config
+if [ ! -d "/var/ipcop/suricata" ]; then
+    mkdir -p /var/ipcop/suricata
+    chown root:lighttpd /var/ipcop/suricata
+    chmod 2770 /var/ipcop/suricata
+fi
+
+# Logs
+mkdir -p /var/log/suricata
+if getent passwd suricata > /dev/null 2>&1; then
+    chown suricata:lighttpd /var/log/suricata
+    chmod 0750 /var/log/suricata
+    
+    # Touch log files so they exist with correct permissions
+    touch "/var/log/suricata/fast.log"
+    touch "/var/log/suricata/eve.json"
+    chown suricata:lighttpd "/var/log/suricata/fast.log"
+    chown suricata:lighttpd "/var/log/suricata/eve.json"
+    chmod 640 "/var/log/suricata/fast.log"
+    chmod 640 "/var/log/suricata/eve.json"
+fi
+
+# 2. Defaults - Handled by package install
+# Files already installed to appropriate locations.
+
+
+# 3. Enable Service
+rc-update add suricata default
+echo "Suricata Configured."

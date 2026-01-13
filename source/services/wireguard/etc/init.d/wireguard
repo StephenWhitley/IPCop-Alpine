@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+description="IPCop WireGuard VPN"
+
+depend() {
+	need net
+	after firewall
+}
+
+start() {
+	ebegin "Starting WireGuard VPN"
+	/usr/bin/wireguardctrl.pl start
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping WireGuard VPN"
+	/usr/bin/wireguardctrl.pl stop
+	eend $?
+}

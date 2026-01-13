@@ -1,0 +1,31 @@
+# Default Suricata IDS/IPS Settings for IPCop
+# These settings control Suricata intrusion detection/prevention system
+
+# Enable Suricata service (on/off)
+ENABLED=off
+
+# Operating mode:
+# - ids: Passive monitoring only (logs threats, no blocking)
+# - ips: Active blocking (inline mode, blocks threats)
+MODE=ids
+
+# Interface monitoring
+# Enable monitoring on each interface (on/off)
+MONITOR_GREEN=off
+MONITOR_BLUE=off
+MONITOR_RED=on
+
+# Home network definition
+# Use 'auto' to automatically detect from GREEN/BLUE subnets
+# Or specify manually: "[192.168.1.0/24,192.168.10.0/24]"
+HOME_NET=auto
+
+# Rule action for IPS mode
+# - alert: Log only (same as IDS)
+# - drop: Block and log
+RULE_ACTION=alert
+
+# Rule update method
+# - manual: User must update rules via WebUI
+# - auto: Automatic updates via cron (requires internet)
+UPDATE_RULES=manual

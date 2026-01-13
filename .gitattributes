@@ -1,0 +1,92 @@
+# ==============================================================================
+# Git Attributes for IPCop-Alpine
+# ==============================================================================
+# This file ensures that all text files are stored in the repository with LF
+# line endings, regardless of the platform. This is critical for Alpine Linux
+# compatibility and prevents build issues with shell scripts and CGI files.
+# ==============================================================================
+
+# Set default behavior - auto-detect text files and normalize to LF
+* text=auto eol=lf
+
+# ==============================================================================
+# Shell Scripts and Build Files
+# ==============================================================================
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Alpine Package Build Files
+APKBUILD text eol=lf
+*.pre-install text eol=lf
+*.post-install text eol=lf
+*.pre-upgrade text eol=lf
+*.post-upgrade text eol=lf
+*.pre-deinstall text eol=lf
+*.post-deinstall text eol=lf
+*.trigger text eol=lf
+
+# ==============================================================================
+# Perl and CGI Scripts
+# ==============================================================================
+*.pl text eol=lf
+*.pm text eol=lf
+*.cgi text eol=lf
+*.t text eol=lf
+
+# ==============================================================================
+# Configuration Files
+# ==============================================================================
+*.conf text eol=lf
+*.config text eol=lf
+*.cfg text eol=lf
+*.ini text eol=lf
+*.service text eol=lf
+*.timer text eol=lf
+
+# ==============================================================================
+# Web Files
+# ==============================================================================
+*.html text eol=lf
+*.htm text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+
+# ==============================================================================
+# Documentation
+# ==============================================================================
+*.md text eol=lf
+*.txt text eol=lf
+README text eol=lf
+LICENSE text eol=lf
+AUTHORS text eol=lf
+CHANGELOG text eol=lf
+INSTALL text eol=lf
+
+# ==============================================================================
+# Data Files
+# ==============================================================================
+*.csv text eol=lf
+*.sql text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# ==============================================================================
+# Binary Files (explicitly mark as binary to prevent any conversion)
+# ==============================================================================
+*.apk binary
+*.tar.gz binary
+*.tgz binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.so binary
+*.a binary
+*.o binary
+*.rsa binary
+*.pub binary

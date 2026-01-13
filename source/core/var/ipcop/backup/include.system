@@ -1,0 +1,15 @@
+/etc/passwd
+/etc/shadow
+/etc/hosts
+/etc/localtime
+/etc/ssh/ssh_host_ed25519_key
+/etc/ssh/ssh_host_ed25519_key.pub
+/etc/ssh/ssh_host_rsa_key
+/etc/ssh/ssh_host_rsa_key.pub
+/var/ipcop/
+/var/lib/squidguard/db/custom/allowed/domains
+/var/lib/squidguard/db/custom/allowed/urls
+/var/lib/squidguard/db/custom/blocked/domains
+/var/lib/squidguard/db/custom/blocked/expressions
+/var/lib/squidguard/db/custom/blocked/files
+/var/lib/squidguard/db/custom/blocked/urls

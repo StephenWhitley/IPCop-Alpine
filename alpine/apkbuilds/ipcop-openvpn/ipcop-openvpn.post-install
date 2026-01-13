@@ -1,0 +1,56 @@
+#!/bin/sh
+# ipcop-openvpn.post-install
+echo "Configuring OpenVPN..."
+
+# 1. Directories & Permissions
+mkdir -p /var/ipcop/openvpn
+chown -R root:lighttpd /var/ipcop/openvpn
+chmod 2770 /var/ipcop/openvpn
+
+# Log File (OpenVPN drops to nobody)
+if [ ! -f "/var/log/openvpnserver.log" ]; then
+    touch "/var/log/openvpnserver.log"
+    chown nobody:lighttpd "/var/log/openvpnserver.log"
+    chmod 0644 "/var/log/openvpnserver.log"
+fi
+
+# 2. Defaults - Handled by package install (APKBUILD copies to /var/ipcop)
+# Files are already in /var/ipcop/openvpn
+
+
+# 3. Empty Configs
+if [ ! -f "/var/ipcop/openvpn/config" ]; then
+    touch "/var/ipcop/openvpn/config"
+    chown root:lighttpd "/var/ipcop/openvpn/config"
+    chmod 0660 "/var/ipcop/openvpn/config"
+fi
+
+
+
+
+# 4. Symlinks
+# Create openvpn.conf symlink for Alpine compatibility (runs on target fs, avoiding build-time issues)
+if [ -f "/var/ipcop/openvpn/server.conf" ] && [ ! -e "/var/ipcop/openvpn/openvpn.conf" ]; then
+    ln -sf /var/ipcop/openvpn/server.conf /var/ipcop/openvpn/openvpn.conf
+fi
+
+# Ensure /etc/openvpn points to /var/ipcop/openvpn for certificate lookups if needed
+if [ -d "/etc/openvpn" ] && [ ! -L "/etc/openvpn" ]; then
+    # If it's a directory (from alpine pkg), move it aside or link inside it?
+    # Alpine openvpn expects configs in /etc/openvpn.
+    # We want /etc/openvpn to contains openvpn.conf which is our symlink.
+    # If /var/ipcop/openvpn is the master dir, let's try to symlink /etc/openvpn -> /var/ipcop/openvpn
+    # BUT alpine package owns /etc/openvpn.
+    # Better to just link the config inside /etc/openvpn if it is a dir.
+    ln -sf /var/ipcop/openvpn/server.conf /etc/openvpn/openvpn.conf
+fi
+
+# Ensure permissions are readable for openvpn user (nobody/openvpn)
+if [ -f "/var/ipcop/openvpn/server.conf" ]; then
+    chmod 644 /var/ipcop/openvpn/server.conf
+fi
+
+# 5. Enable Service
+rc-update add openvpn default
+
+echo "OpenVPN Configured."

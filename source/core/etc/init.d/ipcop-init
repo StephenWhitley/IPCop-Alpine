@@ -1,0 +1,90 @@
+#!/sbin/openrc-run
+# Copyright IPCop Team
+# Distributed under the terms of the GNU General Public License v2
+
+description="IPCop System Initialization"
+
+depend() {
+	need localmount
+	before ipcop-network net
+	provide ipcop-init
+}
+
+start() {
+	ebegin "Initializing IPCop system"
+	
+	local ret=0
+	
+	# Generate SSH keys if missing
+	if [ ! -e /etc/ssh/ssh_host_rsa_key ]; then
+		einfo "  Generating SSH RSA key..."
+		ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key -N "" || ret=1
+	fi
+	
+	if [ ! -e /etc/ssh/ssh_host_ed25519_key ]; then
+		einfo "  Generating SSH Ed25519 key..."
+		ssh-keygen -q -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N "" || ret=1
+	fi
+	
+	# Generate Lighttpd SSL certificate if missing
+	if [ ! -e /etc/lighttpd/server.pem ]; then
+		einfo "  Generating Lighttpd SSL certificate..."
+        # Create temp dir
+        OLD_UMASK=$(umask)
+        umask 077
+        TMP_DIR=$(mktemp -d)
+        
+		openssl req -new -x509 -days 3650 -nodes \
+			-out "$TMP_DIR/server.crt" \
+			-keyout "$TMP_DIR/server.key" \
+			-subj "/C=US/ST=State/L=City/O=IPCop Firewall/CN=$(hostname)" \
+			2>/dev/null || ret=1
+            
+        # Combine for lighttpd
+        cat "$TMP_DIR/server.key" "$TMP_DIR/server.crt" > /etc/lighttpd/server.pem
+        chown root:root /etc/lighttpd/server.pem
+        chmod 400 /etc/lighttpd/server.pem
+        
+        rm -rf "$TMP_DIR"
+        umask $OLD_UMASK
+	fi
+	
+	# Generate web interface menu if missing
+	if [ ! -e /var/www/ipcop/cgi-bin/menu.pl ] || [ ! -s /var/www/ipcop/cgi-bin/menu.pl ]; then
+		if [ -x /usr/bin/updatemenu.pl ]; then
+			einfo "  Generating web interface menu..."
+			/usr/bin/updatemenu.pl 2>/dev/null || ret=1
+		fi
+	fi
+	
+	# Set hostname if configured
+	if [ -f /var/ipcop/main/settings ]; then
+		. /var/ipcop/main/settings 2>/dev/null || true
+		if [ -n "$HOSTNAME" ]; then
+			if [ -n "$DOMAINNAME" ]; then
+				hostname "${HOSTNAME}.${DOMAINNAME}"
+			else
+				hostname "$HOSTNAME"
+			fi
+		fi
+	fi
+	
+	# Initialize random seed
+	if [ -f /var/run/random-seed ]; then
+		cat /var/run/random-seed > /dev/urandom 2>/dev/null
+	fi
+	dd if=/dev/urandom of=/var/run/random-seed count=1 bs=512 2>/dev/null
+	chmod 600 /var/run/random-seed 2>/dev/null
+	
+	# Clean up old runtime files
+	rm -f /var/run/*.pid /var/run/*.sem /var/run/*.tdb 2>/dev/null
+	rm -f /var/run/dhcpcd-*.pid 2>/dev/null
+	
+	eend $ret
+}
+
+stop() {
+	# Nothing to stop
+	ebegin "IPCop shutdown"
+	eend 0
+}

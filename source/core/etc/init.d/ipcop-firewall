@@ -1,0 +1,58 @@
+#!/sbin/openrc-run
+# Copyright IPCop Team
+# Distributed under the terms of the GNU General Public License v2
+
+description="IPCop Firewall Rules and iptables Configuration"
+
+depend() {
+	need net
+	use logger
+	provide firewall
+}
+
+start() {
+	ebegin "Starting IPCop firewall"
+	
+	# Check if already running
+	# Check if already running - Skip this check to allow restart/fix
+	#if /usr/sbin/iptables -L INPUT -n | grep -q "FW_ADMIN"; then
+	#	ewarn "Firewall already initialized"
+	#	eend 1
+	#	return 1
+	#fi
+	
+	# Start the firewall
+	/etc/rc.d/rc.firewall start
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping IPCop firewall"
+	/etc/rc.d/rc.firewall stop
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading IPCop firewall rules"
+	/etc/rc.d/rc.firewall reload
+	eend $?
+}
+
+restart() {
+	ebegin "Restarting IPCop firewall"
+	/etc/rc.d/rc.firewall restart
+	eend $?
+}
+
+status() {
+	ebegin "Checking IPCop firewall status"
+	
+	# Check if key chains exist
+	if /sbin/iptables -L INPUT -n | grep -q "FW_ADMIN"; then
+		einfo "Firewall is active"
+		eend 0
+	else
+		eerror "Firewall is not active"
+		eend 1
+	fi
+}

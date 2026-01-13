@@ -1,0 +1,4 @@
+# Logging configuration
+LOGLEVELSETTING=notice
+ENABLE_REMOTELOG=off
+REMOTELOG_ADDR=

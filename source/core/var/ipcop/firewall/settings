@@ -1,0 +1,19 @@
+# IPCop Firewall Settings
+# This file contains global firewall configuration
+
+# Enable DROPFORWARD (drop forwarding traffic by default)
+DROPFORWARD=on
+
+# Enable DROPINPUT (drop incoming traffic by default)  
+DROPINPUT=on
+
+# Enable DROPOUTPUT (drop outgoing traffic by default)
+DROPOUTPUT=off
+
+# Enable logging of dropped packets
+DROPNEWNOTSYN=on
+DROPINVALID=on
+
+# Advanced firewall options
+DROPCTINVALID=on
+DROPPROXY=off

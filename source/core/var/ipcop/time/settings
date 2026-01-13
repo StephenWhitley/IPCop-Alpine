@@ -1,0 +1,5 @@
+# Time and NTP settings
+ENABLENTP=off
+NTPSERVER1=pool.ntp.org
+NTPSERVER2=
+TIMEZONE=America/Chicago

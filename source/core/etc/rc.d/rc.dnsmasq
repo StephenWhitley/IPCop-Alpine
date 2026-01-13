@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# start/stop dnsmasq
+#   No need for SUID helper since this will only be used by other programs
+#
+#
+# $Id: rc.dnsmasq 5183 2010-11-28 16:07:15Z owes $
+#
+
+# read variables 
+eval $(/usr/bin/readhash /var/ipcop/ppp/settings)
+eval $(/usr/bin/readhash /var/ipcop/ethernet/settings)
+eval $(/usr/bin/readhash /var/ipcop/main/settings)
+[ "$DOMAINNAME" ] && LOCALDOMAIN="-s $DOMAINNAME --local=/$DOMAINNAME/"
+
+# See how we were called.
+# See how we were called.
+case "$1" in
+start|--start)
+    # Ensure config dependencies are updated (resolv.conf symlinks if needed)
+    if [ -e "/var/ipcop/red/dial-on-demand" -a "$DIALONDEMANDDNS" == "on" -a ! -e "/var/ipcop/red/active" ]; then
+         # Only used if we need to swap configs dynamically, but typically rc-service handles reload
+         # For now, just defer to the service
+         /sbin/rc-service dnsmasq start
+    else
+         /sbin/rc-service dnsmasq start
+    fi
+    ;;
+stop|--stop)
+    /sbin/rc-service dnsmasq stop
+    ;;
+restart|--restart)
+    /sbin/rc-service dnsmasq restart
+    ;;
+sighup|--sighup)
+    # clears cache and reloads several config files
+    /sbin/rc-service dnsmasq reload
+    ;;
+sigusr1|--sigusr1)
+    # write statistics to log - service doesn't support SIGUSR1 natively usually, send signal directly if running
+    [ -e /var/run/dnsmasq.pid ] && /bin/kill -SIGUSR1 `cat /var/run/dnsmasq.pid`
+    ;;
+
+*)
+    echo "Usage: $0 {start|stop|restart}"
+    ;;
+esac

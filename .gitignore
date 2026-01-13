@@ -1,3 +1,37 @@
+# ==============================================================================
+# IPCop-Alpine Build Artifacts
+# ==============================================================================
+
+# Alpine Package Build System
+# Built APK packages (architecture-specific)
+alpine/packages/x86_64/*.apk
+alpine/packages/*/APKINDEX.tar.gz
+alpine/packages/*/APKINDEX.tar.gz.bak
+alpine/packages/*/APKINDEX.tar.gz.old
+
+# Build directories (intermediate build artifacts)
+alpine/build/
+alpine/log/
+cache/
+
+# abuild artifacts in package directories
+alpine/apkbuilds/*/src/
+alpine/apkbuilds/*/pkg/
+alpine/apkbuilds/*/tmp/
+alpine/apkbuilds/*/.abuild/
+
+# Package signing keys (should never be committed)
+*.rsa
+*.rsa.pub
+
+# Build logs
+*.log
+alpine/log/*.log
+
+# ==============================================================================
+# Perl Development and Testing
+# ==============================================================================
+
 !Build/
 .last_cover_stats
 /META.yml
@@ -38,4 +72,30 @@ inc/
 /local/
 /.carmel/
 # cpanfile.snapshot should generally be ignored for library code, otherwise included
-# cpanfile.snapshot 
+# cpanfile.snapshot
+
+# ==============================================================================
+# Editor and IDE
+# ==============================================================================
+
+# Vim
+*.swp
+*.swo
+*~
+
+# VS Code
+.vscode/
+
+# ==============================================================================
+# OS-Specific
+# ==============================================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride

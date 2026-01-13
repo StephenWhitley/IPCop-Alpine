@@ -1,0 +1,38 @@
+#!/bin/sh
+# ipcop-e2guardian.post-install
+echo "Configuring e2guardian..."
+
+# 1. Directories & Permissions
+# Logs
+mkdir -p /var/log/e2guardian
+chown -R e2guard:lighttpd /var/log/e2guardian
+chmod 0750 /var/log/e2guardian
+
+# Ensure specific logs exist
+for log in access.log dstats.log; do
+    if [ ! -f "/var/log/e2guardian/$log" ]; then
+        touch "/var/log/e2guardian/$log"
+        chown e2guard:lighttpd "/var/log/e2guardian/$log"
+        chmod 0640 "/var/log/e2guardian/$log"
+    fi
+done
+
+# 2. Defaults
+# E2Guardian config usually lives in /etc/e2guardian
+# But we may have overrides in /var/ipcop/proxy depending on how the CGI works.
+# For now, we assume standard /etc install via package, but we might verify port.
+
+# 3. Port Configuration (Ensure 8081)
+CONFIG="/etc/e2guardian/e2guardian.conf"
+if [ -f "$CONFIG" ]; then
+    if ! grep -q "^filterports = 8081" "$CONFIG"; then
+        echo "Configuring E2Guardian to listen on port 8081..."
+         sed -i 's/^filterports = .*/filterports = 8081/' "$CONFIG"
+    fi
+fi
+
+# 4. Defaults - Handled by package install
+# Files already installed to appropriate locations.
+
+
+echo "E2Guardian Configured."

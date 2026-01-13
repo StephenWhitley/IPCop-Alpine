@@ -1,0 +1,18 @@
+#!/bin/sh
+# ipcop-wireguard.post-install
+
+
+    echo "Configuring Wireguard..."
+
+# 1. Directories & Permissions
+mkdir -p /var/ipcop/wireguard
+chown root:lighttpd /var/ipcop/wireguard
+chmod 2770 /var/ipcop/wireguard
+
+# 2. Defaults - Handled by package install
+# Files already installed to appropriate locations.
+
+
+# 3. Enable Service
+rc-update add wireguard default
+echo "Wireguard Configured."

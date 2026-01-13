@@ -1,0 +1,108 @@
+#!/sbin/openrc-run
+# Copyright IPCop Team
+# Distributed under the terms of the GNU General Public License v2
+
+description="IPCop RED (WAN) Interface Management"
+
+depend() {
+	need ipcop-network
+	use ipcop-firewall dns logger
+	after ipcop-firewall
+}
+
+start() {
+	# Check if already active
+	if [ -f /var/ipcop/red/active ]; then
+		ewarn "RED interface already active"
+		eend 0
+		return 0
+	fi
+	
+	# Check if connecting
+	if [ -f /var/ipcop/red/connecting ]; then
+		einfo "RED interface is connecting..."
+		eend 0
+		return 0
+	fi
+	
+	ebegin "Starting IPCop RED interface"
+	
+	# Call the Perl script to start RED
+	/etc/rc.d/rc.red start
+	local ret=$?
+	
+	if [ $ret -eq 0 ]; then
+		# Wait a moment for connection to establish
+		sleep 2
+		
+		if [ -f /var/ipcop/red/active ]; then
+			einfo "RED interface connected"
+		elif [ -f /var/ipcop/red/connecting ]; then
+			einfo "RED interface connecting..."
+		else
+			ewarn "RED interface start command completed but status unclear"
+		fi
+	else
+		eerror "Failed to start RED interface"
+	fi
+	
+	eend $ret
+}
+
+stop() {
+	ebegin "Stopping IPCop RED interface"
+	
+	# Call the Perl script to stop RED
+	/etc/rc.d/rc.red stop
+	local ret=$?
+	
+	# Wait for disconnection
+	sleep 2
+	
+	if [ ! -f /var/ipcop/red/active ]; then
+		einfo "RED interface disconnected"
+	else
+		ewarn "RED interface may still be active"
+	fi
+	
+	eend $ret
+}
+
+reload() {
+	ebegin "Reloading IPCop RED interface"
+	
+	# Restart RED connection
+	stop
+	sleep 1
+	start
+	
+	eend $?
+}
+
+status() {
+	if [ -f /var/ipcop/red/active ]; then
+		einfo "RED interface is ACTIVE"
+		
+		# Show interface and IP if available
+		if [ -f /var/ipcop/red/iface ]; then
+			local iface=$(cat /var/ipcop/red/iface)
+			einfo "  Interface: $iface"
+		fi
+		
+		if [ -f /var/ipcop/red/local-ipaddress ]; then
+			local ip=$(cat /var/ipcop/red/local-ipaddress)
+			einfo "  IP Address: $ip"
+		fi
+		
+		eend 0
+	elif [ -f /var/ipcop/red/connecting ]; then
+		einfo "RED interface is CONNECTING"
+		eend 0
+	elif [ -f /var/ipcop/red/disconnecting ]; then
+		einfo "RED interface is DISCONNECTING"
+		eend 0
+	else
+		einfo "RED interface is INACTIVE"
+		eend 3
+	fi
+}

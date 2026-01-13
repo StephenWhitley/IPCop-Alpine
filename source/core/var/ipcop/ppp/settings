@@ -1,0 +1,7 @@
+# PPP settings for dial-up/DSL connections
+PROFILE=1
+PROFILENAME=Default
+TYPE=
+DEV=ppp0
+COMPORT=/dev/ttyS0
+DTERATE=115200

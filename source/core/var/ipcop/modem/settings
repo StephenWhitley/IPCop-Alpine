@@ -1,0 +1,7 @@
+# Modem configuration settings
+VALID=no
+PROFILENAME=
+COMPORT=/dev/ttyS0
+DTERATE=115200
+SPEAKER=off
+DIALMODE=T

@@ -1,0 +1,71 @@
+#!/sbin/openrc-run
+# Copyright IPCop Team
+# Distributed under the terms of the GNU General Public License v2
+
+description="IPCop Network Configuration and Interface Setup"
+
+depend() {
+	need localmount
+	before net firewall
+	provide net
+}
+
+start() {
+	ebegin "Initializing IPCop network"
+	
+	# Initialize network interfaces
+	/etc/rc.d/rc.net --init
+	local ret=$?
+	
+	if [ $ret -eq 0 ]; then
+		einfo "IPCop network initialized successfully"
+	else
+		eerror "Failed to initialize IPCop network"
+	fi
+	
+	eend $ret
+}
+
+start_post() {
+	# Start RED interface if configured to connect on boot
+	if [ -f /var/ipcop/red/keepconnected ]; then
+		einfo "Starting RED interface (automatic connection)"
+		/etc/rc.d/rc.net --startred &
+	fi
+}
+
+stop() {
+	ebegin "Stopping IPCop network"
+	
+	# Bring down interfaces
+	# Note: rc.net doesn't have a stop function, 
+	# but we can bring down interfaces manually if needed
+	
+	einfo "Network interfaces will be managed by OpenRC"
+	eend 0
+}
+
+status() {
+	ebegin "Checking IPCop network status"
+	
+	# Check if GREEN interface is up
+	if [ -f /var/ipcop/ethernet/settings ]; then
+		. /var/ipcop/ethernet/settings 2>/dev/null || true
+		
+		if [ -n "$GREEN_1_DEV" ]; then
+			if ip link show "$GREEN_1_DEV" up 2>/dev/null | grep -q "state UP"; then
+				einfo "GREEN interface $GREEN_1_DEV is UP"
+				eend 0
+			else
+				ewarn "GREEN interface $GREEN_1_DEV is DOWN"
+				eend 1
+			fi
+		else
+			eerror "GREEN interface not configured"
+			eend 1
+		fi
+	else
+		eerror "Network settings not found"
+		eend 1
+	fi
+}

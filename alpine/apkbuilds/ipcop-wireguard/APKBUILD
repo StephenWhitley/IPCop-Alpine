@@ -1,0 +1,51 @@
+# Maintainer: IPCop Development Team <ipcop-dev@lists.sourceforge.net>
+pkgname=ipcop-wireguard
+pkgver=2.2.0
+pkgrel=1
+pkgdesc="IPCop VPN (Wireguard)"
+url="https://www.ipcop.org"
+arch="noarch"
+license="GPL"
+depends="ipcop-core wireguard-tools"
+install="$pkgname.post-install"
+builddir="$startdir/../../.."
+
+build() { :; }
+
+package() {
+	cd "$builddir"
+    install -d "$pkgdir"/var/www/ipcop/cgi-bin
+    install -m 0755 source/services/wireguard/html/cgi-bin/*.cgi "$pkgdir"/var/www/ipcop/cgi-bin/
+    
+    install -d "$pkgdir"/var/ipcop
+    # Install Initial Configuration (Hierarchy)
+    if [ -d "source/services/wireguard/var/ipcop" ]; then
+        cp -r source/services/wireguard/var/ipcop/* "$pkgdir"/var/ipcop/
+    fi
+    
+    # Custom WireGuard init script
+    install -d "$pkgdir"/etc/init.d
+    if [ -f "source/services/wireguard/etc/init.d/wireguard" ]; then
+        install -m 0755 source/services/wireguard/etc/init.d/wireguard "$pkgdir"/etc/init.d/wireguard
+    fi
+    
+    # Install Controller Script
+    install -d "$pkgdir"/usr/bin
+    if [ -f "source/services/wireguard/scripts/wireguardctrl.pl" ]; then
+        install -m 0755 source/services/wireguard/scripts/wireguardctrl.pl "$pkgdir"/usr/bin/
+    fi
+    # Install Helper Library (required by controller)
+    install -d "$pkgdir"/usr/lib/ipcop
+    if [ -f "source/services/wireguard/lib/wireguard-functions.pl" ]; then
+        install -m 0644 source/services/wireguard/lib/wireguard-functions.pl "$pkgdir"/usr/lib/ipcop/
+    fi
+
+    
+
+
+    # Enforce permissions
+    chown -R root:lighttpd "$pkgdir"/var/ipcop
+    chmod -R u=rwX,g=rwX,o= "$pkgdir"/var/ipcop
+    # Remove execute permission from files
+    find "$pkgdir"/var/ipcop -type f -exec chmod -x {} +
+}

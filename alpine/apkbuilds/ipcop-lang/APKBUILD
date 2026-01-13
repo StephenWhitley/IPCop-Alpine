@@ -1,0 +1,42 @@
+# Maintainer: IPCop Development Team <ipcop-dev@lists.sourceforge.net>
+pkgname=ipcop-lang
+pkgver=2.2.0
+pkgrel=2
+pkgdesc="IPCop - Languages"
+url="https://www.ipcop.org"
+arch="noarch"
+license="GPL"
+depends="gettext"
+makedepends="gettext"
+builddir="$startdir/../../../lang"
+
+build() {
+    cd "$builddir"
+    for lang_dir in */; do
+        if [ -d "$lang_dir" ]; then
+            if [ -f "$lang_dir/ipcop.po" ]; then
+                msgfmt -o "$lang_dir/ipcop.mo" "$lang_dir/ipcop.po"
+            fi
+            if [ -f "$lang_dir/install.po" ]; then
+                msgfmt -o "$lang_dir/install.mo" "$lang_dir/install.po"
+            fi
+        fi
+    done
+}
+
+package() {
+    cd "$builddir"
+    for lang_dir in */; do
+        if [ -d "$lang_dir" ]; then
+            lang_name="${lang_dir%/}"
+            install -d "$pkgdir"/usr/share/locale/"$lang_name"/LC_MESSAGES
+            
+            if [ -f "$lang_dir/ipcop.mo" ]; then
+                install -m 0644 "$lang_dir/ipcop.mo" "$pkgdir"/usr/share/locale/"$lang_name"/LC_MESSAGES/
+            fi
+            if [ -f "$lang_dir/install.mo" ]; then
+                install -m 0644 "$lang_dir/install.mo" "$pkgdir"/usr/share/locale/"$lang_name"/LC_MESSAGES/
+            fi
+        fi
+    done
+}

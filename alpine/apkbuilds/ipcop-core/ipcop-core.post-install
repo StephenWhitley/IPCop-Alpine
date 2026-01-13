@@ -1,0 +1,213 @@
+#!/bin/sh
+# ipcop-core.post-install
+# Handles core system initialization, permissions, and default config creation.
+
+echo "Configuring IPCop Core..."
+
+# --- 1. User & Group Management ---
+# Ensure lighttpd group exists (sanity check)
+if ! getent group lighttpd >/dev/null 2>&1; then
+    echo "WARNING: lighttpd group not found. WebUI permission errors may occur."
+fi
+
+# Add dnsmasq to lighttpd group so it can read dhcp settings
+if getent passwd dnsmasq >/dev/null 2>&1; then
+    if getent group lighttpd >/dev/null 2>&1; then
+        addgroup dnsmasq lighttpd 2>/dev/null || true
+    fi
+fi
+
+# --- 2. CPAN Module Installation ---
+# Alpine Perl doesn't have all needed modules, use cpanm if available
+echo "Checking/Installing Perl modules..."
+if command -v cpanm >/dev/null 2>&1; then
+    # Install silently, don't fail if network down (first boot)
+    cpanm --quiet --notest Locale::Maketext::Gettext::Functions Apache::Htpasswd Net::IPv4Addr 2>/dev/null || \
+        echo "WARNING: Failed to install Perl modules (network down?)"
+else
+    echo "WARNING: cpanm not found."
+fi
+
+# --- 3. Directory Structure Creation ---
+echo "Creating IPCop directory structure..."
+# Full list from ReferencePort/lfs/ipcop
+for dir in addons addons/lang alcatelusb auth backup ca certs cnx_pci crls ddns dhcp \
+    eagle-usb eciadsl email email/templates ethernet firewall firmware key logging main modem \
+    ipsec openvpn openvpn/ccd openvpn/certs openvpn/crls openvpn/openssl patches \
+    ppp private proxy proxy/blacklists proxy/blacklistupdate proxy/redirector red remote shaping time \
+    traffic vpn wireguard; do
+    if [ ! -d "/var/ipcop/$dir" ]; then
+        mkdir -p "/var/ipcop/$dir"
+    fi
+done
+
+# --- 4. Permission Enforcement (SGID) ---
+# Critical for WebUI to work with root-created files
+echo "Applying Permissions (root:lighttpd 2770)..."
+chown -R root:lighttpd /var/ipcop
+chmod -R u=rwX,g=rwX,o= /var/ipcop
+find /var/ipcop -type d -exec chmod g+s {} +
+
+# Fix specific traffic settings if they exist
+if [ -f "/var/ipcop/traffic/settings" ]; then
+    chmod 0664 "/var/ipcop/traffic/settings"
+fi
+
+# --- 5. Defaults Installation ---
+# Files are now installed directly to /var/ipcop by the package.
+# No action needed here.
+
+
+# --- 6. Empty Config Creation (Touch) ---
+# Creates necessary files that have no default content
+# List from ReferencePort/lfs/ipcop
+for file in auth/users backup/include.user backup/exclude.user \
+    certs/index.txt ddns/config ddns/settings \
+    dhcp/settings dhcp/fixedleases dhcp/advoptions dhcp/dnsmasq.statichosts dhcp/dnsmasq.staticopts \
+    email/settings ethernet/aliases ethernet/isdn ethernet/settings \
+    firewall/addressGroups firewall/config firewall/custominterfaces firewall/customnetworks \
+    firewall/customservices firewall/policy firewall/serviceGroups firewall/settings firewall/wireless \
+    ipsec/config ipsec/settings ipsec/ipsec.conf ipsec/ipsec.secrets \
+    main/hosts main/flashsettings main/scheduler \
+    patches/available.xml patches/installed.xml openvpn/config \
+    ppp/settings-1 ppp/settings-2 ppp/settings-3 ppp/settings-4 ppp/settings-5 ppp/settings \
+    proxy/settings remote/settings shaping/settings shaping/config traffic/settings \
+    proxy/filtersettings \
+    vpn/caconfig; do
+    
+    target="/var/ipcop/$file"
+    if [ ! -f "$target" ]; then
+        dirname=$(dirname "$target")
+        [ -d "$dirname" ] || mkdir -p "$dirname"
+        touch "$target"
+        chown root:lighttpd "$target"
+        chmod 0660 "$target"
+    fi
+done
+
+# Touch logs
+[ -f /var/log/fw_timeframe_log ] || touch /var/log/fw_timeframe_log
+mkdir -p /var/log/updates && chown nobody:nobody /var/log/updates
+mkdir -p /var/log/dyndns && chown nobody:nobody /var/log/dyndns
+
+# Squidguard DB structure
+mkdir -p /var/lib/squidguard/db/custom/allowed
+mkdir -p /var/lib/squidguard/db/custom/blocked
+touch /var/lib/squidguard/db/custom/allowed/domains
+touch /var/lib/squidguard/db/custom/allowed/urls
+touch /var/lib/squidguard/db/custom/blocked/domains
+touch /var/lib/squidguard/db/custom/blocked/expressions
+touch /var/lib/squidguard/db/custom/blocked/files
+touch /var/lib/squidguard/db/custom/blocked/urls
+chown -R nobody:nobody /var/lib/squidguard/db
+
+
+# --- 7. Oneliner Configs ---
+# Ensure critical one-liners exist if missing
+echo_conf() {
+    file="$1"
+    content="$2"
+    target="/var/ipcop/$file"
+    if [ ! -s "$target" ]; then
+        echo "$content" > "$target"
+        chown root:lighttpd "$target"
+        chmod 0660 "$target"
+    fi
+}
+
+echo_conf "ipsec/settings" "ENABLED=off\nVPN_DELAYED_START=0"
+echo_conf "shaping/settings" "VALID=yes"
+echo_conf "certs/serial" "01"
+echo_conf "ppp/fake-resolv.conf" "nameserver    1.2.3.4"
+if [ ! -s "/var/ipcop/patches/available.xml" ]; then
+    printf "<ipcop>\n</ipcop>" > "/var/ipcop/patches/available.xml"
+    chown root:lighttpd "/var/ipcop/patches/available.xml"
+fi
+if [ ! -s "/var/ipcop/patches/installed.xml" ]; then
+    printf "<ipcop>\n</ipcop>" > "/var/ipcop/patches/installed.xml"
+    chown root:lighttpd "/var/ipcop/patches/installed.xml"
+fi
+
+# --- 8. System Compatibility Links ---
+# nftables wrapper compatibility for legacy scripts
+if [ -x /usr/sbin/iptables ]; then
+    ln -sf /usr/sbin/iptables /sbin/iptables 2>/dev/null || true
+    ln -sf /usr/sbin/iptables-restore /sbin/iptables-restore 2>/dev/null || true
+    ln -sf /usr/sbin/iptables-save /sbin/iptables-save 2>/dev/null || true
+fi
+
+# --- 9. Enable Services ---
+rc-update add ipcop-firewall default
+rc-update add ipcop-network default
+rc-update add lighttpd default
+rc-update add fcron default
+rc-update add dnsmasq default
+rc-update add sshd default
+
+# Enable rsyslog (and enforce config)
+if [ -f "/etc/rsyslog.conf.ipcop" ]; then
+    if [ -f "/etc/rsyslog.conf" ] && [ ! -f "/etc/rsyslog.conf.orig" ]; then
+        mv /etc/rsyslog.conf /etc/rsyslog.conf.orig
+    fi
+    mv /etc/rsyslog.conf.ipcop /etc/rsyslog.conf
+    # Fix permissions (u=rw,g=r,o=r)
+    chmod 644 /etc/rsyslog.conf
+fi
+
+# Enable Lighttpd (IPCop Config)
+if [ -f "/etc/lighttpd/lighttpd.conf.ipcop" ]; then
+    if [ -f "/etc/lighttpd/lighttpd.conf" ] && [ ! -f "/etc/lighttpd/lighttpd.conf.orig" ]; then
+        mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.orig
+    fi
+    mv /etc/lighttpd/lighttpd.conf.ipcop /etc/lighttpd/lighttpd.conf
+    # Ensure correct ownership usually root:root for config, but read by lighttpd
+    chmod 644 /etc/lighttpd/lighttpd.conf
+    
+    # Generate self-signed cert if missing (required for startup)
+    if [ ! -f "/etc/lighttpd/server.pem" ]; then
+        echo "Generating self-signed certificate for Lighttpd..."
+        if command -v openssl >/dev/null 2>&1; then
+            openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 \
+                -keyout /tmp/server.key -out /tmp/server.crt \
+                -subj "/C=US/ST=IPCop/L=IPCop/O=IPCop/CN=ipcop.local" 2>/dev/null
+            cat /tmp/server.key /tmp/server.crt > /etc/lighttpd/server.pem
+            rm -f /tmp/server.key /tmp/server.crt
+            chmod 600 /etc/lighttpd/server.pem
+            chown root:root /etc/lighttpd/server.pem
+        else
+            echo "WARNING: openssl not found, cannot generate server.pem. Lighttpd may fail."
+        fi
+    fi
+fi
+
+if rc-service -l | grep -q rsyslog; then
+    rc-update add rsyslog boot
+else
+    rc-update add syslog boot
+fi
+
+if rc-service -l | grep -q collectd; then
+    # Enable Collectd (IPCop Config)
+    if [ -f "/etc/collectd/collectd.conf.ipcop" ]; then
+        if [ -f "/etc/collectd/collectd.conf" ] && [ ! -f "/etc/collectd/collectd.conf.orig" ]; then
+            mv /etc/collectd/collectd.conf /etc/collectd/collectd.conf.orig
+        fi
+        mv /etc/collectd/collectd.conf.ipcop /etc/collectd/collectd.conf
+        # Ensure correct ownership/permissions
+        chmod 644 /etc/collectd/collectd.conf
+    fi
+    rc-update add collectd default
+fi
+
+# Create a basic settings file to indicate installation
+echo "# IPCop Core installed on Alpine Linux" > "/var/ipcop/main/.installed"
+chmod 0644 "/var/ipcop/main/.installed"
+
+# Check for empty settings (created by touch loop above)
+if [ ! -s "/var/ipcop/main/settings" ]; then
+    echo "LOCALE=en_GB" > "/var/ipcop/main/settings"
+fi
+chmod 0660 "/var/ipcop/main/settings"
+
+echo "IPCop Core Configured Successfully."
+

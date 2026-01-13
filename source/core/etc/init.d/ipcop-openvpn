@@ -1,0 +1,44 @@
+#!/sbin/openrc-run
+
+description="IPCop OpenVPN Service"
+command="/usr/bin/restartopenvpn"
+command_args="--start"
+pidfile="/var/run/openvpn.pid"
+
+depend() {
+	need net
+	after firewall
+    use logger dns
+}
+
+start() {
+	ebegin "Starting IPCop OpenVPN"
+    # restartopenvpn handles config generation and firewall rules
+	/usr/bin/restartopenvpn --start
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping IPCop OpenVPN"
+	/usr/bin/restartopenvpn --stop
+	eend $?
+}
+
+restart() {
+	ebegin "Restarting IPCop OpenVPN"
+	/usr/bin/restartopenvpn --restart
+	eend $?
+}
+
+status() {
+    # Custom status check since restartopenvpn handles the pidfile logic internally
+    # but we can check if the process is running
+    if [ -f "$pidfile" ]; then
+        if kill -0 $(cat "$pidfile") 2>/dev/null; then
+            einfo "status: running"
+            return 0
+        fi
+    fi
+    einfo "status: stopped"
+    return 3
+}
