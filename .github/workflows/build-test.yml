@@ -1,0 +1,23 @@
+name: CI Build Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Alpine Build Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential perl
+          
+      - name: Syntax Check Perl Scripts
+        run: |
+          find source -name "*.pl" -exec perl -c {} +
+          find source -name "*.cgi" -exec perl -c {} +
