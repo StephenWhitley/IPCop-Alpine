@@ -16,26 +16,9 @@ set -e  # Exit on any error
 NAME="IPCop"
 SNAME="ipcop"
 VERSION="2.2.0-modular1"
-MACHINE="x86_64"
+MACHINE="$(uname -m)"
 
 # Directories
-# Script is in ipcop-alpine/alpine/
-BASEDIR="$(cd "$(dirname "$0")/.." && pwd)"
-ALPINE_DIR="${BASEDIR}/alpine"
-BUILD_DIR="${ALPINE_DIR}/build"
-PACKAGES_DIR="${ALPINE_DIR}/packages"
-APKBUILDS_DIR="${ALPINE_DIR}/apkbuilds"
-SRC_DIR="${BASEDIR}/source"
-
-CACHE_DIR="${BASEDIR}/cache"
-
-# APK build settings
-PACKAGER="IPCop Development Team"
-MAINTAINER="ipcop-dev@lists.sourceforge.net"
-
-# Output
-LOG_DIR="${ALPINE_DIR}/log"
-LOGFILE="${LOG_DIR}/build_$(date +%Y%m%d_%H%M%S).log"
 
 # Colors for output
 BOLD="\033[1;39m"
@@ -69,6 +52,76 @@ die() {
 	log_msg "ERROR: $@"
 	exit 1
 }
+
+# Directories
+# Script is in ipcop-alpine/alpine/
+# Capture the original location of the repo
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+# Create a temporary work directory for the build
+# This ensures we don't pollute the source tree and handles the "local build area" requirement
+# Use explicit template in /tmp for broader compatibility (BusyBox vs GNU)
+WORK_DIR=$(mktemp -d /tmp/ipcop-build-XXXXXXXXXX)
+msg_info "Created build workspace: ${WORK_DIR}"
+
+# Function to clean up workspace and copy back artifacts
+finish_build() {
+    local exit_code=$?
+    
+    # Copy artifacts back if build was successful (or even partial?)
+    # We always try to copy back whatever packages were built
+    if [ -d "${WORK_DIR}/alpine/packages/${MACHINE}" ]; then
+        msg_info "Copying packages back to source tree..."
+        mkdir -p "${REPO_ROOT}/alpine/packages/${MACHINE}"
+        # Copy APKs and Index, ignore errors if empty
+        # Use -f (force) to ensure we overwrite old packages with the new strings
+        cp -f "${WORK_DIR}/alpine/packages/${MACHINE}/"*.apk "${REPO_ROOT}/alpine/packages/${MACHINE}/" 2>/dev/null || true
+        cp -f "${WORK_DIR}/alpine/packages/${MACHINE}/"APKINDEX.tar.gz "${REPO_ROOT}/alpine/packages/${MACHINE}/" 2>/dev/null || true
+        msg_done "Packages synced to ${REPO_ROOT}/alpine/packages"
+    fi
+    
+    # Copy log file back
+    if [ -d "${WORK_DIR}/alpine/log" ]; then
+        mkdir -p "${REPO_ROOT}/alpine/log"
+        cp -f "${WORK_DIR}/alpine/log/"*.log "${REPO_ROOT}/alpine/log/" 2>/dev/null || true
+    fi
+
+    # Cleanup
+    if [ -n "${WORK_DIR}" ] && [ -d "${WORK_DIR}" ]; then
+        msg_info "Cleaning up workspace..."
+        rm -rf "${WORK_DIR}"
+    fi
+    exit $exit_code
+}
+trap finish_build EXIT
+
+# Copy source tree to workspace
+msg_info "Copying source files to workspace..."
+# We need source, alpine, and lang directories
+cp -a "${REPO_ROOT}/source" "${WORK_DIR}/"
+cp -a "${REPO_ROOT}/alpine" "${WORK_DIR}/"
+cp -a "${REPO_ROOT}/lang" "${WORK_DIR}/"
+msg_done "Workspace ready"
+
+# Update BASEDIR to point to the workspace
+BASEDIR="${WORK_DIR}"
+ALPINE_DIR="${BASEDIR}/alpine"
+BUILD_DIR="${ALPINE_DIR}/build"
+PACKAGES_DIR="${ALPINE_DIR}/packages"
+APKBUILDS_DIR="${ALPINE_DIR}/apkbuilds"
+SRC_DIR="${BASEDIR}/source"
+
+CACHE_DIR="${BASEDIR}/cache"
+
+# APK build settings
+PACKAGER="IPCop Development Team"
+MAINTAINER="ipcop-dev@lists.sourceforge.net"
+
+# Output
+LOG_DIR="${ALPINE_DIR}/log"
+LOGFILE="${LOG_DIR}/build_$(date +%Y%m%d_%H%M%S).log"
+
+
 
 check_alpine() {
 	if [ ! -f /etc/alpine-release ]; then
@@ -112,14 +165,14 @@ cleanup_old_packages() {
 	msg_info "Cleaning old packages..."
 	
 	# Clean output directory
-	local pkg_dir="${PACKAGES_DIR}/x86_64"
+	local pkg_dir="${PACKAGES_DIR}/${MACHINE}"
 	if [ -d "$pkg_dir" ]; then
 		rm -f "$pkg_dir"/*.apk
 		rm -f "$pkg_dir"/APKINDEX.tar.gz
 	fi
 	
 	# Clean abuild cache directory (where stale packages may persist)
-	local abuild_cache="$HOME/packages/apkbuilds/x86_64"
+	local abuild_cache="$HOME/packages/apkbuilds/${MACHINE}"
 	if [ -d "$abuild_cache" ]; then
 		msg_info "Cleaning abuild cache: $abuild_cache"
 		rm -f "$abuild_cache"/ipcop-*.apk
@@ -149,7 +202,7 @@ sanitize_line_endings() {
 
 init_local_repo() {
 	msg_info "Initializing local IPCop repository..."
-	local repo_dir="$HOME/packages/ipcop-modular/x86_64"
+	local repo_dir="$HOME/packages/ipcop-modular/${MACHINE}"
 	mkdir -p "$repo_dir"
 	
 	if ! grep -q "$HOME/packages/ipcop-modular" /etc/apk/repositories 2>/dev/null; then
@@ -190,6 +243,8 @@ build_package() {
 	
     # Clean and Build
 	abuild -F clean || true
+    # Generate checksums for any remote sources (fixes missing checksum error)
+    abuild -F checksum || true
 	if ! abuild -F -f -r; then
 		msg_fail "Failed to build ${pkg_name}"
 		cd "${BASEDIR}"
@@ -197,7 +252,7 @@ build_package() {
 	fi
 	
 	# Copy to output
-	local src_dir=~/packages/ipcop-alpine/x86_64
+	local src_dir=~/packages/ipcop-alpine/${MACHINE}
     # Note: abuild might use different path depending on conf. 
     # Usually ~/packages/[dirname]/x86_64 or similar. 
     # With default abuild.conf it is ~/packages/[pkgname]?? No, usually [repo]/[arch].
@@ -210,10 +265,10 @@ build_package() {
     local found_dir=$(find ~/packages -name "${pkg_name}-*.apk" -exec dirname {} \; | head -n 1)
     if [ -z "$found_dir" ]; then
          # Fallback search
-         found_dir=~/packages/apkbuilds/x86_64
+         found_dir=~/packages/apkbuilds/${MACHINE}
     fi
     
-	local dest_dir="${PACKAGES_DIR}/x86_64"
+	local dest_dir="${PACKAGES_DIR}/${MACHINE}"
 	mkdir -p "${dest_dir}"
     
     if [ -n "$found_dir" ] && [ -d "$found_dir" ]; then
@@ -235,7 +290,7 @@ build_all_packages() {
     # ipcop-core (base)
     # services...
     
-	local packages="ipcop-lang ipcop-core ipcop-installer ipcop-squid ipcop-e2guardian ipcop-suricata ipcop-wireguard ipcop-openvpn"
+	local packages="ipcop-lang perl-apache-htpasswd perl-net-ipv4addr ipcop-core ipcop-installer ipcop-squid ipcop-e2guardian ipcop-suricata ipcop-wireguard ipcop-openvpn"
     
     # Temporary disable suricata update if needed (omitted for brevity)
     
@@ -245,7 +300,7 @@ build_all_packages() {
 	
 	# Generate APKINDEX for the output directory
 	msg_info "Generating APKINDEX for distribution..."
-	local dest_dir="${PACKAGES_DIR}/x86_64"
+	local dest_dir="${PACKAGES_DIR}/${MACHINE}"
 	if command -v apk >/dev/null 2>&1; then
 		cd "$dest_dir"
 		# Generate index from within x86_64 directory so APK can find the files

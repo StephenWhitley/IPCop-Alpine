@@ -1,0 +1,31 @@
+# Contributor: IPCop Development Team
+# Maintainer: IPCop Development Team <ipcop-dev@lists.sourceforge.net>
+pkgname=perl-apache-htpasswd
+_pkgreal=Apache-Htpasswd
+pkgver=1.9
+pkgrel=0
+pkgdesc="Perl interface to .htpasswd files"
+url="https://metacpan.org/release/Apache-Htpasswd"
+arch="noarch"
+license="GPL-1.0-or-later OR Artistic-1.0-Perl"
+depends="perl"
+makedepends="perl-dev"
+subpackages="$pkgname-doc"
+source="https://cpan.metacpan.org/authors/id/K/KM/KMELTZ/$_pkgreal-$pkgver.tar.gz"
+builddir="$srcdir/$_pkgreal-$pkgver"
+
+build() {
+	PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+	make
+}
+
+check() {
+	make test
+}
+
+package() {
+	make DESTDIR="$pkgdir" install
+	find "$pkgdir" \( -name perllocal.pod -o -name .packlist \) -delete
+}
+
+sha512sums="SKIP"

@@ -25,6 +25,19 @@ if getent passwd suricata > /dev/null 2>&1; then
     chmod 640 "/var/log/suricata/eve.json"
 fi
 
+# Install default suricata.yaml if missing
+if [ ! -f "/var/ipcop/suricata/suricata.yaml" ]; then
+    if [ -f "/etc/suricata/suricata.yaml" ]; then
+        echo "Installing default suricata.yaml configuration..."
+        cp /etc/suricata/suricata.yaml /var/ipcop/suricata/suricata.yaml
+        chown root:lighttpd /var/ipcop/suricata/suricata.yaml
+        chmod 0660 /var/ipcop/suricata/suricata.yaml
+    else
+        echo "WARNING: /etc/suricata/suricata.yaml not found. Suricata may not start."
+        echo "Please install suricata package or manually create /var/ipcop/suricata/suricata.yaml"
+    fi
+fi
+
 # 2. Defaults - Handled by package install
 # Files already installed to appropriate locations.
 

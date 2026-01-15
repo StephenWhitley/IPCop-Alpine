@@ -1,0 +1,25 @@
+=== Current Bridge Status ===
+Identifying interfaces...
+
+Interface: bridge0
+  	inet 192.168.3.1 netmask 0xffffff00 broadcast 192.168.3.255
+------------------------------------------------
+Interface: bridge100
+  	inet 192.168.2.1 netmask 0xffffff00 broadcast 192.168.2.255
+------------------------------------------------
+Interface: bridge101
+  	inet 192.168.102.1 netmask 0xffffff00 broadcast 192.168.102.255
+------------------------------------------------
+Interface: bridge102
+  	inet 192.168.218.1 netmask 0xffffff00 broadcast 192.168.218.255
+------------------------------------------------
+
+=== Configuration ===
+The configuration file did not contain direct mappings.
+Please identify the interface from the list above.
+ - bridge100/101 are usually standard vmnet1/vmnet8.
+ - Look for one that has NO IP, or a 192.168.10.x IP.
+
+Target: GREEN Network -> 192.168.10.1
+
+Enter interface name for GREEN (e.g. bridge102) [press ENTER to skip]: 

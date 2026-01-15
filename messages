@@ -1,0 +1,50 @@
+Jan 13 17:39:19 Alpine kernel: e1000e 0000:1a:00.0 eth3: NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+Jan 13 17:39:19 Alpine kernel: e1000e 0000:0b:00.0 eth2: NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+Jan 13 17:39:20 Alpine dnsmasq[3140]: started, version 2.91 cachesize 150
+Jan 13 17:39:20 Alpine dnsmasq[3140]: compile time options: IPv6 GNU-getopt no-DBus no-UBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset no-nftset auth no-DNSSEC loop-detect inotify dumpfile
+Jan 13 17:39:20 Alpine dnsmasq[3140]: read /etc/hosts - 3 names
+Jan 13 17:39:20 Alpine dnsmasq[3140]: using nameserver 192.168.218.2#53
+Jan 13 17:39:20 Alpine squid[3170]: Squid Parent: will start 1 kids
+Jan 13 17:39:20 Alpine squid[3170]: Squid Parent: (squid-1) process 3172 started
+Jan 13 17:39:21 Alpine e2guardian[3200]: master: Started successfully.
+Jan 13 17:39:21 Alpine sshd[3800]: Server listening on 0.0.0.0 port 22.
+Jan 13 17:39:21 Alpine sshd[3800]: Server listening on :: port 22.
+Jan 13 17:39:21 Alpine kernel: IPv4: martian source 192.168.218.2 from 192.168.218.130, on dev eth1
+Jan 13 17:39:21 Alpine kernel: ll header: 00000000: ff ff ff ff ff ff 00 0c 29 33 35 2e 08 06
+Jan 13 17:39:21 Alpine kernel: IPv4: martian source 192.168.218.2 from 192.168.218.130, on dev eth2
+Jan 13 17:39:21 Alpine kernel: ll header: 00000000: ff ff ff ff ff ff 00 0c 29 33 35 2e 08 06
+Jan 13 17:39:21 Alpine kernel: IPv4: martian source 192.168.218.2 from 192.168.218.130, on dev eth3
+Jan 13 17:39:21 Alpine kernel: ll header: 00000000: ff ff ff ff ff ff 00 0c 29 33 35 2e 08 06
+Jan 13 17:39:21 Alpine suricata[3883]: start-stop-daemon: failed to start `/usr/bin/suricata'
+Jan 13 17:39:21 Alpine suricata[3865]: ERROR: suricata failed to start
+Jan 13 17:39:21 Alpine init: starting pid 3912, tty '/dev/tty1': '/sbin/getty 38400 tty1'
+Jan 13 17:39:21 Alpine init: starting pid 3913, tty '/dev/tty2': '/sbin/getty 38400 tty2'
+Jan 13 17:39:21 Alpine init: starting pid 3917, tty '/dev/tty3': '/sbin/getty 38400 tty3'
+Jan 13 17:39:21 Alpine init: starting pid 3919, tty '/dev/tty4': '/sbin/getty 38400 tty4'
+Jan 13 17:39:21 Alpine init: starting pid 3925, tty '/dev/tty5': '/sbin/getty 38400 tty5'
+Jan 13 17:39:21 Alpine init: starting pid 3929, tty '/dev/tty6': '/sbin/getty 38400 tty6'
+Jan 13 17:39:39 Alpine login[3933]: root login on 'tty1'
+Jan 13 17:39:56 Alpine red: Starting RED device eth0 type DHCP.
+Jan 13 17:39:56 Alpine red: dhcp client failed to start: /usr/sbin/dhcpcd -b -c /usr/bin/dhcpcd.sh eth0
+Jan 13 17:39:56 Alpine ipcop: ERROR (1) in rc.red
+Jan 13 17:39:56 Alpine ipcop-red[3968]: Failed to start RED interface
+Jan 13 17:39:56 Alpine ipcop-red[3936]: ERROR: ipcop-red failed to start
+Jan 13 17:40:00 Alpine red: Starting RED device eth0 type DHCP.
+Jan 13 17:40:00 Alpine red: dhcp client failed to start: /usr/sbin/dhcpcd -b -c /usr/bin/dhcpcd.sh eth0
+Jan 13 17:40:00 Alpine ipcop: ERROR (1) in rc.red
+Jan 13 17:40:00 Alpine ipcop-red[4002]: Failed to start RED interface
+Jan 13 17:40:00 Alpine ipcop-red[3970]: ERROR: ipcop-red failed to start
+Jan 13 17:40:00 Alpine crond[2606]: user root: parse error at %daily
+Jan 13 17:40:00 Alpine crond[2606]: user root: parse error at /usr/bin/logwatch
+Jan 13 17:40:00 Alpine crond[2606]: user root: parse error at >
+Jan 13 17:40:00 Alpine crond[2606]: USER root pid 4004 cmd /usr/bin/makegraphs.pl >/dev/null
+Jan 13 17:40:00 Alpine crond[2606]: USER root pid 4005 cmd /usr/bin/scheduler.pl --cron >/dev/null
+Jan 13 17:40:00 Alpine crond[2606]: USER root pid 4006 cmd /usr/bin/setddns.pl --cron
+Jan 13 17:40:00 Alpine crond[2606]: USER root pid 4007 cmd /usr/bin/setfwrules --cron > /dev/null
+Jan 13 17:40:00 Alpine crond[2606]: USER root pid 4008 cmd /usr/bin/aggregatetraffic.pl > /dev/null
+Jan 13 17:40:00 Alpine crond[2606]: USER root pid 4009 cmd /usr/bin/monitorTraffic.pl > /dev/null
+Jan 13 17:41:20 Alpine red: Starting RED device eth0 type DHCP.
+Jan 13 17:41:20 Alpine red: dhcp client failed to start: /usr/sbin/dhcpcd -b -c /usr/bin/dhcpcd.sh eth0
+Jan 13 17:41:20 Alpine ipcop: ERROR (1) in rc.red
+Jan 13 17:41:20 Alpine ipcop-red[4069]: Failed to start RED interface
+Jan 13 17:41:20 Alpine ipcop-red[4037]: ERROR: ipcop-red failed to start

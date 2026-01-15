@@ -92,8 +92,8 @@ void generate_config(NODEKV *suricata_kv) {
   }
 
   // Generate minimal suricata.yaml
-  if (!(file = fopen("/etc/suricata/suricata.yaml", "w"))) {
-    fprintf(stderr, "Unable to create /etc/suricata/suricata.yaml\n");
+  if (!(file = fopen("/var/ipcop/suricata/suricata.yaml", "w"))) {
+    fprintf(stderr, "Unable to create /var/ipcop/suricata/suricata.yaml\n");
     exit(1);
   }
 

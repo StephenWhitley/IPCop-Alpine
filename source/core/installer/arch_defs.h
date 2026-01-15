@@ -32,6 +32,7 @@
 */
 #if defined (__i386__)
 #elif defined (__x86_64__) || defined (__amd64__)
+#elif defined (__aarch64__)
 #elif defined (__alpha__)
 #elif defined (__powerpc__) || defined (__powerpc64__)
 #elif defined (__sparc__) || defined (__sparc64__)
@@ -51,6 +52,8 @@
 #if defined (__i386__)
 #define NR_PARTITIONS       2
 #elif defined (__x86_64__) || defined (__amd64__)
+#define NR_PARTITIONS       2
+#elif defined (__aarch64__)
 #define NR_PARTITIONS       2
 #elif defined (__alpha__)
 #define NR_PARTITIONS       2

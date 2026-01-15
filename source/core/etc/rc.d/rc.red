@@ -95,11 +95,11 @@ sub dodhcpdial($;$) {
 sub doupdatesettings {
 
     # complete cleanup only if settings were changed or clear is ordered
-    system('/sbin/modprobe', '-r', 'pppoatm');
-    system('/sbin/modprobe', '-r', 'pppoe');
+    system('/sbin/modprobe -r pppoatm 2>/dev/null');
+    system('/sbin/modprobe -r pppoe 2>/dev/null');
     system('/usr/bin/killall /usr/sbin/br2684ctl 2>/dev/null');
-    system('/sbin/modprobe', '-r', 'br2684');
-    system('/sbin/modprobe', '-r', 'clip');
+    system('/sbin/modprobe -r br2684 2>/dev/null');
+    system('/sbin/modprobe -r clip 2>/dev/null');
 
     # TODO: readd modules once we can compile them, or find a better mechanism
     #if ($pppsettings{'TYPE'} ne 'conexantpciadsl') { system('/sbin/modprobe', '-r', 'CnxADSL'); }
@@ -110,7 +110,7 @@ sub doupdatesettings {
     if ($pppsettings{'TYPE'} ne 'solosdsl')  { system('/sbin/modprobe -r solos_pci 2>/dev/null'); }
     sleep 1;
     if ($pppsettings{'TYPE'} !~ /^(alcatelusb|conexantpciadsl|pulsardsl|solos_pci)$/) {
-        system('/sbin/modprobe', '-r', 'atm');
+        system('/sbin/modprobe -r atm 2>/dev/null');
     }
 
     # remove existing default route (for static address) if it was been changed from setup or web interface SF1175052

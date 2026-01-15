@@ -1,0 +1,1494 @@
+[0;36m*** Created build workspace: /tmp/ipcop-build-XXXXcnBaCK[0;39m
+[0;36m*** Copying source files to workspace...[0;39m
+[0;32m*** Workspace ready[0;39m
+[0;36m*** Running on Alpine Linux 3.23.2[0;39m
+[0;36m*** Checking prerequisites...[0;39m
+[0;32m*** Prerequisites OK[0;39m
+[0;36m*** Setting up build directories...[0;39m
+[0;32m*** Directories created[0;39m
+[0;36m*** Sanitizing line endings (CRLF -> LF)...[0;39m
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-installer/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-wireguard/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-openvpn/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-e2guardian/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-core/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-lang/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-suricata/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-squid/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-wireguard/ipcop-wireguard.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-openvpn/ipcop-openvpn.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-e2guardian/ipcop-e2guardian.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-core/ipcop-core.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-suricata/ipcop-suricata.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-squid/ipcop-squid.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/wireguard/lib/wireguard-functions.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/wireguard/scripts/wireguardctrl.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/wireguard/html/cgi-bin/wireguard.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/openvpn/scripts/openvpn.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/openvpn/html/cgi-bin/openvpn.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/suricata/html/cgi-bin/suricata.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/suricata/html/cgi-bin/logsuricata.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/scripts/makesquidconf.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/html/cgi-bin/proxystatus.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/html/cgi-bin/logproxy.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/html/cgi-bin/proxygraphs.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/html/cgi-bin/proxy.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/e2guardian/scripts/blacklistupdate.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/e2guardian/html/cgi-bin/logurlfilter.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/e2guardian/html/cgi-bin/urlfilter.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/scheduler-lib.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/ipcop_paths.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/ddns-lib.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/traffic-lib.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/menu.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/vpn-functions.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/protocols.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/firewall-lib.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/header.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/general-functions.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/countries.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/DataAccess.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/lang.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/updatemenu.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/upgrade.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/install-diff.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/scheduler.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/monitorTraffic.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/puzzleFwRules.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/aggregatetraffic.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/flashfinal.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/dhcpcd.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/disk-partition.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/ipcop-debug.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/setddns.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/updatekernel.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/ipsecupdown.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/readhash.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/setreservedports.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/updatelists.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/makegraphs.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/index.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/wireless.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/email.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/ipinfo.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/changepw.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/trafficadm.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/ddns.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/index.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/logfirewall.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/time.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/backupjs.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/sysinfo.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/hosts.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/gui.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/services.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/diag.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/logsummary.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/vpnca.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/connections.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/indexold.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/remote.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/modem.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/backup.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/ipsec.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/interfacestatus.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/shutdown.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/netstatus.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/servicegrps.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/webaccess.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/status.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/fwrules.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/upload.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/backupapi.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/dial.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/traffic.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/scheduler.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/graphs.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/aliases.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/graphdata.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/pppsetup.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/ifaces.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/graphsjs.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/credits.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/updates.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/addresses.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/dhcp.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/fwrulesadm.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/logsystem.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/iptablesgui.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/logconfig.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/addressgrps.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/shaping.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/var/ipcop/misc/install-settings.sh to Unix format...
+[0;32m*** Sanitized[0;39m
+[0;36m*** Cleaning old packages...[0;39m
+[0;36m*** Cleaning abuild cache: /home/builder/packages/apkbuilds/aarch64[0;39m
+v3.23.2-171-gcf237c0f290 [http://dl-cdn.alpinelinux.org/alpine/v3.23/main]
+v3.23.2-178-g91f83f66d55 [http://dl-cdn.alpinelinux.org/alpine/v3.23/community]
+OK: 27422 distinct packages available
+[0;32m*** Old packages cleaned[0;39m
+[0;36m*** Building all IPCop Modular packages...[0;39m
+[0;36m*** Building package: ipcop-lang[0;39m
+>>> ipcop-lang: Cleaning up srcdir
+>>> ipcop-lang: Cleaning up pkgdir
+>>> ipcop-lang: Cleaning up tmpdir
+>>> ipcop-lang: Building apkbuilds/ipcop-lang 2.2.0-r2 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:16:04 -0600
+>>> ipcop-lang: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-lang/APKBUILD...
+>>> ipcop-lang: Analyzing dependencies...
+WARNING: opening /home/builder/packages/apkbuilds/aarch64/APKINDEX.tar.gz: No such file or directory
+>>> ipcop-lang: Installing for build: build-base gettext
+WARNING: opening /home/builder/packages/apkbuilds/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/5) Installing gettext-envsubst (0.24.1-r1)
+(2/5) Installing gettext-libs (0.24.1-r1)
+(3/5) Installing libxml2 (2.13.9-r0)
+(4/5) Installing gettext (0.24.1-r1)
+(5/5) Installing .makedepends-ipcop-lang (20260114.121604)
+Executing busybox-1.37.0-r30.trigger
+OK: 377.8 MiB in 128 packages
+>>> ipcop-lang: Cleaning up srcdir
+>>> ipcop-lang: Cleaning up pkgdir
+>>> ipcop-lang: Cleaning up tmpdir
+>>> WARNING: ipcop-lang: APKBUILD does not run any tests!
+    Alpine policy will soon require that packages have any relevant testsuites run during the build process.
+    To fix, either define a check() function, or declare !check in $options to indicate the package does not have a testsuite.
+>>> ipcop-lang: Entering fakeroot...
+>>> ipcop-lang*: Running postcheck for ipcop-lang
+>>> WARNING: ipcop-lang*: Found /usr/share/locale
+             Maybe add $pkgname-lang to subpackages?
+>>> ipcop-lang*: Preparing package ipcop-lang...
+>>> ipcop-lang*: Tracing dependencies...
+	gettext
+>>> ipcop-lang*: Package size: 3.9 MB
+>>> ipcop-lang*: Compressing data...
+>>> ipcop-lang*: Create checksum...
+>>> ipcop-lang*: Create ipcop-lang-2.2.0-r2.apk
+>>> ipcop-lang: Build complete at Wed, 14 Jan 2026 06:16:16 -0600 elapsed time 0h 0m 12s
+>>> ipcop-lang: Cleaning up srcdir
+>>> ipcop-lang: Cleaning up pkgdir
+>>> ipcop-lang: Cleaning up tmpdir
+>>> ipcop-lang: Uninstalling dependencies...
+(1/5) Purging .makedepends-ipcop-lang (20260114.121604)
+(2/5) Purging gettext (0.24.1-r1)
+(3/5) Purging gettext-envsubst (0.24.1-r1)
+(4/5) Purging gettext-libs (0.24.1-r1)
+(5/5) Purging libxml2 (2.13.9-r0)
+Executing busybox-1.37.0-r30.trigger
+OK: 372.0 MiB in 123 packages
+>>> ipcop-lang: Updating the apkbuilds/aarch64 repository index...
+>>> ipcop-lang: Signing the index...
+'/home/builder/packages/apkbuilds/aarch64/ipcop-lang-2.2.0-r2.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-lang-2.2.0-r2.apk'
+[0;32m*** Built: ipcop-lang[0;39m
+[0;36m*** Building package: perl-apache-htpasswd[0;39m
+>>> perl-apache-htpasswd: Cleaning up srcdir
+>>> perl-apache-htpasswd: Cleaning up pkgdir
+>>> perl-apache-htpasswd: Cleaning up tmpdir
+>>> perl-apache-htpasswd: Fetching https://cpan.metacpan.org/authors/id/K/KM/KMELTZ/Apache-Htpasswd-1.9.tar.gz
+>>> perl-apache-htpasswd: Updating the sha512sums in /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD...
+>>> perl-apache-htpasswd: Building apkbuilds/perl-apache-htpasswd 1.9-r0 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:16:16 -0600
+>>> perl-apache-htpasswd: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD...
+>>> perl-apache-htpasswd: Analyzing dependencies...
+>>> perl-apache-htpasswd: Installing for build: build-base perl perl-dev
+(1/8) Installing libbz2 (1.0.8-r6)
+(2/8) Installing perl (5.42.0-r0)
+(3/8) Installing perl-utils (5.42.0-r0)
+(4/8) Installing perl-dev (5.42.0-r0)
+(5/8) Installing .makedepends-perl-apache-htpasswd (20260114.121616)
+(6/8) Installing perl-error (0.17030-r0)
+(7/8) Installing perl-git (2.52.0-r0)
+(8/8) Installing git-perl (2.52.0-r0)
+Executing busybox-1.37.0-r30.trigger
+OK: 417.0 MiB in 131 packages
+>>> perl-apache-htpasswd: Cleaning up srcdir
+>>> perl-apache-htpasswd: Cleaning up pkgdir
+>>> perl-apache-htpasswd: Cleaning up tmpdir
+>>> perl-apache-htpasswd: Fetching https://cpan.metacpan.org/authors/id/K/KM/KMELTZ/Apache-Htpasswd-1.9.tar.gz
+/var/cache/distfiles/Apache-Htpasswd-1.9.tar.gz: OK
+>>> perl-apache-htpasswd: Fetching https://cpan.metacpan.org/authors/id/K/KM/KMELTZ/Apache-Htpasswd-1.9.tar.gz
+/var/cache/distfiles/Apache-Htpasswd-1.9.tar.gz: OK
+>>> perl-apache-htpasswd: Unpacking /var/cache/distfiles/Apache-Htpasswd-1.9.tar.gz...
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for Apache::Htpasswd
+Writing MYMETA.yml and MYMETA.json
+cp Htpasswd.pm blib/lib/Apache/Htpasswd.pm
+Manifying 1 pod document
+PERL_DL_NONLAZY=1 "/usr/bin/perl" "-Iblib/lib" "-Iblib/arch" test.pl
+Tests 1..20 begining
+ok 1
+ok 2
+ok 3
+ok 4
+ok 5
+ok 6
+ok 7
+ok 8
+ok 9
+ok 10
+ok 11
+ok 12
+ok 13
+ok 14
+ok 15
+ok 16
+ok 17
+ok 18
+ok 19
+ok 20
+Test complete.
+>>> perl-apache-htpasswd: Entering fakeroot...
+Manifying 1 pod document
+Appending installation info to /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/lib/perl5/core_perl/perllocal.pod
+Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/share/perl5/vendor_perl/Apache/Htpasswd.pm
+Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/share/man/man3/Apache::Htpasswd.3pm
+>>> perl-apache-htpasswd-doc*: Running split function doc...
+'usr/share/man' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd-doc/usr/share/man'
+>>> perl-apache-htpasswd-doc*: Preparing subpackage perl-apache-htpasswd-doc...
+>>> perl-apache-htpasswd-doc*: Running postcheck for perl-apache-htpasswd-doc
+>>> perl-apache-htpasswd*: Running postcheck for perl-apache-htpasswd
+>>> perl-apache-htpasswd*: Preparing package perl-apache-htpasswd...
+>>> perl-apache-htpasswd-doc*: Tracing dependencies...
+>>> perl-apache-htpasswd-doc*: Package size: 3.8 KB
+>>> perl-apache-htpasswd-doc*: Compressing data...
+>>> perl-apache-htpasswd-doc*: Create checksum...
+>>> perl-apache-htpasswd-doc*: Create perl-apache-htpasswd-doc-1.9-r0.apk
+>>> perl-apache-htpasswd*: Tracing dependencies...
+	perl
+>>> perl-apache-htpasswd*: Package size: 19.4 KB
+>>> perl-apache-htpasswd*: Compressing data...
+>>> perl-apache-htpasswd*: Create checksum...
+>>> perl-apache-htpasswd*: Create perl-apache-htpasswd-1.9-r0.apk
+>>> perl-apache-htpasswd: Build complete at Wed, 14 Jan 2026 06:17:03 -0600 elapsed time 0h 0m 47s
+>>> perl-apache-htpasswd: Cleaning up srcdir
+>>> perl-apache-htpasswd: Cleaning up pkgdir
+>>> perl-apache-htpasswd: Cleaning up tmpdir
+>>> perl-apache-htpasswd: Uninstalling dependencies...
+(1/8) Purging .makedepends-perl-apache-htpasswd (20260114.121616)
+(2/8) Purging perl-dev (5.42.0-r0)
+(3/8) Purging perl-utils (5.42.0-r0)
+(4/8) Purging git-perl (2.52.0-r0)
+(5/8) Purging perl-git (2.52.0-r0)
+(6/8) Purging perl-error (0.17030-r0)
+(7/8) Purging perl (5.42.0-r0)
+(8/8) Purging libbz2 (1.0.8-r6)
+Executing busybox-1.37.0-r30.trigger
+OK: 372.0 MiB in 123 packages
+>>> perl-apache-htpasswd: Updating the apkbuilds/aarch64 repository index...
+>>> perl-apache-htpasswd: Signing the index...
+'/home/builder/packages/apkbuilds/aarch64/perl-apache-htpasswd-1.9-r0.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/perl-apache-htpasswd-1.9-r0.apk'
+'/home/builder/packages/apkbuilds/aarch64/perl-apache-htpasswd-doc-1.9-r0.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/perl-apache-htpasswd-doc-1.9-r0.apk'
+[0;32m*** Built: perl-apache-htpasswd[0;39m
+[0;36m*** Building package: perl-net-ipv4addr[0;39m
+>>> perl-net-ipv4addr: Cleaning up srcdir
+>>> perl-net-ipv4addr: Cleaning up pkgdir
+>>> perl-net-ipv4addr: Cleaning up tmpdir
+>>> perl-net-ipv4addr: Fetching https://cpan.metacpan.org/authors/id/F/FR/FRAJULAC/Net-IPv4Addr-0.10.tar.gz
+>>> perl-net-ipv4addr: Updating the sha512sums in /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD...
+>>> perl-net-ipv4addr: Building apkbuilds/perl-net-ipv4addr 0.10-r0 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:17:04 -0600
+>>> perl-net-ipv4addr: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD...
+>>> perl-net-ipv4addr: Analyzing dependencies...
+>>> perl-net-ipv4addr: Installing for build: build-base perl perl-dev
+(1/8) Installing libbz2 (1.0.8-r6)
+(2/8) Installing perl (5.42.0-r0)
+(3/8) Installing perl-utils (5.42.0-r0)
+(4/8) Installing perl-dev (5.42.0-r0)
+(5/8) Installing .makedepends-perl-net-ipv4addr (20260114.121704)
+(6/8) Installing perl-error (0.17030-r0)
+(7/8) Installing perl-git (2.52.0-r0)
+(8/8) Installing git-perl (2.52.0-r0)
+Executing busybox-1.37.0-r30.trigger
+OK: 417.0 MiB in 131 packages
+>>> perl-net-ipv4addr: Cleaning up srcdir
+>>> perl-net-ipv4addr: Cleaning up pkgdir
+>>> perl-net-ipv4addr: Cleaning up tmpdir
+>>> perl-net-ipv4addr: Fetching https://cpan.metacpan.org/authors/id/F/FR/FRAJULAC/Net-IPv4Addr-0.10.tar.gz
+/var/cache/distfiles/Net-IPv4Addr-0.10.tar.gz: OK
+>>> perl-net-ipv4addr: Fetching https://cpan.metacpan.org/authors/id/F/FR/FRAJULAC/Net-IPv4Addr-0.10.tar.gz
+/var/cache/distfiles/Net-IPv4Addr-0.10.tar.gz: OK
+>>> perl-net-ipv4addr: Unpacking /var/cache/distfiles/Net-IPv4Addr-0.10.tar.gz...
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for Net::IPv4Addr
+Writing MYMETA.yml and MYMETA.json
+cp IPv4Addr.pm blib/lib/Net/IPv4Addr.pm
+AutoSplitting blib/lib/Net/IPv4Addr.pm (blib/lib/auto/Net/IPv4Addr)
+cp ipv4calc blib/script/ipv4calc
+"/usr/bin/perl" -MExtUtils::MY -e 'MY->fixin(shift)' -- blib/script/ipv4calc
+Manifying 1 pod document
+Manifying 1 pod document
+PERL_DL_NONLAZY=1 "/usr/bin/perl" "-Iblib/lib" "-Iblib/arch" test.pl
+1..37
+# Running under perl version 5.042000 for linux
+# Current time local: Wed Jan 14 06:17:39 2026
+# Current time GMT:   Wed Jan 14 12:17:39 2026
+# Using Test.pm version 1.31
+ok 1
+ok 2
+ok 3
+ok 4
+ok 5
+ok 6
+ok 7
+ok 8
+ok 9
+ok 10
+ok 11
+ok 12
+ok 13
+ok 14
+ok 15
+ok 16
+ok 17
+ok 18
+ok 19
+ok 20
+ok 21
+ok 22
+ok 23
+ok 24
+ok 25
+ok 26
+ok 27
+ok 28
+ok 29
+ok 30
+ok 31
+ok 32
+ok 33
+ok 34
+ok 35
+ok 36
+ok 37
+ok 38
+ok 39
+>>> perl-net-ipv4addr: Entering fakeroot...
+Manifying 1 pod document
+Manifying 1 pod document
+Appending installation info to /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/lib/perl5/core_perl/perllocal.pod
+Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/perl5/vendor_perl/auto/Net/IPv4Addr/autosplit.ix
+Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/perl5/vendor_perl/Net/IPv4Addr.pm
+Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/man/man1/ipv4calc.1
+Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/man/man3/Net::IPv4Addr.3pm
+Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/bin/ipv4calc
+>>> perl-net-ipv4addr-doc*: Running split function doc...
+'usr/share/man' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr-doc/usr/share/man'
+>>> perl-net-ipv4addr-doc*: Preparing subpackage perl-net-ipv4addr-doc...
+>>> perl-net-ipv4addr-doc*: Running postcheck for perl-net-ipv4addr-doc
+>>> perl-net-ipv4addr*: Running postcheck for perl-net-ipv4addr
+>>> perl-net-ipv4addr*: Preparing package perl-net-ipv4addr...
+>>> perl-net-ipv4addr-doc*: Tracing dependencies...
+>>> perl-net-ipv4addr-doc*: Package size: 3.9 KB
+>>> perl-net-ipv4addr-doc*: Compressing data...
+>>> perl-net-ipv4addr-doc*: Create checksum...
+>>> perl-net-ipv4addr-doc*: Create perl-net-ipv4addr-doc-0.10-r0.apk
+>>> perl-net-ipv4addr*: Tracing dependencies...
+	perl
+>>> perl-net-ipv4addr*: Package size: 11.5 KB
+>>> perl-net-ipv4addr*: Compressing data...
+>>> perl-net-ipv4addr*: Create checksum...
+>>> perl-net-ipv4addr*: Create perl-net-ipv4addr-0.10-r0.apk
+>>> perl-net-ipv4addr: Build complete at Wed, 14 Jan 2026 06:17:39 -0600 elapsed time 0h 0m 35s
+>>> perl-net-ipv4addr: Cleaning up srcdir
+>>> perl-net-ipv4addr: Cleaning up pkgdir
+>>> perl-net-ipv4addr: Cleaning up tmpdir
+>>> perl-net-ipv4addr: Uninstalling dependencies...
+(1/8) Purging .makedepends-perl-net-ipv4addr (20260114.121704)
+(2/8) Purging perl-dev (5.42.0-r0)
+(3/8) Purging perl-utils (5.42.0-r0)
+(4/8) Purging git-perl (2.52.0-r0)
+(5/8) Purging perl-git (2.52.0-r0)
+(6/8) Purging perl-error (0.17030-r0)
+(7/8) Purging perl (5.42.0-r0)
+(8/8) Purging libbz2 (1.0.8-r6)
+Executing busybox-1.37.0-r30.trigger
+OK: 372.0 MiB in 123 packages
+>>> perl-net-ipv4addr: Updating the apkbuilds/aarch64 repository index...
+>>> perl-net-ipv4addr: Signing the index...
+'/home/builder/packages/apkbuilds/aarch64/perl-net-ipv4addr-0.10-r0.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/perl-net-ipv4addr-0.10-r0.apk'
+'/home/builder/packages/apkbuilds/aarch64/perl-net-ipv4addr-doc-0.10-r0.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/perl-net-ipv4addr-doc-0.10-r0.apk'
+[0;32m*** Built: perl-net-ipv4addr[0;39m
+[0;36m*** Building package: ipcop-core[0;39m
+>>> ipcop-core: Cleaning up srcdir
+>>> ipcop-core: Cleaning up pkgdir
+>>> ipcop-core: Cleaning up tmpdir
+>>> ipcop-core: Building apkbuilds/ipcop-core 2.2.0-r3 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:17:39 -0600
+>>> ipcop-core: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-core/APKBUILD...
+>>> WARNING: ipcop-core: ipcop-core.post-install: found chown
+             Permissions should be fixed in APKBUILD package()
+>>> WARNING: ipcop-core: ipcop-core.post-install: found chmod
+             Permissions should be fixed in APKBUILD package()
+>>> ipcop-core: Analyzing dependencies...
+>>> ipcop-core: Installing for build: build-base lighttpd bash coreutils util-linux openrc collectd collectd-rrdtool collectd-disk perl perl-cgi perl-locale-gettext perl-dbi perl-dbd-sqlite perl-net-dns perl-netaddr-ip perl-archive-zip perl-xml-simple perl-json openssl perl-io-socket-ssl perl-net-ip iptables nftables dnsmasq vnstat perl-app-cpanminus tzdata ethtool iproute2 perl-rrd net-tools conntrack-tools bind-tools rsyslog perl-net-ssleay lighttpd-mod_auth dhcpcd apache2-utils perl-apache-htpasswd perl-net-ipv4addr dos2unix linux-headers newt-dev slang-dev pciutils-dev libusb-dev zlib-dev gettext-dev
+(  1/197) Installing libdbi (0.9.0-r5)
+(  2/197) Installing gdbm (1.26-r0)
+(  3/197) Installing libsasl (2.1.28-r9)
+(  4/197) Installing libldap (2.6.10-r0)
+(  5/197) Installing lua5.4-libs (5.4.8-r0)
+(  6/197) Installing lighttpd (1.4.82-r0)
+  Executing lighttpd-1.4.82-r0.pre-install
+  Installing file to etc/lighttpd/lighttpd.conf.apk-new
+(  7/197) Installing readline (8.3.1-r0)
+(  8/197) Installing bash (5.3.3-r1)
+  Executing bash-5.3.3-r1.post-install
+(  9/197) Installing coreutils-env (9.8-r1)
+( 10/197) Installing coreutils-fmt (9.8-r1)
+( 11/197) Installing coreutils-sha512sum (9.8-r1)
+( 12/197) Installing libattr (2.5.2-r2)
+( 13/197) Installing skalibs-libs (2.14.4.0-r0)
+( 14/197) Installing utmps-libs (0.1.3.1-r0)
+( 15/197) Installing coreutils (9.8-r1)
+( 16/197) Installing util-linux (2.41.2-r0)
+( 17/197) Installing dmesg (2.41.2-r0)
+( 18/197) Installing setarch (2.41.2-r0)
+( 19/197) Installing libfdisk (2.41.2-r0)
+( 20/197) Installing libsmartcols (2.41.2-r0)
+( 21/197) Installing util-linux-misc (2.41.2-r0)
+( 22/197) Installing linux-pam (1.7.1-r2)
+( 23/197) Installing runuser (2.41.2-r0)
+( 24/197) Installing mount (2.41.2-r0)
+( 25/197) Installing losetup (2.41.2-r0)
+( 26/197) Installing hexdump (2.41.2-r0)
+( 27/197) Installing uuidgen (2.41.2-r0)
+( 28/197) Installing blkid (2.41.2-r0)
+( 29/197) Installing sfdisk (2.41.2-r0)
+( 30/197) Installing mcookie (2.41.2-r0)
+( 31/197) Installing agetty (2.41.2-r0)
+( 32/197) Installing wipefs (2.41.2-r0)
+( 33/197) Installing cfdisk (2.41.2-r0)
+( 34/197) Installing umount (2.41.2-r0)
+( 35/197) Installing flock (2.41.2-r0)
+( 36/197) Installing lsblk (2.41.2-r0)
+( 37/197) Installing libcap-ng (0.8.5-r0)
+( 38/197) Installing setpriv (2.41.2-r0)
+( 39/197) Installing lscpu (2.41.2-r0)
+( 40/197) Installing logger (2.41.2-r0)
+( 41/197) Installing partx (2.41.2-r0)
+( 42/197) Installing fstrim (2.41.2-r0)
+( 43/197) Installing findmnt (2.41.2-r0)
+( 44/197) Installing util-linux-openrc (2.41.2-r0)
+( 45/197) Installing agetty-openrc (0.63-r1)
+( 46/197) Installing lighttpd-openrc (1.4.82-r0)
+( 47/197) Installing libmnl (1.0.5-r2)
+( 48/197) Installing yajl (2.1.0-r9)
+( 49/197) Installing collectd (5.12.0-r23)
+  Executing collectd-5.12.0-r23.pre-install
+  Installing file to etc/collectd/collectd.conf.apk-new
+( 50/197) Installing collectd-openrc (5.12.0-r23)
+( 51/197) Installing libxau (1.0.12-r0)
+( 52/197) Installing libmd (1.1.0-r0)
+( 53/197) Installing libbsd (0.12.2-r0)
+( 54/197) Installing libxdmcp (1.1.5-r1)
+( 55/197) Installing libxcb (1.17.0-r1)
+( 56/197) Installing libx11 (1.8.12-r1)
+( 57/197) Installing libxext (1.3.6-r2)
+( 58/197) Installing libxrender (0.9.12-r0)
+( 59/197) Installing libbz2 (1.0.8-r6)
+( 60/197) Installing libpng (1.6.53-r0)
+( 61/197) Installing freetype (2.14.1-r0)
+( 62/197) Installing fontconfig (2.17.1-r0)
+( 63/197) Installing pixman (0.46.4-r0)
+( 64/197) Installing cairo (1.18.4-r0)
+( 65/197) Installing libxft (2.3.9-r0)
+( 66/197) Installing fribidi (1.0.16-r2)
+( 67/197) Installing graphite2 (1.3.14-r6)
+( 68/197) Installing harfbuzz (12.2.0-r0)
+( 69/197) Installing pango (1.56.4-r0)
+( 70/197) Installing libxml2 (2.13.9-r0)
+( 71/197) Installing librrd (1.9.0-r5)
+( 72/197) Installing collectd-rrdtool (5.12.0-r23)
+( 73/197) Installing eudev-libs (3.2.14-r6)
+( 74/197) Installing collectd-disk (5.12.0-r23)
+( 75/197) Installing perl (5.42.0-r0)
+( 76/197) Installing perl-html-tagset (3.24-r0)
+( 77/197) Installing perl-clone (0.47-r1)
+( 78/197) Installing perl-http-date (6.06-r0)
+( 79/197) Installing perl-uri (5.28-r0)
+( 80/197) Installing perl-io-html (1.004-r1)
+( 81/197) Installing perl-encode-locale (1.05-r5)
+( 82/197) Installing perl-lwp-mediatypes (6.04-r3)
+( 83/197) Installing perl-http-message (7.01-r0)
+( 84/197) Installing perl-html-parser (3.83-r1)
+( 85/197) Installing perl-cgi (4.71-r0)
+( 86/197) Installing gettext-envsubst (0.24.1-r1)
+( 87/197) Installing gettext-libs (0.24.1-r1)
+( 88/197) Installing gettext (0.24.1-r1)
+( 89/197) Installing perl-locale-gettext (1.07-r2)
+( 90/197) Installing perl-dbi (1.647-r1)
+( 91/197) Installing sqlite-libs (3.51.2-r0)
+( 92/197) Installing perl-dbd-sqlite (1.76-r1)
+( 93/197) Installing perl-digest-sha1 (2.13-r20)
+( 94/197) Installing perl-digest-md5 (2.59-r3)
+( 95/197) Installing perl-digest-hmac (1.05-r0)
+( 96/197) Installing perl-net-dns (1.53-r0)
+( 97/197) Installing perl-netaddr-ip (4.079-r14)
+( 98/197) Installing perl-archive-zip (1.68-r3)
+( 99/197) Installing perl-http-cookies (6.11-r0)
+(100/197) Installing perl-net-http (6.24-r0)
+(101/197) Installing perl-file-listing (6.16-r0)
+(102/197) Installing perl-www-robotrules (6.02-r5)
+(103/197) Installing perl-http-negotiate (6.01-r5)
+(104/197) Installing perl-try-tiny (0.32-r0)
+(105/197) Installing perl-libwww (6.81-r0)
+(106/197) Installing perl-xml-parser (2.47-r2)
+(107/197) Installing perl-xml-simple (2.25-r3)
+(108/197) Installing perl-json (4.10-r1)
+(109/197) Installing ca-certificates (20251003-r0)
+(110/197) Installing perl-net-ssleay (1.94-r3)
+(111/197) Installing perl-mozilla-ca (20250602-r0)
+(112/197) Installing perl-io-socket-ssl (2.093-r0)
+(113/197) Installing perl-net-ip (1.26-r7)
+(114/197) Installing libnftnl (1.3.0-r0)
+(115/197) Installing libxtables (1.8.11-r1)
+(116/197) Installing iptables (1.8.11-r1)
+(117/197) Installing iptables-openrc (1.8.11-r1)
+(118/197) Installing nftables (1.1.5-r2)
+(119/197) Installing nftables-openrc (1.1.5-r2)
+(120/197) Installing dnsmasq-common (2.91-r0)
+(121/197) Installing dnsmasq-openrc (2.91-r0)
+(122/197) Installing dnsmasq (2.91-r0)
+  Executing dnsmasq-2.91-r0.pre-install
+(123/197) Installing libice (1.1.2-r0)
+(124/197) Installing libsm (1.2.6-r0)
+(125/197) Installing libxt (1.3.1-r0)
+(126/197) Installing libxpm (3.5.17-r0)
+(127/197) Installing aom-libs (3.13.1-r0)
+(128/197) Installing libdav1d (1.5.2-r0)
+(129/197) Installing libjpeg-turbo (3.1.2-r0)
+(130/197) Installing libyuv (0.0.1887.20251502-r1)
+(131/197) Installing libavif (1.3.0-r0)
+(132/197) Installing libsharpyuv (1.6.0-r0)
+(133/197) Installing libwebp (1.6.0-r0)
+(134/197) Installing tiff (4.7.1-r0)
+(135/197) Installing libgd (2.3.3-r10)
+(136/197) Installing vnstat (2.13-r1)
+  Executing vnstat-2.13-r1.pre-install
+(137/197) Installing vnstat-openrc (2.13-r1)
+(138/197) Installing wget (1.25.0-r2)
+(139/197) Installing perl-app-cpanminus (1.7048-r0)
+(140/197) Installing tzdata (2025c-r0)
+(141/197) Installing ethtool (6.15-r0)
+(142/197) Installing ifupdown-ng-ethtool (0.12.1-r7)
+(143/197) Installing libelf (0.194-r0)
+(144/197) Installing iproute2-minimal (6.17.0-r0)
+(145/197) Installing ifupdown-ng-iproute2 (0.12.1-r7)
+(146/197) Installing iproute2-tc (6.17.0-r0)
+(147/197) Installing iproute2-ss (6.17.0-r0)
+(148/197) Installing iproute2 (6.17.0-r0)
+  Executing iproute2-6.17.0-r0.post-install
+(149/197) Installing perl-rrd (1.9.0-r5)
+(150/197) Installing mii-tool (2.10-r3)
+(151/197) Installing net-tools (2.10-r3)
+(152/197) Installing libnfnetlink (1.0.2-r3)
+(153/197) Installing libnetfilter_conntrack (1.1.0-r0)
+(154/197) Installing libnetfilter_cthelper (1.0.1-r2)
+(155/197) Installing libnetfilter_cttimeout (1.0.1-r2)
+(156/197) Installing libnetfilter_queue (1.0.5-r2)
+(157/197) Installing conntrack-tools (1.4.8-r0)
+(158/197) Installing conntrack-tools-openrc (1.4.8-r0)
+(159/197) Installing fstrm (0.6.1-r4)
+(160/197) Installing krb5-conf (1.0-r2)
+(161/197) Installing keyutils-libs (1.6.3-r4)
+(162/197) Installing libverto (0.3.2-r2)
+(163/197) Installing krb5-libs (1.22.1-r0)
+(164/197) Installing protobuf-c (1.5.2-r2)
+(165/197) Installing userspace-rcu (0.15.3-r0)
+(166/197) Installing libuv (1.51.0-r0)
+(167/197) Installing bind-libs (9.20.17-r0)
+(168/197) Installing bind-tools (9.20.17-r0)
+(169/197) Installing libestr (0.1.11-r4)
+(170/197) Installing libfastjson (1.2304.0-r4)
+(171/197) Installing rsyslog (8.2512.0-r0)
+  Installing file to etc/rsyslog.conf.apk-new
+(172/197) Installing rsyslog-openrc (8.2512.0-r0)
+(173/197) Installing lighttpd-mod_auth (1.4.82-r0)
+(174/197) Installing dhcpcd (10.3.0-r0)
+  Executing dhcpcd-10.3.0-r0.pre-install
+(175/197) Installing dhcpcd-openrc (10.3.0-r0)
+(176/197) Installing apr (1.7.6-r0)
+(177/197) Installing apr-util (1.6.3-r2)
+(178/197) Installing apache2-utils (2.4.66-r0)
+(179/197) Installing perl-apache-htpasswd (1.9-r0)
+(180/197) Installing perl-net-ipv4addr (0.10-r7)
+(181/197) Installing linux-headers (6.16.12-r0)
+(182/197) Installing slang (2.3.3-r3)
+(183/197) Installing newt (0.52.25-r0)
+(184/197) Installing slang-dev (2.3.3-r3)
+(185/197) Installing newt-dev (0.52.25-r0)
+(186/197) Installing pciutils-libs (3.14.0-r0)
+(187/197) Installing pciutils-dev (3.14.0-r0)
+(188/197) Installing libusb (1.0.29-r0)
+(189/197) Installing libusb-dev (1.0.29-r0)
+(190/197) Installing zlib-dev (1.3.1-r2)
+(191/197) Installing xz (5.8.1-r0)
+(192/197) Installing gettext-asprintf (0.24.1-r1)
+(193/197) Installing gettext-dev (0.24.1-r1)
+(194/197) Installing .makedepends-ipcop-core (20260114.121739)
+(195/197) Installing perl-error (0.17030-r0)
+(196/197) Installing perl-git (2.52.0-r0)
+(197/197) Installing git-perl (2.52.0-r0)
+Executing busybox-1.37.0-r30.trigger
+Executing ca-certificates-20251003-r0.trigger
+OK: 512.2 MiB in 320 packages
+>>> ipcop-core: Cleaning up srcdir
+>>> ipcop-core: Cleaning up pkgdir
+>>> ipcop-core: Cleaning up tmpdir
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c setuid.c -o setuid.o
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c helper.c -o helper.o
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c helper_backup.c -o helper_backup.o
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' accountingctrl.c setuid.o helper.o helper_backup.o -o accountingctrl -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' conntrack_helper.c setuid.o helper.o helper_backup.o -o conntrack_helper -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' emailhelper.c setuid.o helper.o helper_backup.o -o emailhelper -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' installfcdsl.c setuid.o helper.o helper_backup.o -o installfcdsl -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' installpackage.c setuid.o helper.o helper_backup.o -o installpackage -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' ipcopbackup.c setuid.o helper.o helper_backup.o -o ipcopbackup -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' ipcopbkcfg.c setuid.o helper.o helper_backup.o -o ipcopbkcfg -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' ipcopreboot.c setuid.o helper.o helper_backup.o -o ipcopreboot -lcrypt
+ipcopreboot.c:37:13: warning: 'command' defined but not used [-Wunused-variable]
+   37 | static char command[STRING_SIZE_LARGE];
+      |             ^~~~~~~
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' ipcoprestore.c setuid.o helper.o helper_backup.o -o ipcoprestore -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' ipsecctrl.c setuid.o helper.o helper_backup.o -o ipsecctrl -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' iptableswrapper.c setuid.o helper.o helper_backup.o -o iptableswrapper -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' rebuildhosts.c setuid.o helper.o helper_backup.o -o rebuildhosts -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' rebuildlangtexts.c setuid.o helper.o helper_backup.o -o rebuildlangtexts -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' red.c setuid.o helper.o helper_backup.o -o red -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' restartdhcp.c setuid.o helper.o helper_backup.o -o restartdhcp -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' restartntpd.c setuid.o helper.o helper_backup.o -o restartntpd -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' restartshaping.c setuid.o helper.o helper_backup.o -o restartshaping -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' restartssh.c setuid.o helper.o helper_backup.o -o restartssh -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' restartsyslogd.c setuid.o helper.o helper_backup.o -o restartsyslogd -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' setaliases.c setuid.o helper.o helper_backup.o -o setaliases -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' setdate.c setuid.o helper.o helper_backup.o -o setdate -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' setfwrules.c setuid.o helper.o helper_backup.o -o setfwrules -lcrypt
+gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' sysinfo.c setuid.o helper.o helper_backup.o -o sysinfo -lcrypt
+>>> ipcop-core: Entering fakeroot...
+>>> ipcop-core*: Running postcheck for ipcop-core
+>>> WARNING: ipcop-core*: Found OpenRC directory (/etc/conf.d or /etc/init.d) but name doesn't end with -openrc
+>>> ipcop-core*: Preparing package ipcop-core...
+>>> ipcop-core*: Stripping binaries
+>>> ipcop-core*: Script found. /bin/sh added as a dependency for ipcop-core-2.2.0-r3.apk
+>>> ipcop-core*: Adding .post-install
+>>> ipcop-core*: Scanning shared objects
+>>> ipcop-core*: Tracing dependencies...
+	lighttpd
+	bash
+	coreutils
+	util-linux
+	openrc
+	collectd
+	collectd-rrdtool
+	collectd-disk
+	perl
+	perl-cgi
+	perl-locale-gettext
+	perl-dbi
+	perl-dbd-sqlite
+	perl-net-dns
+	perl-netaddr-ip
+	perl-archive-zip
+	perl-xml-simple
+	perl-json
+	openssl
+	perl-io-socket-ssl
+	perl-net-ip
+	iptables
+	nftables
+	dnsmasq
+	vnstat
+	perl-app-cpanminus
+	tzdata
+	ethtool
+	iproute2
+	perl-rrd
+	net-tools
+	conntrack-tools
+	bind-tools
+	rsyslog
+	perl-net-ssleay
+	lighttpd-mod_auth
+	dhcpcd
+	apache2-utils
+	perl-apache-htpasswd
+	perl-net-ipv4addr
+	/bin/sh
+	so:libc.musl-aarch64.so.1
+>>> ipcop-core*: Package size: 4.4 MB
+>>> ipcop-core*: Compressing data...
+>>> ipcop-core*: Create checksum...
+>>> ipcop-core*: Create ipcop-core-2.2.0-r3.apk
+>>> ipcop-core: Build complete at Wed, 14 Jan 2026 06:24:10 -0600 elapsed time 0h 6m 31s
+>>> ipcop-core: Cleaning up srcdir
+>>> ipcop-core: Cleaning up pkgdir
+>>> ipcop-core: Cleaning up tmpdir
+>>> ipcop-core: Uninstalling dependencies...
+(  1/197) Purging .makedepends-ipcop-core (20260114.121739)
+(  2/197) Purging lighttpd-openrc (1.4.82-r0)
+(  3/197) Purging lighttpd (1.4.82-r0)
+(  4/197) Purging bash (5.3.3-r1)
+  Executing bash-5.3.3-r1.pre-deinstall
+(  5/197) Purging coreutils (9.8-r1)
+  Executing coreutils-9.8-r1.post-deinstall
+(  6/197) Purging coreutils-env (9.8-r1)
+(  7/197) Purging coreutils-fmt (9.8-r1)
+(  8/197) Purging coreutils-sha512sum (9.8-r1)
+(  9/197) Purging dmesg (2.41.2-r0)
+( 10/197) Purging runuser (2.41.2-r0)
+( 11/197) Purging uuidgen (2.41.2-r0)
+( 12/197) Purging blkid (2.41.2-r0)
+( 13/197) Purging mcookie (2.41.2-r0)
+( 14/197) Purging hexdump (2.41.2-r0)
+( 15/197) Purging sfdisk (2.41.2-r0)
+( 16/197) Purging mount (2.41.2-r0)
+( 17/197) Purging cfdisk (2.41.2-r0)
+( 18/197) Purging losetup (2.41.2-r0)
+( 19/197) Purging util-linux-openrc (2.41.2-r0)
+( 20/197) Purging flock (2.41.2-r0)
+( 21/197) Purging setpriv (2.41.2-r0)
+( 22/197) Purging lscpu (2.41.2-r0)
+( 23/197) Purging logger (2.41.2-r0)
+( 24/197) Purging partx (2.41.2-r0)
+( 25/197) Purging fstrim (2.41.2-r0)
+( 26/197) Purging lsblk (2.41.2-r0)
+( 27/197) Purging umount (2.41.2-r0)
+( 28/197) Purging agetty-openrc (0.63-r1)
+( 29/197) Purging agetty (2.41.2-r0)
+( 30/197) Purging findmnt (2.41.2-r0)
+( 31/197) Purging util-linux-misc (2.41.2-r0)
+( 32/197) Purging setarch (2.41.2-r0)
+( 33/197) Purging wipefs (2.41.2-r0)
+( 34/197) Purging util-linux (2.41.2-r0)
+( 35/197) Purging collectd-rrdtool (5.12.0-r23)
+( 36/197) Purging collectd-disk (5.12.0-r23)
+( 37/197) Purging collectd-openrc (5.12.0-r23)
+( 38/197) Purging collectd (5.12.0-r23)
+( 39/197) Purging perl-cgi (4.71-r0)
+( 40/197) Purging perl-locale-gettext (1.07-r2)
+( 41/197) Purging perl-dbd-sqlite (1.76-r1)
+( 42/197) Purging perl-dbi (1.647-r1)
+( 43/197) Purging perl-net-dns (1.53-r0)
+( 44/197) Purging perl-digest-hmac (1.05-r0)
+( 45/197) Purging perl-digest-sha1 (2.13-r20)
+( 46/197) Purging perl-digest-md5 (2.59-r3)
+( 47/197) Purging perl-netaddr-ip (4.079-r14)
+( 48/197) Purging perl-archive-zip (1.68-r3)
+( 49/197) Purging perl-xml-simple (2.25-r3)
+( 50/197) Purging perl-xml-parser (2.47-r2)
+( 51/197) Purging perl-libwww (6.81-r0)
+( 52/197) Purging perl-http-cookies (6.11-r0)
+( 53/197) Purging perl-net-http (6.24-r0)
+( 54/197) Purging perl-html-parser (3.83-r1)
+( 55/197) Purging perl-html-tagset (3.24-r0)
+( 56/197) Purging perl-file-listing (6.16-r0)
+( 57/197) Purging perl-www-robotrules (6.02-r5)
+( 58/197) Purging perl-http-negotiate (6.01-r5)
+( 59/197) Purging perl-http-message (7.01-r0)
+( 60/197) Purging perl-clone (0.47-r1)
+( 61/197) Purging perl-http-date (6.06-r0)
+( 62/197) Purging perl-uri (5.28-r0)
+( 63/197) Purging perl-io-html (1.004-r1)
+( 64/197) Purging perl-lwp-mediatypes (6.04-r3)
+( 65/197) Purging perl-encode-locale (1.05-r5)
+( 66/197) Purging perl-try-tiny (0.32-r0)
+( 67/197) Purging perl-json (4.10-r1)
+( 68/197) Purging perl-io-socket-ssl (2.093-r0)
+( 69/197) Purging ca-certificates (20251003-r0)
+  Executing ca-certificates-20251003-r0.post-deinstall
+( 70/197) Purging perl-mozilla-ca (20250602-r0)
+( 71/197) Purging perl-net-ip (1.26-r7)
+( 72/197) Purging iptables-openrc (1.8.11-r1)
+( 73/197) Purging iptables (1.8.11-r1)
+( 74/197) Purging nftables-openrc (1.1.5-r2)
+( 75/197) Purging nftables (1.1.5-r2)
+( 76/197) Purging dnsmasq (2.91-r0)
+( 77/197) Purging dnsmasq-openrc (2.91-r0)
+( 78/197) Purging dnsmasq-common (2.91-r0)
+( 79/197) Purging vnstat-openrc (2.13-r1)
+( 80/197) Purging vnstat (2.13-r1)
+( 81/197) Purging perl-app-cpanminus (1.7048-r0)
+( 82/197) Purging wget (1.25.0-r2)
+( 83/197) Purging tzdata (2025c-r0)
+( 84/197) Purging iproute2 (6.17.0-r0)
+( 85/197) Purging iproute2-tc (6.17.0-r0)
+( 86/197) Purging iproute2-ss (6.17.0-r0)
+( 87/197) Purging perl-rrd (1.9.0-r5)
+( 88/197) Purging net-tools (2.10-r3)
+( 89/197) Purging mii-tool (2.10-r3)
+( 90/197) Purging conntrack-tools-openrc (1.4.8-r0)
+( 91/197) Purging conntrack-tools (1.4.8-r0)
+( 92/197) Purging bind-tools (9.20.17-r0)
+( 93/197) Purging rsyslog-openrc (8.2512.0-r0)
+( 94/197) Purging rsyslog (8.2512.0-r0)
+( 95/197) Purging perl-net-ssleay (1.94-r3)
+( 96/197) Purging lighttpd-mod_auth (1.4.82-r0)
+( 97/197) Purging dhcpcd-openrc (10.3.0-r0)
+( 98/197) Purging dhcpcd (10.3.0-r0)
+( 99/197) Purging apache2-utils (2.4.66-r0)
+(100/197) Purging perl-apache-htpasswd (1.9-r0)
+(101/197) Purging perl-net-ipv4addr (0.10-r7)
+(102/197) Purging linux-headers (6.16.12-r0)
+(103/197) Purging newt-dev (0.52.25-r0)
+(104/197) Purging newt (0.52.25-r0)
+(105/197) Purging slang-dev (2.3.3-r3)
+(106/197) Purging slang (2.3.3-r3)
+(107/197) Purging pciutils-dev (3.14.0-r0)
+(108/197) Purging pciutils-libs (3.14.0-r0)
+(109/197) Purging libusb-dev (1.0.29-r0)
+(110/197) Purging libusb (1.0.29-r0)
+(111/197) Purging zlib-dev (1.3.1-r2)
+(112/197) Purging gettext-dev (0.24.1-r1)
+(113/197) Purging xz (5.8.1-r0)
+(114/197) Purging gettext-asprintf (0.24.1-r1)
+(115/197) Purging gettext (0.24.1-r1)
+(116/197) Purging gettext-envsubst (0.24.1-r1)
+(117/197) Purging apr-util (1.6.3-r2)
+(118/197) Purging bind-libs (9.20.17-r0)
+(119/197) Purging eudev-libs (3.2.14-r6)
+(120/197) Purging fstrm (0.6.1-r4)
+(121/197) Purging gettext-libs (0.24.1-r1)
+(122/197) Purging git-perl (2.52.0-r0)
+(123/197) Purging perl-git (2.52.0-r0)
+(124/197) Purging perl-error (0.17030-r0)
+(125/197) Purging perl (5.42.0-r0)
+(126/197) Purging ifupdown-ng-ethtool (0.12.1-r7)
+(127/197) Purging ethtool (6.15-r0)
+(128/197) Purging ifupdown-ng-iproute2 (0.12.1-r7)
+(129/197) Purging iproute2-minimal (6.17.0-r0)
+(130/197) Purging krb5-libs (1.22.1-r0)
+(131/197) Purging krb5-conf (1.0-r2)
+(132/197) Purging libattr (2.5.2-r2)
+(133/197) Purging libcap-ng (0.8.5-r0)
+(134/197) Purging libdbi (0.9.0-r5)
+(135/197) Purging libelf (0.194-r0)
+(136/197) Purging libestr (0.1.11-r4)
+(137/197) Purging libfastjson (1.2304.0-r4)
+(138/197) Purging libfdisk (2.41.2-r0)
+(139/197) Purging libgd (2.3.3-r10)
+(140/197) Purging libldap (2.6.10-r0)
+(141/197) Purging libnetfilter_conntrack (1.1.0-r0)
+(142/197) Purging libnetfilter_cthelper (1.0.1-r2)
+(143/197) Purging libnetfilter_cttimeout (1.0.1-r2)
+(144/197) Purging libnetfilter_queue (1.0.5-r2)
+(145/197) Purging libnfnetlink (1.0.2-r3)
+(146/197) Purging libnftnl (1.3.0-r0)
+(147/197) Purging librrd (1.9.0-r5)
+(148/197) Purging libsasl (2.1.28-r9)
+(149/197) Purging libsmartcols (2.41.2-r0)
+(150/197) Purging libuv (1.51.0-r0)
+(151/197) Purging libverto (0.3.2-r2)
+(152/197) Purging libxml2 (2.13.9-r0)
+(153/197) Purging libxpm (3.5.17-r0)
+(154/197) Purging libxt (1.3.1-r0)
+(155/197) Purging libxtables (1.8.11-r1)
+(156/197) Purging linux-pam (1.7.1-r2)
+(157/197) Purging lua5.4-libs (5.4.8-r0)
+(158/197) Purging pango (1.56.4-r0)
+(159/197) Purging protobuf-c (1.5.2-r2)
+(160/197) Purging readline (8.3.1-r0)
+(161/197) Purging sqlite-libs (3.51.2-r0)
+(162/197) Purging tiff (4.7.1-r0)
+(163/197) Purging userspace-rcu (0.15.3-r0)
+(164/197) Purging utmps-libs (0.1.3.1-r0)
+(165/197) Purging yajl (2.1.0-r9)
+(166/197) Purging libavif (1.3.0-r0)
+(167/197) Purging aom-libs (3.13.1-r0)
+(168/197) Purging apr (1.7.6-r0)
+(169/197) Purging cairo (1.18.4-r0)
+(170/197) Purging libxft (2.3.9-r0)
+(171/197) Purging fontconfig (2.17.1-r0)
+(172/197) Purging harfbuzz (12.2.0-r0)
+(173/197) Purging freetype (2.14.1-r0)
+(174/197) Purging fribidi (1.0.16-r2)
+(175/197) Purging gdbm (1.26-r0)
+(176/197) Purging graphite2 (1.3.14-r6)
+(177/197) Purging keyutils-libs (1.6.3-r4)
+(178/197) Purging libxext (1.3.6-r2)
+(179/197) Purging libxrender (0.9.12-r0)
+(180/197) Purging libx11 (1.8.12-r1)
+(181/197) Purging libxcb (1.17.0-r1)
+(182/197) Purging libxdmcp (1.1.5-r1)
+(183/197) Purging libbsd (0.12.2-r0)
+(184/197) Purging libbz2 (1.0.8-r6)
+(185/197) Purging libdav1d (1.5.2-r0)
+(186/197) Purging libsm (1.2.6-r0)
+(187/197) Purging libice (1.1.2-r0)
+(188/197) Purging libyuv (0.0.1887.20251502-r1)
+(189/197) Purging libjpeg-turbo (3.1.2-r0)
+(190/197) Purging libmd (1.1.0-r0)
+(191/197) Purging libmnl (1.0.5-r2)
+(192/197) Purging libpng (1.6.53-r0)
+(193/197) Purging libwebp (1.6.0-r0)
+(194/197) Purging libsharpyuv (1.6.0-r0)
+(195/197) Purging libxau (1.0.12-r0)
+(196/197) Purging pixman (0.46.4-r0)
+(197/197) Purging skalibs-libs (2.14.4.0-r0)
+Executing busybox-1.37.0-r30.trigger
+OK: 372.0 MiB in 123 packages
+>>> ipcop-core: Updating the apkbuilds/aarch64 repository index...
+>>> ipcop-core: Signing the index...
+'/home/builder/packages/apkbuilds/aarch64/ipcop-core-2.2.0-r3.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-core-2.2.0-r3.apk'
+[0;32m*** Built: ipcop-core[0;39m
+[0;36m*** Building package: ipcop-installer[0;39m
+>>> ipcop-installer: Cleaning up srcdir
+>>> ipcop-installer: Cleaning up pkgdir
+>>> ipcop-installer: Cleaning up tmpdir
+>>> ipcop-installer: Building apkbuilds/ipcop-installer 2.2.0-r1 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:24:10 -0600
+>>> ipcop-installer: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-installer/APKBUILD...
+>>> ipcop-installer: Analyzing dependencies...
+>>> ipcop-installer: Installing for build: build-base ipcop-core newt slang pciutils libusb zlib parted newt-dev slang-dev pciutils-dev libusb-dev zlib-dev gettext-dev parted-dev
+(  1/200) Installing libdbi (0.9.0-r5)
+(  2/200) Installing gdbm (1.26-r0)
+(  3/200) Installing libsasl (2.1.28-r9)
+(  4/200) Installing libldap (2.6.10-r0)
+(  5/200) Installing lua5.4-libs (5.4.8-r0)
+(  6/200) Installing lighttpd (1.4.82-r0)
+  Executing lighttpd-1.4.82-r0.pre-install
+  Installing file to etc/lighttpd/lighttpd.conf.apk-new
+(  7/200) Installing readline (8.3.1-r0)
+(  8/200) Installing bash (5.3.3-r1)
+  Executing bash-5.3.3-r1.post-install
+(  9/200) Installing coreutils-env (9.8-r1)
+( 10/200) Installing coreutils-fmt (9.8-r1)
+( 11/200) Installing coreutils-sha512sum (9.8-r1)
+( 12/200) Installing libattr (2.5.2-r2)
+( 13/200) Installing skalibs-libs (2.14.4.0-r0)
+( 14/200) Installing utmps-libs (0.1.3.1-r0)
+( 15/200) Installing coreutils (9.8-r1)
+( 16/200) Installing util-linux (2.41.2-r0)
+( 17/200) Installing dmesg (2.41.2-r0)
+( 18/200) Installing setarch (2.41.2-r0)
+( 19/200) Installing libfdisk (2.41.2-r0)
+( 20/200) Installing libsmartcols (2.41.2-r0)
+( 21/200) Installing util-linux-misc (2.41.2-r0)
+( 22/200) Installing linux-pam (1.7.1-r2)
+( 23/200) Installing runuser (2.41.2-r0)
+( 24/200) Installing mount (2.41.2-r0)
+( 25/200) Installing losetup (2.41.2-r0)
+( 26/200) Installing hexdump (2.41.2-r0)
+( 27/200) Installing uuidgen (2.41.2-r0)
+( 28/200) Installing blkid (2.41.2-r0)
+( 29/200) Installing sfdisk (2.41.2-r0)
+( 30/200) Installing mcookie (2.41.2-r0)
+( 31/200) Installing agetty (2.41.2-r0)
+( 32/200) Installing wipefs (2.41.2-r0)
+( 33/200) Installing cfdisk (2.41.2-r0)
+( 34/200) Installing umount (2.41.2-r0)
+( 35/200) Installing flock (2.41.2-r0)
+( 36/200) Installing lsblk (2.41.2-r0)
+( 37/200) Installing libcap-ng (0.8.5-r0)
+( 38/200) Installing setpriv (2.41.2-r0)
+( 39/200) Installing lscpu (2.41.2-r0)
+( 40/200) Installing logger (2.41.2-r0)
+( 41/200) Installing partx (2.41.2-r0)
+( 42/200) Installing fstrim (2.41.2-r0)
+( 43/200) Installing findmnt (2.41.2-r0)
+( 44/200) Installing util-linux-openrc (2.41.2-r0)
+( 45/200) Installing agetty-openrc (0.63-r1)
+( 46/200) Installing lighttpd-openrc (1.4.82-r0)
+( 47/200) Installing libmnl (1.0.5-r2)
+( 48/200) Installing yajl (2.1.0-r9)
+( 49/200) Installing collectd (5.12.0-r23)
+  Executing collectd-5.12.0-r23.pre-install
+  Installing file to etc/collectd/collectd.conf.apk-new
+( 50/200) Installing collectd-openrc (5.12.0-r23)
+( 51/200) Installing libxau (1.0.12-r0)
+( 52/200) Installing libmd (1.1.0-r0)
+( 53/200) Installing libbsd (0.12.2-r0)
+( 54/200) Installing libxdmcp (1.1.5-r1)
+( 55/200) Installing libxcb (1.17.0-r1)
+( 56/200) Installing libx11 (1.8.12-r1)
+( 57/200) Installing libxext (1.3.6-r2)
+( 58/200) Installing libxrender (0.9.12-r0)
+( 59/200) Installing libbz2 (1.0.8-r6)
+( 60/200) Installing libpng (1.6.53-r0)
+( 61/200) Installing freetype (2.14.1-r0)
+( 62/200) Installing fontconfig (2.17.1-r0)
+( 63/200) Installing pixman (0.46.4-r0)
+( 64/200) Installing cairo (1.18.4-r0)
+( 65/200) Installing libxft (2.3.9-r0)
+( 66/200) Installing fribidi (1.0.16-r2)
+( 67/200) Installing graphite2 (1.3.14-r6)
+( 68/200) Installing harfbuzz (12.2.0-r0)
+( 69/200) Installing pango (1.56.4-r0)
+( 70/200) Installing libxml2 (2.13.9-r0)
+( 71/200) Installing librrd (1.9.0-r5)
+( 72/200) Installing collectd-rrdtool (5.12.0-r23)
+( 73/200) Installing eudev-libs (3.2.14-r6)
+( 74/200) Installing collectd-disk (5.12.0-r23)
+( 75/200) Installing perl (5.42.0-r0)
+( 76/200) Installing perl-html-tagset (3.24-r0)
+( 77/200) Installing perl-clone (0.47-r1)
+( 78/200) Installing perl-http-date (6.06-r0)
+( 79/200) Installing perl-uri (5.28-r0)
+( 80/200) Installing perl-io-html (1.004-r1)
+( 81/200) Installing perl-encode-locale (1.05-r5)
+( 82/200) Installing perl-lwp-mediatypes (6.04-r3)
+( 83/200) Installing perl-http-message (7.01-r0)
+( 84/200) Installing perl-html-parser (3.83-r1)
+( 85/200) Installing perl-cgi (4.71-r0)
+( 86/200) Installing gettext-envsubst (0.24.1-r1)
+( 87/200) Installing gettext-libs (0.24.1-r1)
+( 88/200) Installing gettext (0.24.1-r1)
+( 89/200) Installing perl-locale-gettext (1.07-r2)
+( 90/200) Installing perl-dbi (1.647-r1)
+( 91/200) Installing sqlite-libs (3.51.2-r0)
+( 92/200) Installing perl-dbd-sqlite (1.76-r1)
+( 93/200) Installing perl-digest-sha1 (2.13-r20)
+( 94/200) Installing perl-digest-md5 (2.59-r3)
+( 95/200) Installing perl-digest-hmac (1.05-r0)
+( 96/200) Installing perl-net-dns (1.53-r0)
+( 97/200) Installing perl-netaddr-ip (4.079-r14)
+( 98/200) Installing perl-archive-zip (1.68-r3)
+( 99/200) Installing perl-http-cookies (6.11-r0)
+(100/200) Installing perl-net-http (6.24-r0)
+(101/200) Installing perl-file-listing (6.16-r0)
+(102/200) Installing perl-www-robotrules (6.02-r5)
+(103/200) Installing perl-http-negotiate (6.01-r5)
+(104/200) Installing perl-try-tiny (0.32-r0)
+(105/200) Installing perl-libwww (6.81-r0)
+(106/200) Installing perl-xml-parser (2.47-r2)
+(107/200) Installing perl-xml-simple (2.25-r3)
+(108/200) Installing perl-json (4.10-r1)
+(109/200) Installing ca-certificates (20251003-r0)
+(110/200) Installing perl-net-ssleay (1.94-r3)
+(111/200) Installing perl-mozilla-ca (20250602-r0)
+(112/200) Installing perl-io-socket-ssl (2.093-r0)
+(113/200) Installing perl-net-ip (1.26-r7)
+(114/200) Installing libnftnl (1.3.0-r0)
+(115/200) Installing libxtables (1.8.11-r1)
+(116/200) Installing iptables (1.8.11-r1)
+(117/200) Installing iptables-openrc (1.8.11-r1)
+(118/200) Installing nftables (1.1.5-r2)
+(119/200) Installing nftables-openrc (1.1.5-r2)
+(120/200) Installing dnsmasq-common (2.91-r0)
+(121/200) Installing dnsmasq (2.91-r0)
+  Executing dnsmasq-2.91-r0.pre-install
+(122/200) Installing libice (1.1.2-r0)
+(123/200) Installing libsm (1.2.6-r0)
+(124/200) Installing libxt (1.3.1-r0)
+(125/200) Installing libxpm (3.5.17-r0)
+(126/200) Installing aom-libs (3.13.1-r0)
+(127/200) Installing libdav1d (1.5.2-r0)
+(128/200) Installing libjpeg-turbo (3.1.2-r0)
+(129/200) Installing libyuv (0.0.1887.20251502-r1)
+(130/200) Installing libavif (1.3.0-r0)
+(131/200) Installing libsharpyuv (1.6.0-r0)
+(132/200) Installing libwebp (1.6.0-r0)
+(133/200) Installing tiff (4.7.1-r0)
+(134/200) Installing libgd (2.3.3-r10)
+(135/200) Installing vnstat (2.13-r1)
+  Executing vnstat-2.13-r1.pre-install
+(136/200) Installing vnstat-openrc (2.13-r1)
+(137/200) Installing wget (1.25.0-r2)
+(138/200) Installing perl-app-cpanminus (1.7048-r0)
+(139/200) Installing tzdata (2025c-r0)
+(140/200) Installing ethtool (6.15-r0)
+(141/200) Installing ifupdown-ng-ethtool (0.12.1-r7)
+(142/200) Installing libelf (0.194-r0)
+(143/200) Installing iproute2-minimal (6.17.0-r0)
+(144/200) Installing ifupdown-ng-iproute2 (0.12.1-r7)
+(145/200) Installing iproute2-tc (6.17.0-r0)
+(146/200) Installing iproute2-ss (6.17.0-r0)
+(147/200) Installing iproute2 (6.17.0-r0)
+  Executing iproute2-6.17.0-r0.post-install
+(148/200) Installing perl-rrd (1.9.0-r5)
+(149/200) Installing mii-tool (2.10-r3)
+(150/200) Installing net-tools (2.10-r3)
+(151/200) Installing libnfnetlink (1.0.2-r3)
+(152/200) Installing libnetfilter_conntrack (1.1.0-r0)
+(153/200) Installing libnetfilter_cthelper (1.0.1-r2)
+(154/200) Installing libnetfilter_cttimeout (1.0.1-r2)
+(155/200) Installing libnetfilter_queue (1.0.5-r2)
+(156/200) Installing conntrack-tools (1.4.8-r0)
+(157/200) Installing conntrack-tools-openrc (1.4.8-r0)
+(158/200) Installing fstrm (0.6.1-r4)
+(159/200) Installing krb5-conf (1.0-r2)
+(160/200) Installing keyutils-libs (1.6.3-r4)
+(161/200) Installing libverto (0.3.2-r2)
+(162/200) Installing krb5-libs (1.22.1-r0)
+(163/200) Installing protobuf-c (1.5.2-r2)
+(164/200) Installing userspace-rcu (0.15.3-r0)
+(165/200) Installing libuv (1.51.0-r0)
+(166/200) Installing bind-libs (9.20.17-r0)
+(167/200) Installing bind-tools (9.20.17-r0)
+(168/200) Installing libestr (0.1.11-r4)
+(169/200) Installing libfastjson (1.2304.0-r4)
+(170/200) Installing rsyslog (8.2512.0-r0)
+  Installing file to etc/rsyslog.conf.apk-new
+(171/200) Installing rsyslog-openrc (8.2512.0-r0)
+(172/200) Installing lighttpd-mod_auth (1.4.82-r0)
+(173/200) Installing dhcpcd (10.3.0-r0)
+  Executing dhcpcd-10.3.0-r0.pre-install
+(174/200) Installing dhcpcd-openrc (10.3.0-r0)
+(175/200) Installing apr (1.7.6-r0)
+(176/200) Installing apr-util (1.6.3-r2)
+(177/200) Installing apache2-utils (2.4.66-r0)
+(178/200) Installing perl-apache-htpasswd (1.9-r0)
+(179/200) Installing perl-net-ipv4addr (0.10-r7)
+(180/200) Installing ipcop-core (2.2.0-r3)
+  Executing ipcop-core-2.2.0-r3.post-install
+  * Configuring IPCop Core...
+  * Checking/Installing Perl modules...
+  * Locale::Maketext::Gettext::Functions is up to date. (0.14)
+  * Apache::Htpasswd is up to date. (1.9)
+  * Net::IPv4Addr is up to date. (0.10)
+  * Creating IPCop directory structure...
+  * Applying Permissions (root:lighttpd 2770)...
+  *  * rc-update: ipcop-firewall already installed in runlevel `default'; skipping
+  *  * rc-update: ipcop-network already installed in runlevel `default'; skipping
+  *  * rc-update: lighttpd already installed in runlevel `default'; skipping
+  *  * rc-update: service `fcron' does not exist
+  *  * rc-update: dnsmasq already installed in runlevel `default'; skipping
+  *  * rc-update: sshd already installed in runlevel `default'; skipping
+  *  * rc-update: rsyslog already installed in runlevel `boot'; skipping
+  *  * rc-update: collectd already installed in runlevel `default'; skipping
+  * IPCop Core Configured Successfully.
+(181/200) Installing slang (2.3.3-r3)
+(182/200) Installing newt (0.52.25-r0)
+(183/200) Installing hwdata-pci (0.401-r0)
+(184/200) Installing pciutils-libs (3.14.0-r0)
+(185/200) Installing pciutils (3.14.0-r0)
+(186/200) Installing libusb (1.0.29-r0)
+(187/200) Installing parted (3.6-r2)
+(188/200) Installing slang-dev (2.3.3-r3)
+(189/200) Installing newt-dev (0.52.25-r0)
+(190/200) Installing pciutils-dev (3.14.0-r0)
+(191/200) Installing libusb-dev (1.0.29-r0)
+(192/200) Installing zlib-dev (1.3.1-r2)
+(193/200) Installing xz (5.8.1-r0)
+(194/200) Installing gettext-asprintf (0.24.1-r1)
+(195/200) Installing gettext-dev (0.24.1-r1)
+(196/200) Installing parted-dev (3.6-r2)
+(197/200) Installing .makedepends-ipcop-installer (20260114.122410)
+(198/200) Installing perl-error (0.17030-r0)
+(199/200) Installing perl-git (2.52.0-r0)
+(200/200) Installing git-perl (2.52.0-r0)
+Executing busybox-1.37.0-r30.trigger
+Executing ca-certificates-20251003-r0.trigger
+OK: 513.3 MiB in 323 packages
+>>> ipcop-installer: Cleaning up srcdir
+>>> ipcop-installer: Cleaning up pkgdir
+>>> ipcop-installer: Cleaning up tmpdir
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  setup.c -o setup.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  helper.c -o helper.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  helper_kernel.c -o helper_kernel.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  helper_newt.c -o helper_newt.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  hardware.c -o hardware.o
+hardware.c: In function 'getdrivesize':
+hardware.c:81:52: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 4 has type 'uint64_t' {aka 'long unsigned int'} [-Wformat=]
+   81 |                 snprintf(strsize, STRING_SIZE, "%llu GiB", size / (1024*1024));
+      |                                                 ~~~^       ~~~~~~~~~~~~~~~~~~
+      |                                                    |            |
+      |                                                    |            uint64_t {aka long unsigned int}
+      |                                                    long long unsigned int
+      |                                                 %lu
+hardware.c:85:52: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 4 has type 'uint64_t' {aka 'long unsigned int'} [-Wformat=]
+   85 |                 snprintf(strsize, STRING_SIZE, "%llu MiB", size / 1024);
+      |                                                 ~~~^       ~~~~~~~~~~~
+      |                                                    |            |
+      |                                                    |            uint64_t {aka long unsigned int}
+      |                                                    long long unsigned int
+      |                                                 %lu
+hardware.c:89:52: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 4 has type 'uint64_t' {aka 'long unsigned int'} [-Wformat=]
+   89 |                 snprintf(strsize, STRING_SIZE, "%llu KiB", size);
+      |                                                 ~~~^       ~~~~
+      |                                                    |       |
+      |                                                    |       uint64_t {aka long unsigned int}
+      |                                                    long long unsigned int
+      |                                                 %lu
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  host_domain.c -o host_domain.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  keymap.c -o keymap.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  passwords.c -o passwords.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  timezone.c -o timezone.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  net_dhcp.c -o net_dhcp.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  net_isdn.c -o net_isdn.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  usbnames.c -o usbnames.o
+cc -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' -c  networking.c -o networking.o
+cc -Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs -no-pie -Os -fstack-clash-protection -Wformat -Werror=format-security -D_GNU_SOURCE -DUINT_MAX_32_BITS=0xFFFFFFFFU -fPIC -g -ggdb2 -Wall -DNAME='"IPCop"' -DSNAME='"ipcop"' -DKVER='"6.18.5-0-virt"' -DVERSION='"2.2.0"' setup.o helper.o helper_kernel.o helper_newt.o hardware.o host_domain.o keymap.o passwords.o timezone.o net_dhcp.o net_isdn.o usbnames.o networking.o -o setup -lnewt -lslang -lpci -lusb-1.0 -lz -lintl
+>>> ipcop-installer: Entering fakeroot...
+>>> ipcop-installer*: Running postcheck for ipcop-installer
+>>> ipcop-installer*: Preparing package ipcop-installer...
+>>> ipcop-installer*: Stripping binaries
+>>> ipcop-installer*: Scanning shared objects
+>>> ipcop-installer*: Tracing dependencies...
+	ipcop-core
+	newt
+	slang
+	pciutils
+	libusb
+	zlib
+	parted
+	so:libc.musl-aarch64.so.1
+	so:libintl.so.8
+	so:libnewt.so.0.52
+	so:libpci.so.3
+	so:libusb-1.0.so.0
+	so:libz.so.1
+>>> ipcop-installer*: Package size: 130.5 KB
+>>> ipcop-installer*: Compressing data...
+>>> ipcop-installer*: Create checksum...
+>>> ipcop-installer*: Create ipcop-installer-2.2.0-r1.apk
+>>> ipcop-installer: Build complete at Wed, 14 Jan 2026 06:27:13 -0600 elapsed time 0h 3m 3s
+>>> ipcop-installer: Cleaning up srcdir
+>>> ipcop-installer: Cleaning up pkgdir
+>>> ipcop-installer: Cleaning up tmpdir
+>>> ipcop-installer: Uninstalling dependencies...
+(  1/200) Purging .makedepends-ipcop-installer (20260114.122410)
+(  2/200) Purging ipcop-core (2.2.0-r3)
+(  3/200) Purging lighttpd-openrc (1.4.82-r0)
+(  4/200) Purging lighttpd (1.4.82-r0)
+(  5/200) Purging bash (5.3.3-r1)
+  Executing bash-5.3.3-r1.pre-deinstall
+(  6/200) Purging coreutils (9.8-r1)
+  Executing coreutils-9.8-r1.post-deinstall
+(  7/200) Purging coreutils-env (9.8-r1)
+(  8/200) Purging coreutils-fmt (9.8-r1)
+(  9/200) Purging coreutils-sha512sum (9.8-r1)
+( 10/200) Purging dmesg (2.41.2-r0)
+( 11/200) Purging runuser (2.41.2-r0)
+( 12/200) Purging uuidgen (2.41.2-r0)
+( 13/200) Purging blkid (2.41.2-r0)
+( 14/200) Purging mcookie (2.41.2-r0)
+( 15/200) Purging hexdump (2.41.2-r0)
+( 16/200) Purging sfdisk (2.41.2-r0)
+( 17/200) Purging mount (2.41.2-r0)
+( 18/200) Purging cfdisk (2.41.2-r0)
+( 19/200) Purging losetup (2.41.2-r0)
+( 20/200) Purging util-linux-openrc (2.41.2-r0)
+( 21/200) Purging flock (2.41.2-r0)
+( 22/200) Purging setpriv (2.41.2-r0)
+( 23/200) Purging lscpu (2.41.2-r0)
+( 24/200) Purging logger (2.41.2-r0)
+( 25/200) Purging partx (2.41.2-r0)
+( 26/200) Purging fstrim (2.41.2-r0)
+( 27/200) Purging lsblk (2.41.2-r0)
+( 28/200) Purging umount (2.41.2-r0)
+( 29/200) Purging agetty-openrc (0.63-r1)
+( 30/200) Purging agetty (2.41.2-r0)
+( 31/200) Purging findmnt (2.41.2-r0)
+( 32/200) Purging util-linux-misc (2.41.2-r0)
+( 33/200) Purging setarch (2.41.2-r0)
+( 34/200) Purging wipefs (2.41.2-r0)
+( 35/200) Purging util-linux (2.41.2-r0)
+( 36/200) Purging collectd-rrdtool (5.12.0-r23)
+( 37/200) Purging collectd-disk (5.12.0-r23)
+( 38/200) Purging collectd-openrc (5.12.0-r23)
+( 39/200) Purging collectd (5.12.0-r23)
+( 40/200) Purging perl-cgi (4.71-r0)
+( 41/200) Purging perl-locale-gettext (1.07-r2)
+( 42/200) Purging perl-dbd-sqlite (1.76-r1)
+( 43/200) Purging perl-dbi (1.647-r1)
+( 44/200) Purging perl-net-dns (1.53-r0)
+( 45/200) Purging perl-digest-hmac (1.05-r0)
+( 46/200) Purging perl-digest-sha1 (2.13-r20)
+( 47/200) Purging perl-digest-md5 (2.59-r3)
+( 48/200) Purging perl-netaddr-ip (4.079-r14)
+( 49/200) Purging perl-archive-zip (1.68-r3)
+( 50/200) Purging perl-xml-simple (2.25-r3)
+( 51/200) Purging perl-xml-parser (2.47-r2)
+( 52/200) Purging perl-libwww (6.81-r0)
+( 53/200) Purging perl-http-cookies (6.11-r0)
+( 54/200) Purging perl-net-http (6.24-r0)
+( 55/200) Purging perl-html-parser (3.83-r1)
+( 56/200) Purging perl-html-tagset (3.24-r0)
+( 57/200) Purging perl-file-listing (6.16-r0)
+( 58/200) Purging perl-www-robotrules (6.02-r5)
+( 59/200) Purging perl-http-negotiate (6.01-r5)
+( 60/200) Purging perl-http-message (7.01-r0)
+( 61/200) Purging perl-clone (0.47-r1)
+( 62/200) Purging perl-http-date (6.06-r0)
+( 63/200) Purging perl-uri (5.28-r0)
+( 64/200) Purging perl-io-html (1.004-r1)
+( 65/200) Purging perl-lwp-mediatypes (6.04-r3)
+( 66/200) Purging perl-encode-locale (1.05-r5)
+( 67/200) Purging perl-try-tiny (0.32-r0)
+( 68/200) Purging perl-json (4.10-r1)
+( 69/200) Purging perl-io-socket-ssl (2.093-r0)
+( 70/200) Purging ca-certificates (20251003-r0)
+  Executing ca-certificates-20251003-r0.post-deinstall
+( 71/200) Purging perl-mozilla-ca (20250602-r0)
+( 72/200) Purging perl-net-ip (1.26-r7)
+( 73/200) Purging iptables-openrc (1.8.11-r1)
+( 74/200) Purging iptables (1.8.11-r1)
+( 75/200) Purging nftables-openrc (1.1.5-r2)
+( 76/200) Purging nftables (1.1.5-r2)
+( 77/200) Purging dnsmasq (2.91-r0)
+( 78/200) Purging dnsmasq-common (2.91-r0)
+( 79/200) Purging vnstat-openrc (2.13-r1)
+( 80/200) Purging vnstat (2.13-r1)
+( 81/200) Purging perl-app-cpanminus (1.7048-r0)
+( 82/200) Purging wget (1.25.0-r2)
+( 83/200) Purging tzdata (2025c-r0)
+( 84/200) Purging iproute2 (6.17.0-r0)
+( 85/200) Purging iproute2-tc (6.17.0-r0)
+( 86/200) Purging iproute2-ss (6.17.0-r0)
+( 87/200) Purging perl-rrd (1.9.0-r5)
+( 88/200) Purging net-tools (2.10-r3)
+( 89/200) Purging mii-tool (2.10-r3)
+( 90/200) Purging conntrack-tools-openrc (1.4.8-r0)
+( 91/200) Purging conntrack-tools (1.4.8-r0)
+( 92/200) Purging bind-tools (9.20.17-r0)
+( 93/200) Purging rsyslog-openrc (8.2512.0-r0)
+( 94/200) Purging rsyslog (8.2512.0-r0)
+( 95/200) Purging perl-net-ssleay (1.94-r3)
+( 96/200) Purging lighttpd-mod_auth (1.4.82-r0)
+( 97/200) Purging dhcpcd-openrc (10.3.0-r0)
+( 98/200) Purging dhcpcd (10.3.0-r0)
+( 99/200) Purging apache2-utils (2.4.66-r0)
+(100/200) Purging perl-apache-htpasswd (1.9-r0)
+(101/200) Purging perl-net-ipv4addr (0.10-r7)
+(102/200) Purging pciutils (3.14.0-r0)
+(103/200) Purging hwdata-pci (0.401-r0)
+(104/200) Purging newt-dev (0.52.25-r0)
+(105/200) Purging newt (0.52.25-r0)
+(106/200) Purging slang-dev (2.3.3-r3)
+(107/200) Purging slang (2.3.3-r3)
+(108/200) Purging pciutils-dev (3.14.0-r0)
+(109/200) Purging pciutils-libs (3.14.0-r0)
+(110/200) Purging libusb-dev (1.0.29-r0)
+(111/200) Purging libusb (1.0.29-r0)
+(112/200) Purging zlib-dev (1.3.1-r2)
+(113/200) Purging gettext-dev (0.24.1-r1)
+(114/200) Purging xz (5.8.1-r0)
+(115/200) Purging gettext-asprintf (0.24.1-r1)
+(116/200) Purging gettext (0.24.1-r1)
+(117/200) Purging gettext-envsubst (0.24.1-r1)
+(118/200) Purging parted-dev (3.6-r2)
+(119/200) Purging parted (3.6-r2)
+(120/200) Purging apr-util (1.6.3-r2)
+(121/200) Purging bind-libs (9.20.17-r0)
+(122/200) Purging eudev-libs (3.2.14-r6)
+(123/200) Purging fstrm (0.6.1-r4)
+(124/200) Purging gettext-libs (0.24.1-r1)
+(125/200) Purging git-perl (2.52.0-r0)
+(126/200) Purging perl-git (2.52.0-r0)
+(127/200) Purging perl-error (0.17030-r0)
+(128/200) Purging perl (5.42.0-r0)
+(129/200) Purging ifupdown-ng-ethtool (0.12.1-r7)
+(130/200) Purging ethtool (6.15-r0)
+(131/200) Purging ifupdown-ng-iproute2 (0.12.1-r7)
+(132/200) Purging iproute2-minimal (6.17.0-r0)
+(133/200) Purging krb5-libs (1.22.1-r0)
+(134/200) Purging krb5-conf (1.0-r2)
+(135/200) Purging libattr (2.5.2-r2)
+(136/200) Purging libcap-ng (0.8.5-r0)
+(137/200) Purging libdbi (0.9.0-r5)
+(138/200) Purging libelf (0.194-r0)
+(139/200) Purging libestr (0.1.11-r4)
+(140/200) Purging libfastjson (1.2304.0-r4)
+(141/200) Purging libfdisk (2.41.2-r0)
+(142/200) Purging libgd (2.3.3-r10)
+(143/200) Purging libldap (2.6.10-r0)
+(144/200) Purging libnetfilter_conntrack (1.1.0-r0)
+(145/200) Purging libnetfilter_cthelper (1.0.1-r2)
+(146/200) Purging libnetfilter_cttimeout (1.0.1-r2)
+(147/200) Purging libnetfilter_queue (1.0.5-r2)
+(148/200) Purging libnfnetlink (1.0.2-r3)
+(149/200) Purging libnftnl (1.3.0-r0)
+(150/200) Purging librrd (1.9.0-r5)
+(151/200) Purging libsasl (2.1.28-r9)
+(152/200) Purging libsmartcols (2.41.2-r0)
+(153/200) Purging libuv (1.51.0-r0)
+(154/200) Purging libverto (0.3.2-r2)
+(155/200) Purging libxml2 (2.13.9-r0)
+(156/200) Purging libxpm (3.5.17-r0)
+(157/200) Purging libxt (1.3.1-r0)
+(158/200) Purging libxtables (1.8.11-r1)
+(159/200) Purging linux-pam (1.7.1-r2)
+(160/200) Purging lua5.4-libs (5.4.8-r0)
+(161/200) Purging pango (1.56.4-r0)
+(162/200) Purging protobuf-c (1.5.2-r2)
+(163/200) Purging readline (8.3.1-r0)
+(164/200) Purging sqlite-libs (3.51.2-r0)
+(165/200) Purging tiff (4.7.1-r0)
+(166/200) Purging userspace-rcu (0.15.3-r0)
+(167/200) Purging utmps-libs (0.1.3.1-r0)
+(168/200) Purging yajl (2.1.0-r9)
+(169/200) Purging libavif (1.3.0-r0)
+(170/200) Purging aom-libs (3.13.1-r0)
+(171/200) Purging apr (1.7.6-r0)
+(172/200) Purging cairo (1.18.4-r0)
+(173/200) Purging libxft (2.3.9-r0)
+(174/200) Purging fontconfig (2.17.1-r0)
+(175/200) Purging harfbuzz (12.2.0-r0)
+(176/200) Purging freetype (2.14.1-r0)
+(177/200) Purging fribidi (1.0.16-r2)
+(178/200) Purging gdbm (1.26-r0)
+(179/200) Purging graphite2 (1.3.14-r6)
+(180/200) Purging keyutils-libs (1.6.3-r4)
+(181/200) Purging libxext (1.3.6-r2)
+(182/200) Purging libxrender (0.9.12-r0)
+(183/200) Purging libx11 (1.8.12-r1)
+(184/200) Purging libxcb (1.17.0-r1)
+(185/200) Purging libxdmcp (1.1.5-r1)
+(186/200) Purging libbsd (0.12.2-r0)
+(187/200) Purging libbz2 (1.0.8-r6)
+(188/200) Purging libdav1d (1.5.2-r0)
+(189/200) Purging libsm (1.2.6-r0)
+(190/200) Purging libice (1.1.2-r0)
+(191/200) Purging libyuv (0.0.1887.20251502-r1)
+(192/200) Purging libjpeg-turbo (3.1.2-r0)
+(193/200) Purging libmd (1.1.0-r0)
+(194/200) Purging libmnl (1.0.5-r2)
+(195/200) Purging libpng (1.6.53-r0)
+(196/200) Purging libwebp (1.6.0-r0)
+(197/200) Purging libsharpyuv (1.6.0-r0)
+(198/200) Purging libxau (1.0.12-r0)
+(199/200) Purging pixman (0.46.4-r0)
+(200/200) Purging skalibs-libs (2.14.4.0-r0)
+Executing busybox-1.37.0-r30.trigger
+OK: 372.0 MiB in 123 packages
+>>> ipcop-installer: Updating the apkbuilds/aarch64 repository index...
+>>> ipcop-installer: Signing the index...
+'/home/builder/packages/apkbuilds/aarch64/ipcop-installer-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-installer-2.2.0-r1.apk'
+[0;32m*** Built: ipcop-installer[0;39m
+[0;36m*** Building package: ipcop-squid[0;39m
+>>> ipcop-squid: Cleaning up srcdir
+>>> ipcop-squid: Cleaning up pkgdir
+>>> ipcop-squid: Cleaning up tmpdir
+>>> ipcop-squid: Building apkbuilds/ipcop-squid 2.2.0-r2 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:27:13 -0600
+>>> ipcop-squid: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-squid/APKBUILD...
+>>> WARNING: ipcop-squid: ipcop-squid.post-install: found chown
+             Permissions should be fixed in APKBUILD package()
+>>> WARNING: ipcop-squid: ipcop-squid.post-install: found chmod
+             Permissions should be fixed in APKBUILD package()
+>>> ipcop-squid: Analyzing dependencies...
+>>> ipcop-squid: Installing for build: build-base ipcop-core squid dos2unix
+(  1/190) Installing libdbi (0.9.0-r5)
+(  2/190) Installing gdbm (1.26-r0)
+(  3/190) Installing libsasl (2.1.28-r9)
+(  4/190) Installing libldap (2.6.10-r0)
+(  5/190) Installing lua5.4-libs (5.4.8-r0)
+(  6/190) Installing lighttpd (1.4.82-r0)
+  Executing lighttpd-1.4.82-r0.pre-install
+  Installing file to etc/lighttpd/lighttpd.conf.apk-new
+(  7/190) Installing readline (8.3.1-r0)
+(  8/190) Installing bash (5.3.3-r1)
+  Executing bash-5.3.3-r1.post-install
+(  9/190) Installing coreutils-env (9.8-r1)
+( 10/190) Installing coreutils-fmt (9.8-r1)
+( 11/190) Installing coreutils-sha512sum (9.8-r1)
+( 12/190) Installing libattr (2.5.2-r2)
+( 13/190) Installing skalibs-libs (2.14.4.0-r0)
+( 14/190) Installing utmps-libs (0.1.3.1-r0)
+( 15/190) Installing coreutils (9.8-r1)
+( 16/190) Installing util-linux (2.41.2-r0)
+( 17/190) Installing dmesg (2.41.2-r0)
+( 18/190) Installing setarch (2.41.2-r0)
+( 19/190) Installing libfdisk (2.41.2-r0)
+( 20/190) Installing libsmartcols (2.41.2-r0)
+( 21/190) Installing util-linux-misc (2.41.2-r0)
+( 22/190) Installing linux-pam (1.7.1-r2)
+( 23/190) Installing runuser (2.41.2-r0)
+( 24/190) Installing mount (2.41.2-r0)
+( 25/190) Installing losetup (2.41.2-r0)
+( 26/190) Installing hexdump (2.41.2-r0)
+( 27/190) Installing uuidgen (2.41.2-r0)
+( 28/190) Installing blkid (2.41.2-r0)
+( 29/190) Installing sfdisk (2.41.2-r0)
+( 30/190) Installing mcookie (2.41.2-r0)
+( 31/190) Installing agetty (2.41.2-r0)
+( 32/190) Installing wipefs (2.41.2-r0)
+( 33/190) Installing cfdisk (2.41.2-r0)

@@ -41,8 +41,10 @@ die() {
 }
 
 # Determine script location and package path
+# Detect architecture dynamically
+MACHINE="$(uname -m)"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PKG_DIR="${SCRIPT_DIR}/packages/x86_64"
+PKG_DIR="${SCRIPT_DIR}/packages/${MACHINE}"
 
 # Verify packages exist
 if [ ! -d "$PKG_DIR" ] || [ -z "$(ls -A "$PKG_DIR"/*.apk 2>/dev/null)" ]; then
@@ -62,7 +64,7 @@ fi
 msg "Installing IPCop Core..."
 # Use find or globs carefully. apk add works with specific files.
 # We assume only one version exists in PKG_DIR due to clean build.
-sudo apk add --allow-untrusted --force-overwrite "$PKG_DIR"/ipcop-core-*.apk "$PKG_DIR"/ipcop-lang-*.apk "$PKG_DIR"/ipcop-installer-*.apk
+sudo apk add --allow-untrusted --force-overwrite "$PKG_DIR"/ipcop-core-*.apk "$PKG_DIR"/ipcop-lang-*.apk "$PKG_DIR"/ipcop-installer-*.apk "$PKG_DIR"/perl-apache-htpasswd-*.apk "$PKG_DIR"/perl-net-ipv4addr-*.apk
 
 echo ""
 msg "Select optional packages to install:"

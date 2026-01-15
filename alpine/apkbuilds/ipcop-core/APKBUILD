@@ -11,7 +11,7 @@ install="$pkgname.post-install"
 subpackages=""
 provides="dnsmasq-openrc"
 replaces="dnsmasq-openrc"
-depends="lighttpd bash coreutils util-linux openrc collectd collectd-rrdtool perl perl-cgi perl-locale-gettext perl-dbi perl-dbd-sqlite perl-net-dns perl-netaddr-ip perl-archive-zip perl-xml-simple perl-json openssl perl-io-socket-ssl perl-net-ip iptables nftables dnsmasq vnstat perl-app-cpanminus tzdata ethtool iproute2 perl-rrd net-tools conntrack-tools bind-tools rsyslog perl-net-ssleay lighttpd-mod_auth"
+depends="lighttpd bash coreutils util-linux openrc collectd collectd-rrdtool collectd-disk perl perl-cgi perl-locale-gettext perl-dbi perl-dbd-sqlite perl-net-dns perl-netaddr-ip perl-archive-zip perl-xml-simple perl-json openssl perl-io-socket-ssl perl-net-ip iptables nftables dnsmasq vnstat perl-app-cpanminus tzdata ethtool iproute2 perl-rrd net-tools conntrack-tools bind-tools rsyslog perl-net-ssleay lighttpd-mod_auth dhcpcd apache2-utils perl-apache-htpasswd perl-net-ipv4addr"
 makedepends="dos2unix build-base linux-headers newt-dev slang-dev pciutils-dev libusb-dev zlib-dev gettext-dev"
 
 builddir="$startdir/../../.."
