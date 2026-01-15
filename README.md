@@ -23,7 +23,7 @@ Most packages have achieved **deployment and smoke testing** on development syst
 ### Known Limitations
 
 📦 **Language Packaging**  
-The localization system (`ipcop-lang`) remains **monolithic** - all language files are bundled into a single package. The modular packaging approach has not yet been applied to split languages into individual packages (e.g., `ipcop-lang-en`, `ipcop-lang-de`).
+The localization system (`ipcop-lang`) remains **monolithic** - all language files are bundled into a single package. The modular packaging approach has not yet been applied to split languages into individual packages (e.g., `ipcop-lang-core`, `ipcop-lang-proxy`).
 
 🎨 **Web Interface Modernization**  
 The web UI remains **primarily CGI-based** to maintain stability during the porting process:
