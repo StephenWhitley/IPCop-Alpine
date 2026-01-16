@@ -29,6 +29,10 @@ alpine/apkbuilds/*/.abuild/
 *.log
 alpine/log/*.log
 
+#diagnostic output
+*.out
+diag/
+
 # ==============================================================================
 # Perl Development and Testing
 # ==============================================================================
@@ -100,8 +104,3 @@ Desktop.ini
 .DS_Store
 .AppleDouble
 .LSOverride
-/alpine/packages/aarch64
-*.err
-*.apk
-*.err
-/diag
