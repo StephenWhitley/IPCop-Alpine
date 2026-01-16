@@ -137,6 +137,13 @@ if [ -x /usr/sbin/iptables ]; then
 fi
 
 # --- 9. Enable Services ---
+# Disable conflicting services first
+rc-update del crond default 2>/dev/null || true
+rc-update del crond boot 2>/dev/null || true
+rc-update del dnsmasq default 2>/dev/null || true
+rc-update del dnsmasq boot 2>/dev/null || true
+
+# Enable IPCop services
 rc-update add ipcop-firewall default
 rc-update add ipcop-network default
 rc-update add lighttpd default

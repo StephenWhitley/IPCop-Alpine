@@ -103,3 +103,5 @@ Desktop.ini
 /alpine/packages/aarch64
 *.err
 *.apk
+*.err
+/diag

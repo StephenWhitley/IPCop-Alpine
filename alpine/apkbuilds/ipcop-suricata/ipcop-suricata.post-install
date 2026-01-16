@@ -32,9 +32,45 @@ if [ ! -f "/var/ipcop/suricata/suricata.yaml" ]; then
         cp /etc/suricata/suricata.yaml /var/ipcop/suricata/suricata.yaml
         chown root:lighttpd /var/ipcop/suricata/suricata.yaml
         chmod 0660 /var/ipcop/suricata/suricata.yaml
+        
+        # Suricata requires configuration via web interface before first start
+        # The restartsuricata helper will generate proper config with interfaces
+        echo "NOTE: Configure Suricata via web interface before enabling"
     else
-        echo "WARNING: /etc/suricata/suricata.yaml not found. Suricata may not start."
-        echo "Please install suricata package or manually create /var/ipcop/suricata/suricata.yaml"
+        echo "WARNING: /etc/suricata/suricata.yaml not found."
+        echo "Creating minimal placeholder - configure via web interface"
+        
+        # Create minimal YAML that won't start but won't fail package install
+        cat > /var/ipcop/suricata/suricata.yaml << 'EOF'
+%YAML 1.1
+---
+# Placeholder Suricata configuration for IPCop
+# This file will be regenerated when you configure Suricata via the web interface
+# DO NOT START SURICATA until configured via https://your-ipcop:8443/cgi-bin/suricata.cgi
+
+vars:
+  address-groups:
+    HOME_NET: "[192.168.0.0/16,10.0.0.0/8,172.16.0.0/12]"
+    EXTERNAL_NET: "!$HOME_NET"
+
+default-log-dir: /var/log/suricata
+
+# af-packet mode requires at least one interface
+# Will be configured via IPCop web interface
+af-packet: []
+
+outputs:
+  - fast:
+      enabled: yes
+      filename: fast.log
+
+rule-files:
+  - suricata.rules
+
+default-rule-path: /var/lib/suricata/rules
+EOF
+        chown root:lighttpd /var/ipcop/suricata/suricata.yaml
+        chmod 0660 /var/ipcop/suricata/suricata.yaml
     fi
 fi
 
@@ -42,6 +78,9 @@ fi
 # Files already installed to appropriate locations.
 
 
-# 3. Enable Service
-rc-update add suricata default
-echo "Suricata Configured."
+# 3. Service Management
+# NOTE: Suricata is NOT enabled by default
+# It will be enabled automatically when configured via the web interface
+# The restartsuricata helper handles service enablement based on ENABLED setting
+echo "Suricata package installed."
+echo "Configure Suricata via: https://your-ipcop-ip:8443/cgi-bin/suricata.cgi"

@@ -1,4 +1,4 @@
-[0;36m*** Created build workspace: /tmp/ipcop-build-XXXXcnBaCK[0;39m
+[0;36m*** Created build workspace: /tmp/ipcop-build-XXXXiffDgk[0;39m
 [0;36m*** Copying source files to workspace...[0;39m
 [0;32m*** Workspace ready[0;39m
 [0;36m*** Running on Alpine Linux 3.23.2[0;39m
@@ -7,135 +7,135 @@
 [0;36m*** Setting up build directories...[0;39m
 [0;32m*** Directories created[0;39m
 [0;36m*** Sanitizing line endings (CRLF -> LF)...[0;39m
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-installer/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-wireguard/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-openvpn/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-e2guardian/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-core/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-lang/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-suricata/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-squid/APKBUILD to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-wireguard/ipcop-wireguard.post-install to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-openvpn/ipcop-openvpn.post-install to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-e2guardian/ipcop-e2guardian.post-install to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-core/ipcop-core.post-install to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-suricata/ipcop-suricata.post-install to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-squid/ipcop-squid.post-install to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/wireguard/lib/wireguard-functions.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/wireguard/scripts/wireguardctrl.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/wireguard/html/cgi-bin/wireguard.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/openvpn/scripts/openvpn.sh to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/openvpn/html/cgi-bin/openvpn.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/suricata/html/cgi-bin/suricata.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/suricata/html/cgi-bin/logsuricata.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/scripts/makesquidconf.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/html/cgi-bin/proxystatus.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/html/cgi-bin/logproxy.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/html/cgi-bin/proxygraphs.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/squid/html/cgi-bin/proxy.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/e2guardian/scripts/blacklistupdate.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/e2guardian/html/cgi-bin/logurlfilter.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/services/e2guardian/html/cgi-bin/urlfilter.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/scheduler-lib.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/ipcop_paths.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/ddns-lib.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/traffic-lib.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/menu.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/vpn-functions.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/protocols.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/firewall-lib.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/header.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/general-functions.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/countries.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/DataAccess.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/lib/lang.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/updatemenu.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/upgrade.sh to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/install-diff.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/scheduler.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/monitorTraffic.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/puzzleFwRules.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/aggregatetraffic.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/flashfinal.sh to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/dhcpcd.sh to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/disk-partition.sh to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/ipcop-debug.sh to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/setddns.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/updatekernel.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/ipsecupdown.sh to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/readhash.sh to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/setreservedports.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/updatelists.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/scripts/makegraphs.pl to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/index.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/wireless.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/email.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/ipinfo.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/changepw.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/trafficadm.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/ddns.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/index.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/logfirewall.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/time.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/backupjs.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/sysinfo.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/hosts.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/gui.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/services.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/diag.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/logsummary.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/vpnca.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/connections.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/indexold.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/remote.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/modem.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/backup.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/ipsec.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/interfacestatus.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/shutdown.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/netstatus.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/servicegrps.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/webaccess.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/status.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/fwrules.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/upload.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/backupapi.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/dial.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/traffic.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/scheduler.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/graphs.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/aliases.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/graphdata.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/pppsetup.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/ifaces.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/graphsjs.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/credits.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/updates.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/addresses.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/dhcp.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/fwrulesadm.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/logsystem.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/iptablesgui.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/logconfig.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/addressgrps.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/html/cgi-bin/shaping.cgi to Unix format...
-dos2unix: converting file /tmp/ipcop-build-XXXXcnBaCK/source/core/var/ipcop/misc/install-settings.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-installer/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-wireguard/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-openvpn/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-e2guardian/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-core/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-lang/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-suricata/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-squid/APKBUILD to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-wireguard/ipcop-wireguard.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-openvpn/ipcop-openvpn.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-e2guardian/ipcop-e2guardian.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-core/ipcop-core.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-suricata/ipcop-suricata.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-squid/ipcop-squid.post-install to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/wireguard/lib/wireguard-functions.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/wireguard/scripts/wireguardctrl.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/wireguard/html/cgi-bin/wireguard.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/openvpn/scripts/openvpn.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/openvpn/html/cgi-bin/openvpn.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/suricata/html/cgi-bin/suricata.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/suricata/html/cgi-bin/logsuricata.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/squid/scripts/makesquidconf.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/squid/html/cgi-bin/proxystatus.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/squid/html/cgi-bin/logproxy.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/squid/html/cgi-bin/proxygraphs.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/squid/html/cgi-bin/proxy.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/e2guardian/scripts/blacklistupdate.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/e2guardian/html/cgi-bin/logurlfilter.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/services/e2guardian/html/cgi-bin/urlfilter.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/scheduler-lib.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/ipcop_paths.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/ddns-lib.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/traffic-lib.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/menu.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/vpn-functions.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/protocols.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/firewall-lib.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/header.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/general-functions.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/countries.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/DataAccess.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/lib/lang.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/updatemenu.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/upgrade.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/install-diff.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/scheduler.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/monitorTraffic.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/puzzleFwRules.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/aggregatetraffic.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/flashfinal.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/dhcpcd.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/disk-partition.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/ipcop-debug.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/setddns.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/updatekernel.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/ipsecupdown.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/readhash.sh to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/setreservedports.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/updatelists.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/scripts/makegraphs.pl to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/index.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/wireless.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/email.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/ipinfo.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/changepw.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/trafficadm.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/ddns.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/index.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/logfirewall.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/time.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/backupjs.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/sysinfo.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/hosts.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/gui.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/services.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/diag.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/logsummary.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/vpnca.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/connections.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/indexold.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/remote.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/modem.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/backup.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/ipsec.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/interfacestatus.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/shutdown.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/netstatus.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/servicegrps.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/webaccess.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/status.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/fwrules.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/upload.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/backupapi.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/dial.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/traffic.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/scheduler.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/graphs.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/aliases.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/graphdata.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/pppsetup.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/ifaces.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/graphsjs.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/credits.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/updates.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/addresses.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/dhcp.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/fwrulesadm.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/logsystem.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/iptablesgui.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/logconfig.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/addressgrps.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/html/cgi-bin/shaping.cgi to Unix format...
+dos2unix: converting file /tmp/ipcop-build-XXXXiffDgk/source/core/var/ipcop/misc/install-settings.sh to Unix format...
 [0;32m*** Sanitized[0;39m
 [0;36m*** Cleaning old packages...[0;39m
 [0;36m*** Cleaning abuild cache: /home/builder/packages/apkbuilds/aarch64[0;39m
-v3.23.2-171-gcf237c0f290 [http://dl-cdn.alpinelinux.org/alpine/v3.23/main]
-v3.23.2-178-g91f83f66d55 [http://dl-cdn.alpinelinux.org/alpine/v3.23/community]
-OK: 27422 distinct packages available
+v3.23.2-186-gcc9bc015d3f [http://dl-cdn.alpinelinux.org/alpine/v3.23/main]
+v3.23.2-179-g6a830ea9269 [http://dl-cdn.alpinelinux.org/alpine/v3.23/community]
+OK: 27423 distinct packages available
 [0;32m*** Old packages cleaned[0;39m
 [0;36m*** Building all IPCop Modular packages...[0;39m
 [0;36m*** Building package: ipcop-lang[0;39m
 >>> ipcop-lang: Cleaning up srcdir
 >>> ipcop-lang: Cleaning up pkgdir
 >>> ipcop-lang: Cleaning up tmpdir
->>> ipcop-lang: Building apkbuilds/ipcop-lang 2.2.0-r2 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:16:04 -0600
->>> ipcop-lang: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-lang/APKBUILD...
+>>> ipcop-lang: Building apkbuilds/ipcop-lang 2.2.0-r2 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:43:05 -0600
+>>> ipcop-lang: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-lang/APKBUILD...
 >>> ipcop-lang: Analyzing dependencies...
 WARNING: opening /home/builder/packages/apkbuilds/aarch64/APKINDEX.tar.gz: No such file or directory
 >>> ipcop-lang: Installing for build: build-base gettext
@@ -144,7 +144,7 @@ WARNING: opening /home/builder/packages/apkbuilds/aarch64/APKINDEX.tar.gz: No su
 (2/5) Installing gettext-libs (0.24.1-r1)
 (3/5) Installing libxml2 (2.13.9-r0)
 (4/5) Installing gettext (0.24.1-r1)
-(5/5) Installing .makedepends-ipcop-lang (20260114.121604)
+(5/5) Installing .makedepends-ipcop-lang (20260116.114305)
 Executing busybox-1.37.0-r30.trigger
 OK: 377.8 MiB in 128 packages
 >>> ipcop-lang: Cleaning up srcdir
@@ -164,12 +164,12 @@ OK: 377.8 MiB in 128 packages
 >>> ipcop-lang*: Compressing data...
 >>> ipcop-lang*: Create checksum...
 >>> ipcop-lang*: Create ipcop-lang-2.2.0-r2.apk
->>> ipcop-lang: Build complete at Wed, 14 Jan 2026 06:16:16 -0600 elapsed time 0h 0m 12s
+>>> ipcop-lang: Build complete at Fri, 16 Jan 2026 05:43:06 -0600 elapsed time 0h 0m 1s
 >>> ipcop-lang: Cleaning up srcdir
 >>> ipcop-lang: Cleaning up pkgdir
 >>> ipcop-lang: Cleaning up tmpdir
 >>> ipcop-lang: Uninstalling dependencies...
-(1/5) Purging .makedepends-ipcop-lang (20260114.121604)
+(1/5) Purging .makedepends-ipcop-lang (20260116.114305)
 (2/5) Purging gettext (0.24.1-r1)
 (3/5) Purging gettext-envsubst (0.24.1-r1)
 (4/5) Purging gettext-libs (0.24.1-r1)
@@ -178,23 +178,23 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> ipcop-lang: Updating the apkbuilds/aarch64 repository index...
 >>> ipcop-lang: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/ipcop-lang-2.2.0-r2.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-lang-2.2.0-r2.apk'
+'/home/builder/packages/apkbuilds/aarch64/ipcop-lang-2.2.0-r2.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/ipcop-lang-2.2.0-r2.apk'
 [0;32m*** Built: ipcop-lang[0;39m
 [0;36m*** Building package: perl-apache-htpasswd[0;39m
 >>> perl-apache-htpasswd: Cleaning up srcdir
 >>> perl-apache-htpasswd: Cleaning up pkgdir
 >>> perl-apache-htpasswd: Cleaning up tmpdir
 >>> perl-apache-htpasswd: Fetching https://cpan.metacpan.org/authors/id/K/KM/KMELTZ/Apache-Htpasswd-1.9.tar.gz
->>> perl-apache-htpasswd: Updating the sha512sums in /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD...
->>> perl-apache-htpasswd: Building apkbuilds/perl-apache-htpasswd 1.9-r0 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:16:16 -0600
->>> perl-apache-htpasswd: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD...
+>>> perl-apache-htpasswd: Updating the sha512sums in /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD...
+>>> perl-apache-htpasswd: Building apkbuilds/perl-apache-htpasswd 1.9-r0 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:43:06 -0600
+>>> perl-apache-htpasswd: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-apache-htpasswd/APKBUILD...
 >>> perl-apache-htpasswd: Analyzing dependencies...
 >>> perl-apache-htpasswd: Installing for build: build-base perl perl-dev
 (1/8) Installing libbz2 (1.0.8-r6)
 (2/8) Installing perl (5.42.0-r0)
 (3/8) Installing perl-utils (5.42.0-r0)
 (4/8) Installing perl-dev (5.42.0-r0)
-(5/8) Installing .makedepends-perl-apache-htpasswd (20260114.121616)
+(5/8) Installing .makedepends-perl-apache-htpasswd (20260116.114307)
 (6/8) Installing perl-error (0.17030-r0)
 (7/8) Installing perl-git (2.52.0-r0)
 (8/8) Installing git-perl (2.52.0-r0)
@@ -240,11 +240,11 @@ ok 20
 Test complete.
 >>> perl-apache-htpasswd: Entering fakeroot...
 Manifying 1 pod document
-Appending installation info to /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/lib/perl5/core_perl/perllocal.pod
-Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/share/perl5/vendor_perl/Apache/Htpasswd.pm
-Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/share/man/man3/Apache::Htpasswd.3pm
+Appending installation info to /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/lib/perl5/core_perl/perllocal.pod
+Installing /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/share/perl5/vendor_perl/Apache/Htpasswd.pm
+Installing /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd/usr/share/man/man3/Apache::Htpasswd.3pm
 >>> perl-apache-htpasswd-doc*: Running split function doc...
-'usr/share/man' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd-doc/usr/share/man'
+'usr/share/man' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-apache-htpasswd/pkg/perl-apache-htpasswd-doc/usr/share/man'
 >>> perl-apache-htpasswd-doc*: Preparing subpackage perl-apache-htpasswd-doc...
 >>> perl-apache-htpasswd-doc*: Running postcheck for perl-apache-htpasswd-doc
 >>> perl-apache-htpasswd*: Running postcheck for perl-apache-htpasswd
@@ -260,12 +260,12 @@ Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-apache-htpasswd/pkg
 >>> perl-apache-htpasswd*: Compressing data...
 >>> perl-apache-htpasswd*: Create checksum...
 >>> perl-apache-htpasswd*: Create perl-apache-htpasswd-1.9-r0.apk
->>> perl-apache-htpasswd: Build complete at Wed, 14 Jan 2026 06:17:03 -0600 elapsed time 0h 0m 47s
+>>> perl-apache-htpasswd: Build complete at Fri, 16 Jan 2026 05:43:09 -0600 elapsed time 0h 0m 3s
 >>> perl-apache-htpasswd: Cleaning up srcdir
 >>> perl-apache-htpasswd: Cleaning up pkgdir
 >>> perl-apache-htpasswd: Cleaning up tmpdir
 >>> perl-apache-htpasswd: Uninstalling dependencies...
-(1/8) Purging .makedepends-perl-apache-htpasswd (20260114.121616)
+(1/8) Purging .makedepends-perl-apache-htpasswd (20260116.114307)
 (2/8) Purging perl-dev (5.42.0-r0)
 (3/8) Purging perl-utils (5.42.0-r0)
 (4/8) Purging git-perl (2.52.0-r0)
@@ -277,24 +277,24 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> perl-apache-htpasswd: Updating the apkbuilds/aarch64 repository index...
 >>> perl-apache-htpasswd: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/perl-apache-htpasswd-1.9-r0.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/perl-apache-htpasswd-1.9-r0.apk'
-'/home/builder/packages/apkbuilds/aarch64/perl-apache-htpasswd-doc-1.9-r0.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/perl-apache-htpasswd-doc-1.9-r0.apk'
+'/home/builder/packages/apkbuilds/aarch64/perl-apache-htpasswd-1.9-r0.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/perl-apache-htpasswd-1.9-r0.apk'
+'/home/builder/packages/apkbuilds/aarch64/perl-apache-htpasswd-doc-1.9-r0.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/perl-apache-htpasswd-doc-1.9-r0.apk'
 [0;32m*** Built: perl-apache-htpasswd[0;39m
 [0;36m*** Building package: perl-net-ipv4addr[0;39m
 >>> perl-net-ipv4addr: Cleaning up srcdir
 >>> perl-net-ipv4addr: Cleaning up pkgdir
 >>> perl-net-ipv4addr: Cleaning up tmpdir
 >>> perl-net-ipv4addr: Fetching https://cpan.metacpan.org/authors/id/F/FR/FRAJULAC/Net-IPv4Addr-0.10.tar.gz
->>> perl-net-ipv4addr: Updating the sha512sums in /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD...
->>> perl-net-ipv4addr: Building apkbuilds/perl-net-ipv4addr 0.10-r0 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:17:04 -0600
->>> perl-net-ipv4addr: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD...
+>>> perl-net-ipv4addr: Updating the sha512sums in /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD...
+>>> perl-net-ipv4addr: Building apkbuilds/perl-net-ipv4addr 0.10-r0 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:43:09 -0600
+>>> perl-net-ipv4addr: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/APKBUILD...
 >>> perl-net-ipv4addr: Analyzing dependencies...
 >>> perl-net-ipv4addr: Installing for build: build-base perl perl-dev
 (1/8) Installing libbz2 (1.0.8-r6)
 (2/8) Installing perl (5.42.0-r0)
 (3/8) Installing perl-utils (5.42.0-r0)
 (4/8) Installing perl-dev (5.42.0-r0)
-(5/8) Installing .makedepends-perl-net-ipv4addr (20260114.121704)
+(5/8) Installing .makedepends-perl-net-ipv4addr (20260116.114310)
 (6/8) Installing perl-error (0.17030-r0)
 (7/8) Installing perl-git (2.52.0-r0)
 (8/8) Installing git-perl (2.52.0-r0)
@@ -322,8 +322,8 @@ Manifying 1 pod document
 PERL_DL_NONLAZY=1 "/usr/bin/perl" "-Iblib/lib" "-Iblib/arch" test.pl
 1..37
 # Running under perl version 5.042000 for linux
-# Current time local: Wed Jan 14 06:17:39 2026
-# Current time GMT:   Wed Jan 14 12:17:39 2026
+# Current time local: Fri Jan 16 05:43:13 2026
+# Current time GMT:   Fri Jan 16 11:43:13 2026
 # Using Test.pm version 1.31
 ok 1
 ok 2
@@ -367,14 +367,14 @@ ok 39
 >>> perl-net-ipv4addr: Entering fakeroot...
 Manifying 1 pod document
 Manifying 1 pod document
-Appending installation info to /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/lib/perl5/core_perl/perllocal.pod
-Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/perl5/vendor_perl/auto/Net/IPv4Addr/autosplit.ix
-Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/perl5/vendor_perl/Net/IPv4Addr.pm
-Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/man/man1/ipv4calc.1
-Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/man/man3/Net::IPv4Addr.3pm
-Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/bin/ipv4calc
+Appending installation info to /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/lib/perl5/core_perl/perllocal.pod
+Installing /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/perl5/vendor_perl/auto/Net/IPv4Addr/autosplit.ix
+Installing /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/perl5/vendor_perl/Net/IPv4Addr.pm
+Installing /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/man/man1/ipv4calc.1
+Installing /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/share/man/man3/Net::IPv4Addr.3pm
+Installing /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr/usr/bin/ipv4calc
 >>> perl-net-ipv4addr-doc*: Running split function doc...
-'usr/share/man' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr-doc/usr/share/man'
+'usr/share/man' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/perl-net-ipv4addr/pkg/perl-net-ipv4addr-doc/usr/share/man'
 >>> perl-net-ipv4addr-doc*: Preparing subpackage perl-net-ipv4addr-doc...
 >>> perl-net-ipv4addr-doc*: Running postcheck for perl-net-ipv4addr-doc
 >>> perl-net-ipv4addr*: Running postcheck for perl-net-ipv4addr
@@ -390,12 +390,12 @@ Installing /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/perl-net-ipv4addr/pkg/pe
 >>> perl-net-ipv4addr*: Compressing data...
 >>> perl-net-ipv4addr*: Create checksum...
 >>> perl-net-ipv4addr*: Create perl-net-ipv4addr-0.10-r0.apk
->>> perl-net-ipv4addr: Build complete at Wed, 14 Jan 2026 06:17:39 -0600 elapsed time 0h 0m 35s
+>>> perl-net-ipv4addr: Build complete at Fri, 16 Jan 2026 05:43:13 -0600 elapsed time 0h 0m 4s
 >>> perl-net-ipv4addr: Cleaning up srcdir
 >>> perl-net-ipv4addr: Cleaning up pkgdir
 >>> perl-net-ipv4addr: Cleaning up tmpdir
 >>> perl-net-ipv4addr: Uninstalling dependencies...
-(1/8) Purging .makedepends-perl-net-ipv4addr (20260114.121704)
+(1/8) Purging .makedepends-perl-net-ipv4addr (20260116.114310)
 (2/8) Purging perl-dev (5.42.0-r0)
 (3/8) Purging perl-utils (5.42.0-r0)
 (4/8) Purging git-perl (2.52.0-r0)
@@ -407,15 +407,15 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> perl-net-ipv4addr: Updating the apkbuilds/aarch64 repository index...
 >>> perl-net-ipv4addr: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/perl-net-ipv4addr-0.10-r0.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/perl-net-ipv4addr-0.10-r0.apk'
-'/home/builder/packages/apkbuilds/aarch64/perl-net-ipv4addr-doc-0.10-r0.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/perl-net-ipv4addr-doc-0.10-r0.apk'
+'/home/builder/packages/apkbuilds/aarch64/perl-net-ipv4addr-0.10-r0.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/perl-net-ipv4addr-0.10-r0.apk'
+'/home/builder/packages/apkbuilds/aarch64/perl-net-ipv4addr-doc-0.10-r0.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/perl-net-ipv4addr-doc-0.10-r0.apk'
 [0;32m*** Built: perl-net-ipv4addr[0;39m
 [0;36m*** Building package: ipcop-core[0;39m
 >>> ipcop-core: Cleaning up srcdir
 >>> ipcop-core: Cleaning up pkgdir
 >>> ipcop-core: Cleaning up tmpdir
->>> ipcop-core: Building apkbuilds/ipcop-core 2.2.0-r3 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:17:39 -0600
->>> ipcop-core: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-core/APKBUILD...
+>>> ipcop-core: Building apkbuilds/ipcop-core 2.2.0-r3 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:43:13 -0600
+>>> ipcop-core: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-core/APKBUILD...
 >>> WARNING: ipcop-core: ipcop-core.post-install: found chown
              Permissions should be fixed in APKBUILD package()
 >>> WARNING: ipcop-core: ipcop-core.post-install: found chmod
@@ -622,10 +622,10 @@ OK: 372.0 MiB in 123 packages
 (188/197) Installing libusb (1.0.29-r0)
 (189/197) Installing libusb-dev (1.0.29-r0)
 (190/197) Installing zlib-dev (1.3.1-r2)
-(191/197) Installing xz (5.8.1-r0)
+(191/197) Installing xz (5.8.2-r0)
 (192/197) Installing gettext-asprintf (0.24.1-r1)
 (193/197) Installing gettext-dev (0.24.1-r1)
-(194/197) Installing .makedepends-ipcop-core (20260114.121739)
+(194/197) Installing .makedepends-ipcop-core (20260116.114313)
 (195/197) Installing perl-error (0.17030-r0)
 (196/197) Installing perl-git (2.52.0-r0)
 (197/197) Installing git-perl (2.52.0-r0)
@@ -719,12 +719,12 @@ gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-u
 >>> ipcop-core*: Compressing data...
 >>> ipcop-core*: Create checksum...
 >>> ipcop-core*: Create ipcop-core-2.2.0-r3.apk
->>> ipcop-core: Build complete at Wed, 14 Jan 2026 06:24:10 -0600 elapsed time 0h 6m 31s
+>>> ipcop-core: Build complete at Fri, 16 Jan 2026 05:43:34 -0600 elapsed time 0h 0m 21s
 >>> ipcop-core: Cleaning up srcdir
 >>> ipcop-core: Cleaning up pkgdir
 >>> ipcop-core: Cleaning up tmpdir
 >>> ipcop-core: Uninstalling dependencies...
-(  1/197) Purging .makedepends-ipcop-core (20260114.121739)
+(  1/197) Purging .makedepends-ipcop-core (20260116.114313)
 (  2/197) Purging lighttpd-openrc (1.4.82-r0)
 (  3/197) Purging lighttpd (1.4.82-r0)
 (  4/197) Purging bash (5.3.3-r1)
@@ -839,7 +839,7 @@ gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-u
 (110/197) Purging libusb (1.0.29-r0)
 (111/197) Purging zlib-dev (1.3.1-r2)
 (112/197) Purging gettext-dev (0.24.1-r1)
-(113/197) Purging xz (5.8.1-r0)
+(113/197) Purging xz (5.8.2-r0)
 (114/197) Purging gettext-asprintf (0.24.1-r1)
 (115/197) Purging gettext (0.24.1-r1)
 (116/197) Purging gettext-envsubst (0.24.1-r1)
@@ -928,14 +928,14 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> ipcop-core: Updating the apkbuilds/aarch64 repository index...
 >>> ipcop-core: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/ipcop-core-2.2.0-r3.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-core-2.2.0-r3.apk'
+'/home/builder/packages/apkbuilds/aarch64/ipcop-core-2.2.0-r3.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/ipcop-core-2.2.0-r3.apk'
 [0;32m*** Built: ipcop-core[0;39m
 [0;36m*** Building package: ipcop-installer[0;39m
 >>> ipcop-installer: Cleaning up srcdir
 >>> ipcop-installer: Cleaning up pkgdir
 >>> ipcop-installer: Cleaning up tmpdir
->>> ipcop-installer: Building apkbuilds/ipcop-installer 2.2.0-r1 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:24:10 -0600
->>> ipcop-installer: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-installer/APKBUILD...
+>>> ipcop-installer: Building apkbuilds/ipcop-installer 2.2.0-r1 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:43:34 -0600
+>>> ipcop-installer: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-installer/APKBUILD...
 >>> ipcop-installer: Analyzing dependencies...
 >>> ipcop-installer: Installing for build: build-base ipcop-core newt slang pciutils libusb zlib parted newt-dev slang-dev pciutils-dev libusb-dev zlib-dev gettext-dev parted-dev
 (  1/200) Installing libdbi (0.9.0-r5)
@@ -1136,11 +1136,13 @@ OK: 372.0 MiB in 123 packages
   * Net::IPv4Addr is up to date. (0.10)
   * Creating IPCop directory structure...
   * Applying Permissions (root:lighttpd 2770)...
+  *  * service crond deleted from runlevel default
+  *  * service dnsmasq deleted from runlevel default
   *  * rc-update: ipcop-firewall already installed in runlevel `default'; skipping
   *  * rc-update: ipcop-network already installed in runlevel `default'; skipping
   *  * rc-update: lighttpd already installed in runlevel `default'; skipping
   *  * rc-update: service `fcron' does not exist
-  *  * rc-update: dnsmasq already installed in runlevel `default'; skipping
+  *  * service dnsmasq added to runlevel default
   *  * rc-update: sshd already installed in runlevel `default'; skipping
   *  * rc-update: rsyslog already installed in runlevel `boot'; skipping
   *  * rc-update: collectd already installed in runlevel `default'; skipping
@@ -1157,11 +1159,11 @@ OK: 372.0 MiB in 123 packages
 (190/200) Installing pciutils-dev (3.14.0-r0)
 (191/200) Installing libusb-dev (1.0.29-r0)
 (192/200) Installing zlib-dev (1.3.1-r2)
-(193/200) Installing xz (5.8.1-r0)
+(193/200) Installing xz (5.8.2-r0)
 (194/200) Installing gettext-asprintf (0.24.1-r1)
 (195/200) Installing gettext-dev (0.24.1-r1)
 (196/200) Installing parted-dev (3.6-r2)
-(197/200) Installing .makedepends-ipcop-installer (20260114.122410)
+(197/200) Installing .makedepends-ipcop-installer (20260116.114334)
 (198/200) Installing perl-error (0.17030-r0)
 (199/200) Installing perl-git (2.52.0-r0)
 (200/200) Installing git-perl (2.52.0-r0)
@@ -1230,12 +1232,12 @@ cc -Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs -no-pie -Os -fs
 >>> ipcop-installer*: Compressing data...
 >>> ipcop-installer*: Create checksum...
 >>> ipcop-installer*: Create ipcop-installer-2.2.0-r1.apk
->>> ipcop-installer: Build complete at Wed, 14 Jan 2026 06:27:13 -0600 elapsed time 0h 3m 3s
+>>> ipcop-installer: Build complete at Fri, 16 Jan 2026 05:43:57 -0600 elapsed time 0h 0m 23s
 >>> ipcop-installer: Cleaning up srcdir
 >>> ipcop-installer: Cleaning up pkgdir
 >>> ipcop-installer: Cleaning up tmpdir
 >>> ipcop-installer: Uninstalling dependencies...
-(  1/200) Purging .makedepends-ipcop-installer (20260114.122410)
+(  1/200) Purging .makedepends-ipcop-installer (20260116.114334)
 (  2/200) Purging ipcop-core (2.2.0-r3)
 (  3/200) Purging lighttpd-openrc (1.4.82-r0)
 (  4/200) Purging lighttpd (1.4.82-r0)
@@ -1351,7 +1353,7 @@ cc -Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs -no-pie -Os -fs
 (111/200) Purging libusb (1.0.29-r0)
 (112/200) Purging zlib-dev (1.3.1-r2)
 (113/200) Purging gettext-dev (0.24.1-r1)
-(114/200) Purging xz (5.8.1-r0)
+(114/200) Purging xz (5.8.2-r0)
 (115/200) Purging gettext-asprintf (0.24.1-r1)
 (116/200) Purging gettext (0.24.1-r1)
 (117/200) Purging gettext-envsubst (0.24.1-r1)
@@ -1442,14 +1444,14 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> ipcop-installer: Updating the apkbuilds/aarch64 repository index...
 >>> ipcop-installer: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/ipcop-installer-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-installer-2.2.0-r1.apk'
+'/home/builder/packages/apkbuilds/aarch64/ipcop-installer-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/ipcop-installer-2.2.0-r1.apk'
 [0;32m*** Built: ipcop-installer[0;39m
 [0;36m*** Building package: ipcop-squid[0;39m
 >>> ipcop-squid: Cleaning up srcdir
 >>> ipcop-squid: Cleaning up pkgdir
 >>> ipcop-squid: Cleaning up tmpdir
->>> ipcop-squid: Building apkbuilds/ipcop-squid 2.2.0-r2 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:27:13 -0600
->>> ipcop-squid: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-squid/APKBUILD...
+>>> ipcop-squid: Building apkbuilds/ipcop-squid 2.2.0-r2 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:43:57 -0600
+>>> ipcop-squid: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-squid/APKBUILD...
 >>> WARNING: ipcop-squid: ipcop-squid.post-install: found chown
              Permissions should be fixed in APKBUILD package()
 >>> WARNING: ipcop-squid: ipcop-squid.post-install: found chmod
@@ -1654,11 +1656,12 @@ OK: 372.0 MiB in 123 packages
   * Net::IPv4Addr is up to date. (0.10)
   * Creating IPCop directory structure...
   * Applying Permissions (root:lighttpd 2770)...
+  *  * service dnsmasq deleted from runlevel default
   *  * rc-update: ipcop-firewall already installed in runlevel `default'; skipping
   *  * rc-update: ipcop-network already installed in runlevel `default'; skipping
   *  * rc-update: lighttpd already installed in runlevel `default'; skipping
   *  * rc-update: service `fcron' does not exist
-  *  * rc-update: dnsmasq already installed in runlevel `default'; skipping
+  *  * service dnsmasq added to runlevel default
   *  * rc-update: sshd already installed in runlevel `default'; skipping
   *  * rc-update: rsyslog already installed in runlevel `boot'; skipping
   *  * rc-update: collectd already installed in runlevel `default'; skipping
@@ -1670,7 +1673,7 @@ OK: 372.0 MiB in 123 packages
 (185/190) Installing squid (7.3-r0)
   Executing squid-7.3-r0.pre-install
 (186/190) Installing squid-openrc (7.3-r0)
-(187/190) Installing .makedepends-ipcop-squid (20260114.122714)
+(187/190) Installing .makedepends-ipcop-squid (20260116.114357)
 (188/190) Installing perl-error (0.17030-r0)
 (189/190) Installing perl-git (2.52.0-r0)
 (190/190) Installing git-perl (2.52.0-r0)
@@ -1701,12 +1704,12 @@ gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-u
 >>> ipcop-squid*: Compressing data...
 >>> ipcop-squid*: Create checksum...
 >>> ipcop-squid*: Create ipcop-squid-2.2.0-r2.apk
->>> ipcop-squid: Build complete at Wed, 14 Jan 2026 06:30:08 -0600 elapsed time 0h 2m 55s
+>>> ipcop-squid: Build complete at Fri, 16 Jan 2026 05:44:18 -0600 elapsed time 0h 0m 21s
 >>> ipcop-squid: Cleaning up srcdir
 >>> ipcop-squid: Cleaning up pkgdir
 >>> ipcop-squid: Cleaning up tmpdir
 >>> ipcop-squid: Uninstalling dependencies...
-(  1/190) Purging .makedepends-ipcop-squid (20260114.122714)
+(  1/190) Purging .makedepends-ipcop-squid (20260116.114357)
 (  2/190) Purging ipcop-core (2.2.0-r3)
 (  3/190) Purging lighttpd-openrc (1.4.82-r0)
 (  4/190) Purging lighttpd (1.4.82-r0)
@@ -1903,14 +1906,14 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> ipcop-squid: Updating the apkbuilds/aarch64 repository index...
 >>> ipcop-squid: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/ipcop-squid-2.2.0-r2.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-squid-2.2.0-r2.apk'
+'/home/builder/packages/apkbuilds/aarch64/ipcop-squid-2.2.0-r2.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/ipcop-squid-2.2.0-r2.apk'
 [0;32m*** Built: ipcop-squid[0;39m
 [0;36m*** Building package: ipcop-e2guardian[0;39m
 >>> ipcop-e2guardian: Cleaning up srcdir
 >>> ipcop-e2guardian: Cleaning up pkgdir
 >>> ipcop-e2guardian: Cleaning up tmpdir
->>> ipcop-e2guardian: Building apkbuilds/ipcop-e2guardian 2.2.0-r1 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:30:08 -0600
->>> ipcop-e2guardian: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-e2guardian/APKBUILD...
+>>> ipcop-e2guardian: Building apkbuilds/ipcop-e2guardian 2.2.0-r1 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:44:18 -0600
+>>> ipcop-e2guardian: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-e2guardian/APKBUILD...
 >>> WARNING: ipcop-e2guardian: ipcop-e2guardian.post-install: found chown
              Permissions should be fixed in APKBUILD package()
 >>> WARNING: ipcop-e2guardian: ipcop-e2guardian.post-install: found chmod
@@ -2115,11 +2118,12 @@ OK: 372.0 MiB in 123 packages
   * Net::IPv4Addr is up to date. (0.10)
   * Creating IPCop directory structure...
   * Applying Permissions (root:lighttpd 2770)...
+  *  * service dnsmasq deleted from runlevel default
   *  * rc-update: ipcop-firewall already installed in runlevel `default'; skipping
   *  * rc-update: ipcop-network already installed in runlevel `default'; skipping
   *  * rc-update: lighttpd already installed in runlevel `default'; skipping
   *  * rc-update: service `fcron' does not exist
-  *  * rc-update: dnsmasq already installed in runlevel `default'; skipping
+  *  * service dnsmasq added to runlevel default
   *  * rc-update: sshd already installed in runlevel `default'; skipping
   *  * rc-update: rsyslog already installed in runlevel `boot'; skipping
   *  * rc-update: collectd already installed in runlevel `default'; skipping
@@ -2130,7 +2134,7 @@ OK: 372.0 MiB in 123 packages
 (184/189) Installing e2guardian (5.5.9r-r0)
   Executing e2guardian-5.5.9r-r0.pre-install
 (185/189) Installing e2guardian-openrc (5.5.9r-r0)
-(186/189) Installing .makedepends-ipcop-e2guardian (20260114.123008)
+(186/189) Installing .makedepends-ipcop-e2guardian (20260116.114419)
 (187/189) Installing perl-error (0.17030-r0)
 (188/189) Installing perl-git (2.52.0-r0)
 (189/189) Installing git-perl (2.52.0-r0)
@@ -2154,12 +2158,12 @@ OK: 509.5 MiB in 312 packages
 >>> ipcop-e2guardian*: Compressing data...
 >>> ipcop-e2guardian*: Create checksum...
 >>> ipcop-e2guardian*: Create ipcop-e2guardian-2.2.0-r1.apk
->>> ipcop-e2guardian: Build complete at Wed, 14 Jan 2026 06:32:30 -0600 elapsed time 0h 2m 22s
+>>> ipcop-e2guardian: Build complete at Fri, 16 Jan 2026 05:44:42 -0600 elapsed time 0h 0m 24s
 >>> ipcop-e2guardian: Cleaning up srcdir
 >>> ipcop-e2guardian: Cleaning up pkgdir
 >>> ipcop-e2guardian: Cleaning up tmpdir
 >>> ipcop-e2guardian: Uninstalling dependencies...
-(  1/189) Purging .makedepends-ipcop-e2guardian (20260114.123008)
+(  1/189) Purging .makedepends-ipcop-e2guardian (20260116.114419)
 (  2/189) Purging ipcop-core (2.2.0-r3)
 (  3/189) Purging lighttpd-openrc (1.4.82-r0)
 (  4/189) Purging lighttpd (1.4.82-r0)
@@ -2355,14 +2359,14 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> ipcop-e2guardian: Updating the apkbuilds/aarch64 repository index...
 >>> ipcop-e2guardian: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/ipcop-e2guardian-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-e2guardian-2.2.0-r1.apk'
+'/home/builder/packages/apkbuilds/aarch64/ipcop-e2guardian-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/ipcop-e2guardian-2.2.0-r1.apk'
 [0;32m*** Built: ipcop-e2guardian[0;39m
 [0;36m*** Building package: ipcop-suricata[0;39m
 >>> ipcop-suricata: Cleaning up srcdir
 >>> ipcop-suricata: Cleaning up pkgdir
 >>> ipcop-suricata: Cleaning up tmpdir
->>> ipcop-suricata: Building apkbuilds/ipcop-suricata 2.2.0-r1 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:32:31 -0600
->>> ipcop-suricata: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-suricata/APKBUILD...
+>>> ipcop-suricata: Building apkbuilds/ipcop-suricata 2.2.0-r1 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:44:42 -0600
+>>> ipcop-suricata: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-suricata/APKBUILD...
 >>> WARNING: ipcop-suricata: ipcop-suricata.post-install: found chown
              Permissions should be fixed in APKBUILD package()
 >>> WARNING: ipcop-suricata: ipcop-suricata.post-install: found chmod
@@ -2567,11 +2571,12 @@ OK: 372.0 MiB in 123 packages
   * Net::IPv4Addr is up to date. (0.10)
   * Creating IPCop directory structure...
   * Applying Permissions (root:lighttpd 2770)...
+  *  * service dnsmasq deleted from runlevel default
   *  * rc-update: ipcop-firewall already installed in runlevel `default'; skipping
   *  * rc-update: ipcop-network already installed in runlevel `default'; skipping
   *  * rc-update: lighttpd already installed in runlevel `default'; skipping
   *  * rc-update: service `fcron' does not exist
-  *  * rc-update: dnsmasq already installed in runlevel `default'; skipping
+  *  * service dnsmasq added to runlevel default
   *  * rc-update: sshd already installed in runlevel `default'; skipping
   *  * rc-update: rsyslog already installed in runlevel `boot'; skipping
   *  * rc-update: collectd already installed in runlevel `default'; skipping
@@ -2594,53 +2599,53 @@ OK: 372.0 MiB in 123 packages
 (196/202) Installing libpcap (1.10.5-r1)
 (197/202) Installing suricata (8.0.0-r0)
   Executing suricata-8.0.0-r0.post-install
-  * 14/1/2026 -- 06:36:25 - <Info> -- Using data-directory /var/lib/suricata.
-  * 14/1/2026 -- 06:36:25 - <Info> -- Using /usr/share/suricata/rules for Suricata provided rules.
-  * 14/1/2026 -- 06:36:25 - <Info> -- Found Suricata version 8.0.0 at /usr/bin/suricata.
-  * 14/1/2026 -- 06:36:25 - <Info> -- Loading /etc/suricata/suricata.yaml
-  * 14/1/2026 -- 06:36:25 - <Info> -- Disabling rules for protocol pgsql
-  * 14/1/2026 -- 06:36:25 - <Info> -- Disabling rules for protocol modbus
-  * 14/1/2026 -- 06:36:25 - <Info> -- Disabling rules for protocol dnp3
-  * 14/1/2026 -- 06:36:25 - <Info> -- Disabling rules for protocol enip
-  * 14/1/2026 -- 06:36:25 - <Info> -- No sources configured, will use Emerging Threats Open
-  * 14/1/2026 -- 06:36:25 - <Info> -- Checking https://rules.emergingthreats.net/open/suricata-8.0.0/emerging.rules.tar.gz.md5.
-  * 14/1/2026 -- 06:36:27 - <Info> -- Fetching https://rules.emergingthreats.net/open/suricata-8.0.0/emerging.rules.tar.gz.
-  * 14/1/2026 -- 06:36:39 - <Info> -- Done.
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/app-layer-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/decoder-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dhcp-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dnp3-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dns-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/files.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/http2-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/http-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ipsec-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/kerberos-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/modbus-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/mqtt-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/nfs-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ntp-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/quic-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/rfb-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/smb-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/smtp-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ssh-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/stream-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/tls-events.rules
-  * 14/1/2026 -- 06:36:39 - <Info> -- Ignoring file b3a62191660c4b770056372c69bc7439/rules/emerging-deleted.rules
-  * 14/1/2026 -- 06:36:40 - <Info> -- Loaded 63476 rules.
-  * 14/1/2026 -- 06:36:40 - <Info> -- Disabled 13 rules.
-  * 14/1/2026 -- 06:36:40 - <Info> -- Enabled 0 rules.
-  * 14/1/2026 -- 06:36:40 - <Info> -- Modified 0 rules.
-  * 14/1/2026 -- 06:36:40 - <Info> -- Dropped 0 rules.
-  * 14/1/2026 -- 06:36:40 - <Info> -- Enabled 136 rules for flowbit dependencies.
-  * 14/1/2026 -- 06:36:40 - <Info> -- Backing up current rules.
-  * 14/1/2026 -- 06:36:43 - <Info> -- Writing rules to /var/lib/suricata/rules/suricata.rules: total: 63476; enabled: 47646; added: 16; removed 1; modified: 1280
-  * 14/1/2026 -- 06:36:43 - <Info> -- Writing /var/lib/suricata/rules/classification.config
-  * 14/1/2026 -- 06:36:43 - <Info> -- Skipping test, disabled by configuration.
-  * 14/1/2026 -- 06:36:43 - <Info> -- Done.
+  * 16/1/2026 -- 05:45:06 - <Info> -- Using data-directory /var/lib/suricata.
+  * 16/1/2026 -- 05:45:06 - <Info> -- Using /usr/share/suricata/rules for Suricata provided rules.
+  * 16/1/2026 -- 05:45:06 - <Info> -- Found Suricata version 8.0.0 at /usr/bin/suricata.
+  * 16/1/2026 -- 05:45:06 - <Info> -- Loading /etc/suricata/suricata.yaml
+  * 16/1/2026 -- 05:45:06 - <Info> -- Disabling rules for protocol pgsql
+  * 16/1/2026 -- 05:45:06 - <Info> -- Disabling rules for protocol modbus
+  * 16/1/2026 -- 05:45:06 - <Info> -- Disabling rules for protocol dnp3
+  * 16/1/2026 -- 05:45:06 - <Info> -- Disabling rules for protocol enip
+  * 16/1/2026 -- 05:45:06 - <Info> -- No sources configured, will use Emerging Threats Open
+  * 16/1/2026 -- 05:45:06 - <Info> -- Checking https://rules.emergingthreats.net/open/suricata-8.0.0/emerging.rules.tar.gz.md5.
+  * 16/1/2026 -- 05:45:08 - <Info> -- Fetching https://rules.emergingthreats.net/open/suricata-8.0.0/emerging.rules.tar.gz.
+  * 16/1/2026 -- 05:45:30 - <Info> -- Done.
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/app-layer-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/decoder-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dhcp-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dnp3-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/dns-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/files.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/http2-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/http-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ipsec-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/kerberos-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/modbus-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/mqtt-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/nfs-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ntp-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/quic-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/rfb-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/smb-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/smtp-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/ssh-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/stream-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Loading distribution rule file /usr/share/suricata/rules/tls-events.rules
+  * 16/1/2026 -- 05:45:30 - <Info> -- Ignoring file b3a62191660c4b770056372c69bc7439/rules/emerging-deleted.rules
+  * 16/1/2026 -- 05:45:32 - <Info> -- Loaded 63506 rules.
+  * 16/1/2026 -- 05:45:32 - <Info> -- Disabled 13 rules.
+  * 16/1/2026 -- 05:45:32 - <Info> -- Enabled 0 rules.
+  * 16/1/2026 -- 05:45:32 - <Info> -- Modified 0 rules.
+  * 16/1/2026 -- 05:45:32 - <Info> -- Dropped 0 rules.
+  * 16/1/2026 -- 05:45:32 - <Info> -- Enabled 136 rules for flowbit dependencies.
+  * 16/1/2026 -- 05:45:32 - <Info> -- Backing up current rules.
+  * 16/1/2026 -- 05:45:37 - <Info> -- Writing rules to /var/lib/suricata/rules/suricata.rules: total: 63506; enabled: 47674; added: 32; removed 2; modified: 1288
+  * 16/1/2026 -- 05:45:37 - <Info> -- Writing /var/lib/suricata/rules/classification.config
+  * 16/1/2026 -- 05:45:37 - <Info> -- Skipping test, disabled by configuration.
+  * 16/1/2026 -- 05:45:37 - <Info> -- Done.
 (198/202) Installing suricata-openrc (8.0.0-r0)
-(199/202) Installing .makedepends-ipcop-suricata (20260114.123231)
+(199/202) Installing .makedepends-ipcop-suricata (20260116.114442)
 (200/202) Installing perl-error (0.17030-r0)
 (201/202) Installing perl-git (2.52.0-r0)
 (202/202) Installing git-perl (2.52.0-r0)
@@ -2650,12 +2655,10 @@ OK: 561.4 MiB in 325 packages
 >>> ipcop-suricata: Cleaning up srcdir
 >>> ipcop-suricata: Cleaning up pkgdir
 >>> ipcop-suricata: Cleaning up tmpdir
-make: Warning: File 'restartsuricata.c' has modification time 107879 s in the future
 gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c setuid.c -o setuid.o
 gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c helper.c -o helper.o
 gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c helper_backup.c -o helper_backup.o
 gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' restartsuricata.c setuid.o helper.o helper_backup.o -o restartsuricata -lcrypt
-make: warning:  Clock skew detected.  Your build may be incomplete.
 >>> WARNING: ipcop-suricata: APKBUILD does not run any tests!
     Alpine policy will soon require that packages have any relevant testsuites run during the build process.
     To fix, either define a check() function, or declare !check in $options to indicate the package does not have a testsuite.
@@ -2676,12 +2679,12 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 >>> ipcop-suricata*: Compressing data...
 >>> ipcop-suricata*: Create checksum...
 >>> ipcop-suricata*: Create ipcop-suricata-2.2.0-r1.apk
->>> ipcop-suricata: Build complete at Wed, 14 Jan 2026 06:36:45 -0600 elapsed time 0h 4m 14s
+>>> ipcop-suricata: Build complete at Fri, 16 Jan 2026 05:45:38 -0600 elapsed time 0h 0m 56s
 >>> ipcop-suricata: Cleaning up srcdir
 >>> ipcop-suricata: Cleaning up pkgdir
 >>> ipcop-suricata: Cleaning up tmpdir
 >>> ipcop-suricata: Uninstalling dependencies...
-(  1/202) Purging .makedepends-ipcop-suricata (20260114.123231)
+(  1/202) Purging .makedepends-ipcop-suricata (20260116.114442)
 (  2/202) Purging ipcop-core (2.2.0-r3)
 (  3/202) Purging lighttpd-openrc (1.4.82-r0)
 (  4/202) Purging lighttpd (1.4.82-r0)
@@ -2890,14 +2893,14 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> ipcop-suricata: Updating the apkbuilds/aarch64 repository index...
 >>> ipcop-suricata: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/ipcop-suricata-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-suricata-2.2.0-r1.apk'
+'/home/builder/packages/apkbuilds/aarch64/ipcop-suricata-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/ipcop-suricata-2.2.0-r1.apk'
 [0;32m*** Built: ipcop-suricata[0;39m
 [0;36m*** Building package: ipcop-wireguard[0;39m
 >>> ipcop-wireguard: Cleaning up srcdir
 >>> ipcop-wireguard: Cleaning up pkgdir
 >>> ipcop-wireguard: Cleaning up tmpdir
->>> ipcop-wireguard: Building apkbuilds/ipcop-wireguard 2.2.0-r1 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:36:45 -0600
->>> ipcop-wireguard: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-wireguard/APKBUILD...
+>>> ipcop-wireguard: Building apkbuilds/ipcop-wireguard 2.2.0-r1 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:45:38 -0600
+>>> ipcop-wireguard: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-wireguard/APKBUILD...
 >>> WARNING: ipcop-wireguard: ipcop-wireguard.post-install: found chown
              Permissions should be fixed in APKBUILD package()
 >>> WARNING: ipcop-wireguard: ipcop-wireguard.post-install: found chmod
@@ -3102,11 +3105,12 @@ OK: 372.0 MiB in 123 packages
   * Net::IPv4Addr is up to date. (0.10)
   * Creating IPCop directory structure...
   * Applying Permissions (root:lighttpd 2770)...
+  *  * service dnsmasq deleted from runlevel default
   *  * rc-update: ipcop-firewall already installed in runlevel `default'; skipping
   *  * rc-update: ipcop-network already installed in runlevel `default'; skipping
   *  * rc-update: lighttpd already installed in runlevel `default'; skipping
   *  * rc-update: service `fcron' does not exist
-  *  * rc-update: dnsmasq already installed in runlevel `default'; skipping
+  *  * service dnsmasq added to runlevel default
   *  * rc-update: sshd already installed in runlevel `default'; skipping
   *  * rc-update: rsyslog already installed in runlevel `boot'; skipping
   *  * rc-update: collectd already installed in runlevel `default'; skipping
@@ -3125,7 +3129,7 @@ OK: 372.0 MiB in 123 packages
   * And then call it instead:
   *     rc-service wg-quick.wg0 start
   * 
-(188/191) Installing .makedepends-ipcop-wireguard (20260114.123646)
+(188/191) Installing .makedepends-ipcop-wireguard (20260116.114538)
 (189/191) Installing perl-error (0.17030-r0)
 (190/191) Installing perl-git (2.52.0-r0)
 (191/191) Installing git-perl (2.52.0-r0)
@@ -3152,12 +3156,12 @@ OK: 505.8 MiB in 314 packages
 >>> ipcop-wireguard*: Compressing data...
 >>> ipcop-wireguard*: Create checksum...
 >>> ipcop-wireguard*: Create ipcop-wireguard-2.2.0-r1.apk
->>> ipcop-wireguard: Build complete at Wed, 14 Jan 2026 06:39:12 -0600 elapsed time 0h 2m 27s
+>>> ipcop-wireguard: Build complete at Fri, 16 Jan 2026 05:45:55 -0600 elapsed time 0h 0m 17s
 >>> ipcop-wireguard: Cleaning up srcdir
 >>> ipcop-wireguard: Cleaning up pkgdir
 >>> ipcop-wireguard: Cleaning up tmpdir
 >>> ipcop-wireguard: Uninstalling dependencies...
-(  1/191) Purging .makedepends-ipcop-wireguard (20260114.123646)
+(  1/191) Purging .makedepends-ipcop-wireguard (20260116.114538)
 (  2/191) Purging ipcop-core (2.2.0-r3)
 (  3/191) Purging lighttpd-openrc (1.4.82-r0)
 (  4/191) Purging lighttpd (1.4.82-r0)
@@ -3355,14 +3359,14 @@ Executing busybox-1.37.0-r30.trigger
 OK: 372.0 MiB in 123 packages
 >>> ipcop-wireguard: Updating the apkbuilds/aarch64 repository index...
 >>> ipcop-wireguard: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/ipcop-wireguard-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-wireguard-2.2.0-r1.apk'
+'/home/builder/packages/apkbuilds/aarch64/ipcop-wireguard-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXiffDgk/alpine/packages/aarch64/ipcop-wireguard-2.2.0-r1.apk'
 [0;32m*** Built: ipcop-wireguard[0;39m
 [0;36m*** Building package: ipcop-openvpn[0;39m
 >>> ipcop-openvpn: Cleaning up srcdir
 >>> ipcop-openvpn: Cleaning up pkgdir
 >>> ipcop-openvpn: Cleaning up tmpdir
->>> ipcop-openvpn: Building apkbuilds/ipcop-openvpn 2.2.0-r1 (using abuild 3.16.0-r0) started Wed, 14 Jan 2026 06:39:12 -0600
->>> ipcop-openvpn: Validating /tmp/ipcop-build-XXXXcnBaCK/alpine/apkbuilds/ipcop-openvpn/APKBUILD...
+>>> ipcop-openvpn: Building apkbuilds/ipcop-openvpn 2.2.0-r1 (using abuild 3.16.0-r0) started Fri, 16 Jan 2026 05:45:55 -0600
+>>> ipcop-openvpn: Validating /tmp/ipcop-build-XXXXiffDgk/alpine/apkbuilds/ipcop-openvpn/APKBUILD...
 >>> WARNING: ipcop-openvpn: ipcop-openvpn.post-install: found chown
              Permissions should be fixed in APKBUILD package()
 >>> WARNING: ipcop-openvpn: ipcop-openvpn.post-install: found chmod
@@ -3449,377 +3453,3 @@ OK: 372.0 MiB in 123 packages
 ( 73/187) Installing eudev-libs (3.2.14-r6)
 ( 74/187) Installing collectd-disk (5.12.0-r23)
 ( 75/187) Installing perl (5.42.0-r0)
-( 76/187) Installing perl-html-tagset (3.24-r0)
-( 77/187) Installing perl-clone (0.47-r1)
-( 78/187) Installing perl-http-date (6.06-r0)
-( 79/187) Installing perl-uri (5.28-r0)
-( 80/187) Installing perl-io-html (1.004-r1)
-( 81/187) Installing perl-encode-locale (1.05-r5)
-( 82/187) Installing perl-lwp-mediatypes (6.04-r3)
-( 83/187) Installing perl-http-message (7.01-r0)
-( 84/187) Installing perl-html-parser (3.83-r1)
-( 85/187) Installing perl-cgi (4.71-r0)
-( 86/187) Installing gettext-envsubst (0.24.1-r1)
-( 87/187) Installing gettext-libs (0.24.1-r1)
-( 88/187) Installing gettext (0.24.1-r1)
-( 89/187) Installing perl-locale-gettext (1.07-r2)
-( 90/187) Installing perl-dbi (1.647-r1)
-( 91/187) Installing sqlite-libs (3.51.2-r0)
-( 92/187) Installing perl-dbd-sqlite (1.76-r1)
-( 93/187) Installing perl-digest-sha1 (2.13-r20)
-( 94/187) Installing perl-digest-md5 (2.59-r3)
-( 95/187) Installing perl-digest-hmac (1.05-r0)
-( 96/187) Installing perl-net-dns (1.53-r0)
-( 97/187) Installing perl-netaddr-ip (4.079-r14)
-( 98/187) Installing perl-archive-zip (1.68-r3)
-( 99/187) Installing perl-http-cookies (6.11-r0)
-(100/187) Installing perl-net-http (6.24-r0)
-(101/187) Installing perl-file-listing (6.16-r0)
-(102/187) Installing perl-www-robotrules (6.02-r5)
-(103/187) Installing perl-http-negotiate (6.01-r5)
-(104/187) Installing perl-try-tiny (0.32-r0)
-(105/187) Installing perl-libwww (6.81-r0)
-(106/187) Installing perl-xml-parser (2.47-r2)
-(107/187) Installing perl-xml-simple (2.25-r3)
-(108/187) Installing perl-json (4.10-r1)
-(109/187) Installing ca-certificates (20251003-r0)
-(110/187) Installing perl-net-ssleay (1.94-r3)
-(111/187) Installing perl-mozilla-ca (20250602-r0)
-(112/187) Installing perl-io-socket-ssl (2.093-r0)
-(113/187) Installing perl-net-ip (1.26-r7)
-(114/187) Installing libnftnl (1.3.0-r0)
-(115/187) Installing libxtables (1.8.11-r1)
-(116/187) Installing iptables (1.8.11-r1)
-(117/187) Installing iptables-openrc (1.8.11-r1)
-(118/187) Installing nftables (1.1.5-r2)
-(119/187) Installing nftables-openrc (1.1.5-r2)
-(120/187) Installing dnsmasq-common (2.91-r0)
-(121/187) Installing dnsmasq (2.91-r0)
-  Executing dnsmasq-2.91-r0.pre-install
-(122/187) Installing libice (1.1.2-r0)
-(123/187) Installing libsm (1.2.6-r0)
-(124/187) Installing libxt (1.3.1-r0)
-(125/187) Installing libxpm (3.5.17-r0)
-(126/187) Installing aom-libs (3.13.1-r0)
-(127/187) Installing libdav1d (1.5.2-r0)
-(128/187) Installing libjpeg-turbo (3.1.2-r0)
-(129/187) Installing libyuv (0.0.1887.20251502-r1)
-(130/187) Installing libavif (1.3.0-r0)
-(131/187) Installing libsharpyuv (1.6.0-r0)
-(132/187) Installing libwebp (1.6.0-r0)
-(133/187) Installing tiff (4.7.1-r0)
-(134/187) Installing libgd (2.3.3-r10)
-(135/187) Installing vnstat (2.13-r1)
-  Executing vnstat-2.13-r1.pre-install
-(136/187) Installing vnstat-openrc (2.13-r1)
-(137/187) Installing wget (1.25.0-r2)
-(138/187) Installing perl-app-cpanminus (1.7048-r0)
-(139/187) Installing tzdata (2025c-r0)
-(140/187) Installing ethtool (6.15-r0)
-(141/187) Installing ifupdown-ng-ethtool (0.12.1-r7)
-(142/187) Installing libelf (0.194-r0)
-(143/187) Installing iproute2-minimal (6.17.0-r0)
-(144/187) Installing ifupdown-ng-iproute2 (0.12.1-r7)
-(145/187) Installing iproute2-tc (6.17.0-r0)
-(146/187) Installing iproute2-ss (6.17.0-r0)
-(147/187) Installing iproute2 (6.17.0-r0)
-  Executing iproute2-6.17.0-r0.post-install
-(148/187) Installing perl-rrd (1.9.0-r5)
-(149/187) Installing mii-tool (2.10-r3)
-(150/187) Installing net-tools (2.10-r3)
-(151/187) Installing libnfnetlink (1.0.2-r3)
-(152/187) Installing libnetfilter_conntrack (1.1.0-r0)
-(153/187) Installing libnetfilter_cthelper (1.0.1-r2)
-(154/187) Installing libnetfilter_cttimeout (1.0.1-r2)
-(155/187) Installing libnetfilter_queue (1.0.5-r2)
-(156/187) Installing conntrack-tools (1.4.8-r0)
-(157/187) Installing conntrack-tools-openrc (1.4.8-r0)
-(158/187) Installing fstrm (0.6.1-r4)
-(159/187) Installing krb5-conf (1.0-r2)
-(160/187) Installing keyutils-libs (1.6.3-r4)
-(161/187) Installing libverto (0.3.2-r2)
-(162/187) Installing krb5-libs (1.22.1-r0)
-(163/187) Installing protobuf-c (1.5.2-r2)
-(164/187) Installing userspace-rcu (0.15.3-r0)
-(165/187) Installing libuv (1.51.0-r0)
-(166/187) Installing bind-libs (9.20.17-r0)
-(167/187) Installing bind-tools (9.20.17-r0)
-(168/187) Installing libestr (0.1.11-r4)
-(169/187) Installing libfastjson (1.2304.0-r4)
-(170/187) Installing rsyslog (8.2512.0-r0)
-  Installing file to etc/rsyslog.conf.apk-new
-(171/187) Installing rsyslog-openrc (8.2512.0-r0)
-(172/187) Installing lighttpd-mod_auth (1.4.82-r0)
-(173/187) Installing dhcpcd (10.3.0-r0)
-  Executing dhcpcd-10.3.0-r0.pre-install
-(174/187) Installing dhcpcd-openrc (10.3.0-r0)
-(175/187) Installing apr (1.7.6-r0)
-(176/187) Installing apr-util (1.6.3-r2)
-(177/187) Installing apache2-utils (2.4.66-r0)
-(178/187) Installing perl-apache-htpasswd (1.9-r0)
-(179/187) Installing perl-net-ipv4addr (0.10-r7)
-(180/187) Installing ipcop-core (2.2.0-r3)
-  Executing ipcop-core-2.2.0-r3.post-install
-  * Configuring IPCop Core...
-  * Checking/Installing Perl modules...
-  * Locale::Maketext::Gettext::Functions is up to date. (0.14)
-  * Apache::Htpasswd is up to date. (1.9)
-  * Net::IPv4Addr is up to date. (0.10)
-  * Creating IPCop directory structure...
-  * Applying Permissions (root:lighttpd 2770)...
-  *  * rc-update: ipcop-firewall already installed in runlevel `default'; skipping
-  *  * rc-update: ipcop-network already installed in runlevel `default'; skipping
-  *  * rc-update: lighttpd already installed in runlevel `default'; skipping
-  *  * rc-update: service `fcron' does not exist
-  *  * rc-update: dnsmasq already installed in runlevel `default'; skipping
-  *  * rc-update: sshd already installed in runlevel `default'; skipping
-  *  * rc-update: rsyslog already installed in runlevel `boot'; skipping
-  *  * rc-update: collectd already installed in runlevel `default'; skipping
-  * IPCop Core Configured Successfully.
-(181/187) Installing lzo (2.10-r5)
-(182/187) Installing openvpn (2.6.16-r0)
-  Executing openvpn-2.6.16-r0.pre-install
-(183/187) Installing openvpn-openrc (2.6.16-r0)
-(184/187) Installing .makedepends-ipcop-openvpn (20260114.123913)
-(185/187) Installing perl-error (0.17030-r0)
-(186/187) Installing perl-git (2.52.0-r0)
-(187/187) Installing git-perl (2.52.0-r0)
-Executing busybox-1.37.0-r30.trigger
-Executing ca-certificates-20251003-r0.trigger
-OK: 506.7 MiB in 310 packages
->>> ipcop-openvpn: Cleaning up srcdir
->>> ipcop-openvpn: Cleaning up pkgdir
->>> ipcop-openvpn: Cleaning up tmpdir
-gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c setuid.c -o setuid.o
-gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c helper.c -o helper.o
-gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' -c helper_backup.c -o helper_backup.o
-gcc -D_GNU_SOURCE -I. -Wall -Wno-format-truncation -Wno-main -Wno-address -Wno-unused-but-set-variable -Wformat-overflow=0 -Wno-logical-not-parentheses -DNAME='"IPCop"' -DSNAME='"ipcop"' -DVERSION='"2.2.0"' -DKVER='"2.2.0"' restartopenvpn.c setuid.o helper.o helper_backup.o -o restartopenvpn -lcrypt
->>> WARNING: ipcop-openvpn: APKBUILD does not run any tests!
-    Alpine policy will soon require that packages have any relevant testsuites run during the build process.
-    To fix, either define a check() function, or declare !check in $options to indicate the package does not have a testsuite.
->>> ipcop-openvpn: Entering fakeroot...
->>> ipcop-openvpn*: Running postcheck for ipcop-openvpn
->>> WARNING: ipcop-openvpn*: Found OpenRC directory (/etc/conf.d or /etc/init.d) but name doesn't end with -openrc
->>> ipcop-openvpn*: Preparing package ipcop-openvpn...
->>> ipcop-openvpn*: Stripping binaries
->>> ipcop-openvpn*: Script found. /bin/sh added as a dependency for ipcop-openvpn-2.2.0-r1.apk
->>> ipcop-openvpn*: Adding .post-install
->>> ipcop-openvpn*: Scanning shared objects
->>> ipcop-openvpn*: Tracing dependencies...
-	ipcop-core
-	openvpn
-	/bin/sh
-	so:libc.musl-aarch64.so.1
->>> ipcop-openvpn*: Package size: 152.7 KB
->>> ipcop-openvpn*: Compressing data...
->>> ipcop-openvpn*: Create checksum...
->>> ipcop-openvpn*: Create ipcop-openvpn-2.2.0-r1.apk
->>> ipcop-openvpn: Build complete at Wed, 14 Jan 2026 06:41:16 -0600 elapsed time 0h 2m 4s
->>> ipcop-openvpn: Cleaning up srcdir
->>> ipcop-openvpn: Cleaning up pkgdir
->>> ipcop-openvpn: Cleaning up tmpdir
->>> ipcop-openvpn: Uninstalling dependencies...
-(  1/187) Purging .makedepends-ipcop-openvpn (20260114.123913)
-(  2/187) Purging ipcop-core (2.2.0-r3)
-(  3/187) Purging lighttpd-openrc (1.4.82-r0)
-(  4/187) Purging lighttpd (1.4.82-r0)
-(  5/187) Purging bash (5.3.3-r1)
-  Executing bash-5.3.3-r1.pre-deinstall
-(  6/187) Purging coreutils (9.8-r1)
-  Executing coreutils-9.8-r1.post-deinstall
-(  7/187) Purging coreutils-env (9.8-r1)
-(  8/187) Purging coreutils-fmt (9.8-r1)
-(  9/187) Purging coreutils-sha512sum (9.8-r1)
-( 10/187) Purging dmesg (2.41.2-r0)
-( 11/187) Purging runuser (2.41.2-r0)
-( 12/187) Purging uuidgen (2.41.2-r0)
-( 13/187) Purging blkid (2.41.2-r0)
-( 14/187) Purging mcookie (2.41.2-r0)
-( 15/187) Purging hexdump (2.41.2-r0)
-( 16/187) Purging sfdisk (2.41.2-r0)
-( 17/187) Purging mount (2.41.2-r0)
-( 18/187) Purging cfdisk (2.41.2-r0)
-( 19/187) Purging losetup (2.41.2-r0)
-( 20/187) Purging util-linux-openrc (2.41.2-r0)
-( 21/187) Purging flock (2.41.2-r0)
-( 22/187) Purging setpriv (2.41.2-r0)
-( 23/187) Purging lscpu (2.41.2-r0)
-( 24/187) Purging logger (2.41.2-r0)
-( 25/187) Purging partx (2.41.2-r0)
-( 26/187) Purging fstrim (2.41.2-r0)
-( 27/187) Purging lsblk (2.41.2-r0)
-( 28/187) Purging umount (2.41.2-r0)
-( 29/187) Purging agetty-openrc (0.63-r1)
-( 30/187) Purging agetty (2.41.2-r0)
-( 31/187) Purging findmnt (2.41.2-r0)
-( 32/187) Purging util-linux-misc (2.41.2-r0)
-( 33/187) Purging setarch (2.41.2-r0)
-( 34/187) Purging wipefs (2.41.2-r0)
-( 35/187) Purging util-linux (2.41.2-r0)
-( 36/187) Purging collectd-rrdtool (5.12.0-r23)
-( 37/187) Purging collectd-disk (5.12.0-r23)
-( 38/187) Purging collectd-openrc (5.12.0-r23)
-( 39/187) Purging collectd (5.12.0-r23)
-( 40/187) Purging perl-cgi (4.71-r0)
-( 41/187) Purging perl-locale-gettext (1.07-r2)
-( 42/187) Purging gettext (0.24.1-r1)
-( 43/187) Purging gettext-envsubst (0.24.1-r1)
-( 44/187) Purging perl-dbd-sqlite (1.76-r1)
-( 45/187) Purging perl-dbi (1.647-r1)
-( 46/187) Purging perl-net-dns (1.53-r0)
-( 47/187) Purging perl-digest-hmac (1.05-r0)
-( 48/187) Purging perl-digest-sha1 (2.13-r20)
-( 49/187) Purging perl-digest-md5 (2.59-r3)
-( 50/187) Purging perl-netaddr-ip (4.079-r14)
-( 51/187) Purging perl-archive-zip (1.68-r3)
-( 52/187) Purging perl-xml-simple (2.25-r3)
-( 53/187) Purging perl-xml-parser (2.47-r2)
-( 54/187) Purging perl-libwww (6.81-r0)
-( 55/187) Purging perl-http-cookies (6.11-r0)
-( 56/187) Purging perl-net-http (6.24-r0)
-( 57/187) Purging perl-html-parser (3.83-r1)
-( 58/187) Purging perl-html-tagset (3.24-r0)
-( 59/187) Purging perl-file-listing (6.16-r0)
-( 60/187) Purging perl-www-robotrules (6.02-r5)
-( 61/187) Purging perl-http-negotiate (6.01-r5)
-( 62/187) Purging perl-http-message (7.01-r0)
-( 63/187) Purging perl-clone (0.47-r1)
-( 64/187) Purging perl-http-date (6.06-r0)
-( 65/187) Purging perl-uri (5.28-r0)
-( 66/187) Purging perl-io-html (1.004-r1)
-( 67/187) Purging perl-lwp-mediatypes (6.04-r3)
-( 68/187) Purging perl-encode-locale (1.05-r5)
-( 69/187) Purging perl-try-tiny (0.32-r0)
-( 70/187) Purging perl-json (4.10-r1)
-( 71/187) Purging perl-io-socket-ssl (2.093-r0)
-( 72/187) Purging ca-certificates (20251003-r0)
-  Executing ca-certificates-20251003-r0.post-deinstall
-( 73/187) Purging perl-mozilla-ca (20250602-r0)
-( 74/187) Purging perl-net-ip (1.26-r7)
-( 75/187) Purging iptables-openrc (1.8.11-r1)
-( 76/187) Purging iptables (1.8.11-r1)
-( 77/187) Purging nftables-openrc (1.1.5-r2)
-( 78/187) Purging nftables (1.1.5-r2)
-( 79/187) Purging dnsmasq (2.91-r0)
-( 80/187) Purging dnsmasq-common (2.91-r0)
-( 81/187) Purging vnstat-openrc (2.13-r1)
-( 82/187) Purging vnstat (2.13-r1)
-( 83/187) Purging perl-app-cpanminus (1.7048-r0)
-( 84/187) Purging wget (1.25.0-r2)
-( 85/187) Purging tzdata (2025c-r0)
-( 86/187) Purging iproute2 (6.17.0-r0)
-( 87/187) Purging iproute2-tc (6.17.0-r0)
-( 88/187) Purging iproute2-ss (6.17.0-r0)
-( 89/187) Purging perl-rrd (1.9.0-r5)
-( 90/187) Purging net-tools (2.10-r3)
-( 91/187) Purging mii-tool (2.10-r3)
-( 92/187) Purging conntrack-tools-openrc (1.4.8-r0)
-( 93/187) Purging conntrack-tools (1.4.8-r0)
-( 94/187) Purging bind-tools (9.20.17-r0)
-( 95/187) Purging rsyslog-openrc (8.2512.0-r0)
-( 96/187) Purging rsyslog (8.2512.0-r0)
-( 97/187) Purging perl-net-ssleay (1.94-r3)
-( 98/187) Purging lighttpd-mod_auth (1.4.82-r0)
-( 99/187) Purging dhcpcd-openrc (10.3.0-r0)
-(100/187) Purging dhcpcd (10.3.0-r0)
-(101/187) Purging apache2-utils (2.4.66-r0)
-(102/187) Purging perl-apache-htpasswd (1.9-r0)
-(103/187) Purging perl-net-ipv4addr (0.10-r7)
-(104/187) Purging openvpn-openrc (2.6.16-r0)
-(105/187) Purging openvpn (2.6.16-r0)
-(106/187) Purging apr-util (1.6.3-r2)
-(107/187) Purging bind-libs (9.20.17-r0)
-(108/187) Purging eudev-libs (3.2.14-r6)
-(109/187) Purging fstrm (0.6.1-r4)
-(110/187) Purging gettext-libs (0.24.1-r1)
-(111/187) Purging git-perl (2.52.0-r0)
-(112/187) Purging perl-git (2.52.0-r0)
-(113/187) Purging perl-error (0.17030-r0)
-(114/187) Purging perl (5.42.0-r0)
-(115/187) Purging ifupdown-ng-ethtool (0.12.1-r7)
-(116/187) Purging ethtool (6.15-r0)
-(117/187) Purging ifupdown-ng-iproute2 (0.12.1-r7)
-(118/187) Purging iproute2-minimal (6.17.0-r0)
-(119/187) Purging krb5-libs (1.22.1-r0)
-(120/187) Purging krb5-conf (1.0-r2)
-(121/187) Purging libattr (2.5.2-r2)
-(122/187) Purging libcap-ng (0.8.5-r0)
-(123/187) Purging libdbi (0.9.0-r5)
-(124/187) Purging libelf (0.194-r0)
-(125/187) Purging libestr (0.1.11-r4)
-(126/187) Purging libfastjson (1.2304.0-r4)
-(127/187) Purging libfdisk (2.41.2-r0)
-(128/187) Purging libgd (2.3.3-r10)
-(129/187) Purging libldap (2.6.10-r0)
-(130/187) Purging libnetfilter_conntrack (1.1.0-r0)
-(131/187) Purging libnetfilter_cthelper (1.0.1-r2)
-(132/187) Purging libnetfilter_cttimeout (1.0.1-r2)
-(133/187) Purging libnetfilter_queue (1.0.5-r2)
-(134/187) Purging libnfnetlink (1.0.2-r3)
-(135/187) Purging libnftnl (1.3.0-r0)
-(136/187) Purging librrd (1.9.0-r5)
-(137/187) Purging libsasl (2.1.28-r9)
-(138/187) Purging libsmartcols (2.41.2-r0)
-(139/187) Purging libuv (1.51.0-r0)
-(140/187) Purging libverto (0.3.2-r2)
-(141/187) Purging libxml2 (2.13.9-r0)
-(142/187) Purging libxpm (3.5.17-r0)
-(143/187) Purging libxt (1.3.1-r0)
-(144/187) Purging libxtables (1.8.11-r1)
-(145/187) Purging linux-pam (1.7.1-r2)
-(146/187) Purging lua5.4-libs (5.4.8-r0)
-(147/187) Purging lzo (2.10-r5)
-(148/187) Purging pango (1.56.4-r0)
-(149/187) Purging protobuf-c (1.5.2-r2)
-(150/187) Purging readline (8.3.1-r0)
-(151/187) Purging sqlite-libs (3.51.2-r0)
-(152/187) Purging tiff (4.7.1-r0)
-(153/187) Purging userspace-rcu (0.15.3-r0)
-(154/187) Purging utmps-libs (0.1.3.1-r0)
-(155/187) Purging yajl (2.1.0-r9)
-(156/187) Purging libavif (1.3.0-r0)
-(157/187) Purging aom-libs (3.13.1-r0)
-(158/187) Purging apr (1.7.6-r0)
-(159/187) Purging cairo (1.18.4-r0)
-(160/187) Purging libxft (2.3.9-r0)
-(161/187) Purging fontconfig (2.17.1-r0)
-(162/187) Purging harfbuzz (12.2.0-r0)
-(163/187) Purging freetype (2.14.1-r0)
-(164/187) Purging fribidi (1.0.16-r2)
-(165/187) Purging gdbm (1.26-r0)
-(166/187) Purging graphite2 (1.3.14-r6)
-(167/187) Purging keyutils-libs (1.6.3-r4)
-(168/187) Purging libxext (1.3.6-r2)
-(169/187) Purging libxrender (0.9.12-r0)
-(170/187) Purging libx11 (1.8.12-r1)
-(171/187) Purging libxcb (1.17.0-r1)
-(172/187) Purging libxdmcp (1.1.5-r1)
-(173/187) Purging libbsd (0.12.2-r0)
-(174/187) Purging libbz2 (1.0.8-r6)
-(175/187) Purging libdav1d (1.5.2-r0)
-(176/187) Purging libsm (1.2.6-r0)
-(177/187) Purging libice (1.1.2-r0)
-(178/187) Purging libyuv (0.0.1887.20251502-r1)
-(179/187) Purging libjpeg-turbo (3.1.2-r0)
-(180/187) Purging libmd (1.1.0-r0)
-(181/187) Purging libmnl (1.0.5-r2)
-(182/187) Purging libpng (1.6.53-r0)
-(183/187) Purging libwebp (1.6.0-r0)
-(184/187) Purging libsharpyuv (1.6.0-r0)
-(185/187) Purging libxau (1.0.12-r0)
-(186/187) Purging pixman (0.46.4-r0)
-(187/187) Purging skalibs-libs (2.14.4.0-r0)
-Executing busybox-1.37.0-r30.trigger
-OK: 372.0 MiB in 123 packages
->>> ipcop-openvpn: Updating the apkbuilds/aarch64 repository index...
->>> ipcop-openvpn: Signing the index...
-'/home/builder/packages/apkbuilds/aarch64/ipcop-openvpn-2.2.0-r1.apk' -> '/tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64/ipcop-openvpn-2.2.0-r1.apk'
-[0;32m*** Built: ipcop-openvpn[0;39m
-[0;36m*** Generating APKINDEX for distribution...[0;39m
-Index has 12 packages (of which 12 are new)
-[0;32m*** All packages built successfully[0;39m
-[0;36m*** Packages ready in: /tmp/ipcop-build-XXXXcnBaCK/alpine/packages/aarch64[0;39m
-[0;35m*** APKBUILD for ipcop-progs not found, skipping...[0;39m
-[0;36m*** Copying packages back to source tree...[0;39m
-[0;32m*** Packages synced to /mnt/ipcop/IPCop-Alpine/alpine/packages[0;39m
-[0;36m*** Cleaning up workspace...[0;39m
