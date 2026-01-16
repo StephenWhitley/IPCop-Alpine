@@ -5,6 +5,7 @@
 # Alpine Package Build System
 # Built APK packages (architecture-specific)
 alpine/packages/x86_64/*.apk
+alpine/packages/aarch64/*.apk
 alpine/packages/*/APKINDEX.tar.gz
 alpine/packages/*/APKINDEX.tar.gz.bak
 alpine/packages/*/APKINDEX.tar.gz.old
@@ -99,3 +100,6 @@ Desktop.ini
 .DS_Store
 .AppleDouble
 .LSOverride
+/alpine/packages/aarch64
+*.err
+*.apk
