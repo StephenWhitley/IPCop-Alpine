@@ -151,7 +151,7 @@ sub net_start
 {
     my $settings = shift;
 
-    print "Setting up IPCop firewall rules ... ";
+    print "/nSetting up IPCop firewall rules ... ";
     system("/etc/rc.d/rc.firewall start");
     &General::testok($columns);
 
