@@ -105,6 +105,22 @@ msg "System services configured ✓"
 echo ""
 
 # ============================================================================
+# Step 2.5: Create Required System Users
+# ============================================================================
+
+msg "Creating required IPCop users..."
+
+if ! id "backup" >/dev/null 2>&1; then
+	msg_info "Creating 'backup' user..."
+	adduser -D backup 2>/dev/null || true
+else
+	msg_info "'backup' user already exists"
+fi
+
+msg "System users created ✓"
+echo ""
+
+# ============================================================================
 # Step 3: Create iptables Symlinks
 # ============================================================================
 

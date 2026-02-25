@@ -54,6 +54,8 @@ package() {
     
     # --- 3. Install HTML/Images/Includes ---
     cp -r source/core/html/* "$pkgdir"/var/www/ipcop/html/ 2>/dev/null || true
+    # Create backup directory with wide open permissions for legacy scripts
+    install -d -m 0777 "$pkgdir"/var/www/ipcop/html/backup
     # Ensure correct ownership for web content
     chown -R lighttpd:lighttpd "$pkgdir"/var/www/ipcop
     # (Assuming includes are inside html based on previous structure, or verify if separate)

@@ -208,8 +208,10 @@ start)
     /sbin/iptables -A FORWARD -i lo          -m conntrack --ctstate NEW -j ACCEPT
     /sbin/iptables -A FORWARD -s 127.0.0.0/8 -m conntrack --ctstate NEW -j DROP
     /sbin/iptables -A FORWARD -d 127.0.0.0/8 -m conntrack --ctstate NEW -j DROP
-    #~ /sbin/iptables -A INPUT   -i $GREEN_1_DEV -m conntrack --ctstate NEW -j ACCEPT
-    #~ /sbin/iptables -A FORWARD -i $GREEN_1_DEV -m conntrack --ctstate NEW -j ACCEPT
+    /sbin/iptables -A INPUT   -i $GREEN_1_DEV -m conntrack --ctstate NEW -j ACCEPT
+    /sbin/iptables -A FORWARD -i $GREEN_1_DEV -m conntrack --ctstate NEW -j ACCEPT
+    # Allow DHCP traffic explicitly on GREEN (broadcasts are not caught by conntrack NEW)
+    /sbin/iptables -A INPUT -p udp --source-port 68 --destination-port 67 -i $GREEN_1_DEV -j ACCEPT
 
     # If a host on orange tries to initiate a connection to IPCop's red IP and
     # the connection gets DNATed back through a port forward to a server on orange

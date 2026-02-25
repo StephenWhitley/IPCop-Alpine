@@ -917,7 +917,7 @@ sub writeconfig {
 pid-file=/var/run/dnsmasq.pid
 # Run as group lighttpd to access IPCop config files
 group=lighttpd
-bind-interfaces
+bind-dynamic
 dhcp-leasefile=/var/ipcop/dhcp/dnsmasq.leases
 except-interface=wan-1
 except-interface=ppp0
@@ -943,33 +943,34 @@ END
     foreach $interface (@INTERFACEs) {
         for ($counter = 1; $counter <= $netsettings{"${interface}_COUNT"}; $counter++) {
             $ic = "${interface}_${counter}";
+            my $hw_iface = $netsettings{"${ic}_DEV"};
             if ($savesettings{"ENABLED_${ic}"} eq 'on') {
                 my $lease = $savesettings{"DEFAULT_LEASE_TIME_${ic}"} * 60;
 
                 print FILE "# network: ${interface} - ${counter}, ".$netaddressip{"${ic}"}."\n";
                 if ($savesettings{"START_ADDR_${ic}"}) {
-                    print FILE "dhcp-range=${ic},"
+                    print FILE "dhcp-range=${hw_iface},"
                         . $savesettings{"START_ADDR_${ic}"} . ","
                         . $savesettings{"END_ADDR_${ic}"}
                         . ",$lease\n";
                 }
                 else {
-                    print FILE "dhcp-range=${ic},"
+                    print FILE "dhcp-range=${hw_iface},"
                         . $netsettings{"${ic}_ADDRESS"}
                         . ",static,$lease\n";
                 }
                 if ($savesettings{"DOMAIN_NAME_${ic}"}) {
-                    print FILE "dhcp-option=${ic},option:domain-name,"
+                    print FILE "dhcp-option=${hw_iface},option:domain-name,"
                         . $savesettings{"DOMAIN_NAME_${ic}"} . "\n";
                 }
 
                 # bootp enabled
                 if ($savesettings{"ENABLED_BOOTP_${ic}"} eq 'on') {
-                    print FILE "bootp-dynamic=${ic}\n";
+                    print FILE "bootp-dynamic=${hw_iface}\n";
                 }
 
                 # DNS server(s)
-                print FILE "dhcp-option=${ic},option:dns-server,"
+                print FILE "dhcp-option=${hw_iface},option:dns-server,"
                     . $savesettings{"DNS1_${ic}"};
                 print FILE "," . $savesettings{"DNS2_${ic}"}
                     if ($savesettings{"DNS2_${ic}"});
@@ -977,7 +978,7 @@ END
 
                 # WINS server(s)
                 if ($savesettings{"WINS1_${ic}"}) {
-                    print FILE "dhcp-option=${ic},option:netbios-ns,"
+                    print FILE "dhcp-option=${hw_iface},option:netbios-ns,"
                         . $savesettings{"WINS1_${ic}"};
                     print FILE "," . $savesettings{"WINS2_${ic}"}
                         if ($savesettings{"WINS2_${ic}"});
@@ -986,7 +987,7 @@ END
 
                 # NTP server(s)
                 if ($savesettings{"NTP1_${ic}"}) {
-                    print FILE "dhcp-option=${ic},option:ntp-server,"
+                    print FILE "dhcp-option=${hw_iface},option:ntp-server,"
                         . $savesettings{"NTP1_${ic}"};
                     print FILE "," . $savesettings{"NTP2_${ic}"}
                         if ($savesettings{"NTP2_${ic}"});

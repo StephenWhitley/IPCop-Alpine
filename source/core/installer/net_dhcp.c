@@ -247,6 +247,14 @@ int changedhcpserver(void) {
     if (test_kv(dhcpkv, "ENABLED_GREEN_1", "on") == SUCCESS) {
       FILE *f;
       int leasetime;
+      NODEKV *ethernetkv = NULL;
+      char *green_dev = "eth0";
+
+      read_kv_from_file(&ethernetkv, "/var/ipcop/ethernet/settings");
+      if (find_kv(ethernetkv, "GREEN_1_DEV") &&
+          strlen(find_kv(ethernetkv, "GREEN_1_DEV")) > 0) {
+        green_dev = find_kv(ethernetkv, "GREEN_1_DEV");
+      }
 
       if ((f = fopen("/var/ipcop/dhcp/dnsmasq.conf", "w")) == NULL) {
         errorbox(gettext("TR_ERROR_WRITING_CONFIG"));
@@ -266,7 +274,7 @@ int changedhcpserver(void) {
       fprintf(f, "\n");
 
       fprintf(f, "pid-file=/var/run/dnsmasq.pid\n");
-      fprintf(f, "bind-interfaces\n");
+      fprintf(f, "bind-dynamic\n");
       fprintf(f, "except-interface=wan-1\n");
       fprintf(f, "except-interface=ppp0\n");
       fprintf(f, "except-interface=dmz-1\n");
@@ -280,17 +288,19 @@ int changedhcpserver(void) {
       fprintf(f, "\n");
 
       leasetime = atol(find_kv(dhcpkv, "DEFAULT_LEASE_TIME_GREEN_1")) * 60;
-      fprintf(f, "dhcp-range=GREEN_1,%s,%s,%d\n",
+      fprintf(f, "dhcp-range=%s,%s,%s,%d\n", green_dev,
               find_kv(dhcpkv, "START_ADDR_GREEN_1"),
               find_kv(dhcpkv, "END_ADDR_GREEN_1"), leasetime);
       if (domainname[0]) {
         update_kv(&dhcpkv, "DOMAIN_NAME_GREEN_1", domainname);
-        fprintf(f, "dhcp-option=GREEN_1,option:domain-name,%s\n", domainname);
+        fprintf(f, "dhcp-option=%s,option:domain-name,%s\n", green_dev,
+                domainname);
       }
-      fprintf(f, "dhcp-option=GREEN_1,option:dns-server,%s\n",
+      fprintf(f, "dhcp-option=%s,option:dns-server,%s\n", green_dev,
               find_kv(dhcpkv, "DNS1_GREEN_1"));
 
       fclose(f);
+      free_kv(&ethernetkv);
     }
 
     write_kv_to_file(&dhcpkv, "/var/ipcop/dhcp/settings");

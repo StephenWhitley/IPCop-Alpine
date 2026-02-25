@@ -146,6 +146,7 @@ rc-update del dnsmasq boot 2>/dev/null || true
 # Enable IPCop services
 rc-update add ipcop-firewall default
 rc-update add ipcop-network default
+rc-update add ipcop-red default
 rc-update add lighttpd default
 rc-update add fcron default
 rc-update add dnsmasq default

@@ -29,13 +29,13 @@ my $warnmessage = '';
 
 # Action Processing
 if ($cgiparams{'ACTION'} eq 'Start') {
-    system('/usr/bin/wireguardctrl.pl start >/dev/null 2>&1');
+    system('/usr/bin/restartwireguard --start >/dev/null 2>&1 &');
 }
 elsif ($cgiparams{'ACTION'} eq 'Restart') {
-    system('/usr/bin/wireguardctrl.pl restart >/dev/null 2>&1');
+    system('/usr/bin/restartwireguard --restart >/dev/null 2>&1 &');
 }
 elsif ($cgiparams{'ACTION'} eq 'Stop') {
-    system('/usr/bin/wireguardctrl.pl stop >/dev/null 2>&1');
+    system('/usr/bin/restartwireguard --stop >/dev/null 2>&1 &');
 }
 elsif ($cgiparams{'ACTION'} eq $Lang::tr{'save'}) {
     
@@ -67,9 +67,9 @@ elsif ($cgiparams{'ACTION'} eq $Lang::tr{'save'}) {
         
         # Apply changes (redirect output to avoid polluting HTTP response)
         if ($WireGuard::wgsettings{'ENABLED'} eq 'on') {
-            system('/usr/bin/wireguardctrl.pl restart >/dev/null 2>&1');
+            system('/usr/bin/restartwireguard --restart >/dev/null 2>&1 &');
         } else {
-            system('/usr/bin/wireguardctrl.pl stop >/dev/null 2>&1');
+            system('/usr/bin/restartwireguard --stop >/dev/null 2>&1 &');
         }
     }
 }
@@ -80,14 +80,14 @@ elsif ($cgiparams{'ACTION'} eq 'Add Peer') {
     &WireGuard::write_peers(\%wgpeers);
     
     if ($WireGuard::wgsettings{'ENABLED'} eq 'on') {
-        system('/usr/bin/wireguardctrl.pl restart >/dev/null 2>&1');
+        system('/usr/bin/restartwireguard --restart >/dev/null 2>&1 &');
     }
 }
 elsif ($cgiparams{'ACTION'} eq 'Delete') {
     delete $wgpeers{$cgiparams{'KEY'}};
     &WireGuard::write_peers(\%wgpeers);
     if ($WireGuard::wgsettings{'ENABLED'} eq 'on') {
-        system('/usr/bin/wireguardctrl.pl restart >/dev/null 2>&1');
+        system('/usr/bin/restartwireguard --restart >/dev/null 2>&1 &');
     }
 }
 elsif ($cgiparams{'ACTION'} eq 'Toggle') {
@@ -98,7 +98,7 @@ elsif ($cgiparams{'ACTION'} eq 'Toggle') {
      }
      &WireGuard::write_peers(\%wgpeers);
      if ($WireGuard::wgsettings{'ENABLED'} eq 'on') {
-        system('/usr/bin/wireguardctrl.pl restart >/dev/null 2>&1');
+        system('/usr/bin/restartwireguard --restart >/dev/null 2>&1 &');
     }
 }
 

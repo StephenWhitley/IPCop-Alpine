@@ -4,13 +4,18 @@ pkgver=2.2.0
 pkgrel=1
 pkgdesc="IPCop VPN (Wireguard)"
 url="https://www.ipcop.org"
-arch="noarch"
+arch="all"
 license="GPL"
 depends="ipcop-core wireguard-tools"
 install="$pkgname.post-install"
 builddir="$startdir/../../.."
 
-build() { :; }
+build() {
+    if [ -d "source/services/wireguard/progs" ]; then
+        cd "$builddir/source/services/wireguard/progs"
+        make restartwireguard || return 1
+    fi
+}
 
 package() {
 	cd "$builddir"
@@ -29,6 +34,12 @@ package() {
         install -m 0755 source/services/wireguard/etc/init.d/wireguard "$pkgdir"/etc/init.d/wireguard
     fi
     
+    # Install Helper
+    install -d "$pkgdir"/usr/bin
+    if [ -f "source/services/wireguard/progs/restartwireguard" ]; then
+        install -m 4750 -g lighttpd source/services/wireguard/progs/restartwireguard "$pkgdir"/usr/bin/
+    fi
+
     # Install Controller Script
     install -d "$pkgdir"/usr/bin
     if [ -f "source/services/wireguard/scripts/wireguardctrl.pl" ]; then

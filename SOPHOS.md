@@ -37,7 +37,11 @@ APPEND modules=loop,squashfs,sd-mod,usb-storage console=ttyS0,115200n8
 > Note: SYSLINUX may not accept keyboard input at the `boot:` prompt despite the SERIAL directive. The 1-second TIMEOUT autoboot handles this — just wait and it will proceed automatically.
 
 ## Step 3 — BIOS Configuration
-Boot the Sophos XG 115 and enter BIOS via serial console. Ensure the USB drive is first in the boot order.
+Boot the Sophos XG 115 and enter BIOS via serial console. 
+
+> **Note:** The original serial speed of the Sophos box is 38400 baud. You should change this in the BIOS to 115200 to match the settings used by Linux later on.
+
+Ensure the USB drive is first in the boot order.
 
 ## Step 4 — Install Alpine
 Once booted into Alpine from USB, run the installer:
@@ -59,7 +63,7 @@ Mount the installed system's boot partition:
 mount /dev/sda1 /mnt
 ```
 
-Edit `/mnt/boot/extlinux.conf` to add `SERIAL 0 115200` as the first line and append `console=ttyS0,115200n8` to the APPEND line. Remove `quiet`. The final file should look like:
+Edit `/mnt/boot/extlinux.conf` to add `SERIAL 0 115200` as the first line and append `console=ttyS0,115200n8` to the APPEND line. The final file should look like:
 
 ```properties
 SERIAL 0 115200
@@ -91,3 +95,48 @@ Remove the USB stick and reboot. You should see full boot output on the serial c
 ---
 
 **Key Principle:** Every bootloader in the chain requires the serial console configuration explicitly. Nothing inherits it automatically from BIOS or from a previous bootloader stage.
+
+## Step 7 — Install and Configure IPCop
+Log in to Alpine via the serial console.
+
+Mount the USB drive again after it has booted:
+
+```sh
+mkdir /mnt/usb
+mount -t vfat /dev/sdb1 /mnt/usb
+cd /mnt/usb/ipcop
+```
+
+Uncomment the community repository in `/etc/apk/repositories` using `vi` or `sed`:
+
+```sh
+sed -i 's/^#\(.*community\)/\1/' /etc/apk/repositories
+apk update
+```
+
+Run the initial deployment setup (run this once):
+
+```sh
+alpine/setup-deploy.sh
+```
+
+Run this whenever you want to install new packages or updates:
+
+```sh
+alpine/install-ipcop.sh
+```
+
+Run the IPCop configuration setup. You should also add the `backup` user to the system:
+
+```sh
+adduser backup
+setup-ipcop
+```
+
+After completing the configuration, reboot the system:
+
+```sh
+reboot
+```
+
+Once the system has restarted, the IPCop Web UI will be available via the **GREEN** network interface at **https://<GREEN_IP>:8443**.

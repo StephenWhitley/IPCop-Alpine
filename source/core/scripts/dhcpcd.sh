@@ -88,7 +88,7 @@ case "${reason}" in
         state=down
         ;;
 
-    PREINIT|CARRIER|NAK|STOPPED)
+    PREINIT|CARRIER|NAK|STOPPED|ROUTERADVERT)
         exit 0
         ;;
 

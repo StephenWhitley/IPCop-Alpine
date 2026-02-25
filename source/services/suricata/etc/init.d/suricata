@@ -4,11 +4,13 @@
 
 name="suricata"
 description="Suricata IDS/IPS"
-command=/usr/bin/suricata
-pidfile=/var/run/suricata.pid
-# Use conf.d variable SURICATA_OPTS if available, otherwise default to IPCop path
-command_args="--pidfile ${pidfile} -D -c /var/ipcop/suricata/suricata.yaml --af-packet"
-retry="TERM/20/KILL/5"
+
+command="/usr/bin/suricata"
+pidfile="/var/run/suricata.pid"
+# Using -D lets Suricata fork precisely AFTER loading rules, preventing OpenRC false-crashes.
+command_args="--pidfile ${pidfile} -D -c /var/ipcop/suricata/suricata.yaml -i eth0"
+# Suricata can take a very long time to dump rules to disk during shutdown
+retry="TERM/60/KILL/5"
 
 depend() {
 	need net
@@ -17,8 +19,8 @@ depend() {
 
 start_pre() {
 	# Validate configuration before starting
-	if [ ! -f /var/ipcop/suricata/suricata.yaml ]; then
-		eerror "Configuration file /var/ipcop/suricata/suricata.yaml not found"
+	if [ ! -f "/var/ipcop/suricata/suricata.yaml" ]; then
+		eerror "Configuration file not found"
 		return 1
 	fi
 	

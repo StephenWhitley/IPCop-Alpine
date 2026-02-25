@@ -1013,6 +1013,11 @@ if ($doUpdateIpcopRules) {
             # Add a firewall log filter for DHCP broadcast responses
             &prepareRule("-A FW_IPCOP -i $FW::interfaces{$inIface}{'IFACE'} -p udp --sport 67 --dport 68 -j DROP");
 
+            # ** ALPINE PATCH: ALWAYS ALLOW DHCP DISCOVERY BROADCASTS ON GREEN **
+            if (defined($FW::interfaces{$inIface}{'COLOR'}) && $FW::interfaces{$inIface}{'COLOR'} =~ /^GREEN_COLOR$/) {
+                &prepareRule("-A FW_IPCOP -i $FW::interfaces{$inIface}{'IFACE'} -p udp --sport 68 --dport 67 -j ACCEPT");
+            }
+
             if ($ifacePolicies{$inIface}{'ADDRESSFILTER'} eq 'on') {
                 $doUpdateWirelessRules = 1;
                 &prepareRule("-A FW_IPCOP -i $FW::interfaces{$inIface}{'IFACE'} -m conntrack --ctstate NEW -j ADRFILTERINPUT");
@@ -1061,17 +1066,17 @@ if ($doUpdateIpcopRules) {
 
             my @ipcopServices = ();
             # Some IPCop services for Green
-            if ($FW::interfaces{$inIface}{'COLOR'} =~ /^GREEN_COLOR$/) {
+            if (defined($FW::interfaces{$inIface}{'COLOR'}) && $FW::interfaces{$inIface}{'COLOR'} =~ /^GREEN_COLOR$/) {
                 @ipcopServices = ('IPCop dhcp', 'IPCop dns', 'IPCop ntp', 'IPCop proxy', 'IPCop http', 'IPCop proxy-int-1', 'Ping');
                 # Add a firewall log filter for DHCP broadcast responses
                 &prepareRule("-A FW_IPCOP -i $FW::interfaces{$inIface}{'IFACE'} -p udp --sport 67 --dport 68 -j DROP");
             }
             # Some IPCop services for Blue (DHCP, IPsec, OpenVPN are already opened above)
-            if ($FW::interfaces{$inIface}{'COLOR'} =~ /^BLUE_COLOR$/) {
+            if (defined($FW::interfaces{$inIface}{'COLOR'}) && $FW::interfaces{$inIface}{'COLOR'} =~ /^BLUE_COLOR$/) {
                 @ipcopServices = ('IPCop dns', 'IPCop ntp', 'IPCop proxy', 'IPCop http', 'IPCop proxy-int-1', 'Ping');
             }
             # Some IPCop services for IPsec and OpenVPN (no DHCP needed for VPN)
-            if ($FW::interfaces{$inIface}{'COLOR'} =~ /^IPSEC_COLOR|OVPN_COLOR$/) {
+            if (defined($FW::interfaces{$inIface}{'COLOR'}) && $FW::interfaces{$inIface}{'COLOR'} =~ /^IPSEC_COLOR|OVPN_COLOR$/) {
                 @ipcopServices = ('IPCop dns', 'IPCop ntp', 'IPCop proxy', 'IPCop http', 'IPCop proxy-int-1', 'Ping');
             }
 

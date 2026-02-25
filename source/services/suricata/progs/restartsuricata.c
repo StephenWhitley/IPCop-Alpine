@@ -135,6 +135,15 @@ void generate_config(NODEKV *suricata_kv) {
 
   fprintf(file, "default-log-dir: /var/log/suricata\n\n");
 
+  fprintf(file, "logging:\n");
+  fprintf(file, "  default-log-level: info\n");
+  fprintf(file, "  outputs:\n");
+  fprintf(file, "  - console:\n");
+  fprintf(file, "      enabled: yes\n");
+  fprintf(file, "  - file:\n");
+  fprintf(file, "      enabled: yes\n");
+  fprintf(file, "      filename: /var/log/suricata/suricata.log\n\n");
+
   // af-packet (IDS) or nfqueue (IPS) configuration
   if (strcmp(mode, "ips") == 0) {
     fprintf(file, "# Inline IPS mode (nfqueue)\n");
@@ -149,8 +158,14 @@ void generate_config(NODEKV *suricata_kv) {
       fprintf(file, "    fail-open: yes\n");
     }
     if (monitor_red && ipcop_ethernet.count[RED]) {
-      fprintf(file, "  - mode: accept\n");
-      fprintf(file, "    fail-open: yes\n");
+      char *red_dev = ipcop_ethernet.device[RED][1];
+      if (!red_dev || strlen(red_dev) == 0) {
+        red_dev = ipcop_ethernet.red_device[1];
+      }
+      if (red_dev && strlen(red_dev) > 0) {
+        fprintf(file, "  - mode: accept\n");
+        fprintf(file, "    fail-open: yes\n");
+      }
     }
   } else {
     fprintf(file, "# IDS mode (af-packet)\n");
@@ -169,10 +184,16 @@ void generate_config(NODEKV *suricata_kv) {
       fprintf(file, "    defrag: yes\n");
     }
     if (monitor_red && ipcop_ethernet.count[RED]) {
-      fprintf(file, "  - interface: %s\n", ipcop_ethernet.device[RED][1]);
-      fprintf(file, "    threads: auto\n");
-      fprintf(file, "    cluster-type: cluster_flow\n");
-      fprintf(file, "    defrag: yes\n");
+      char *red_dev = ipcop_ethernet.device[RED][1];
+      if (!red_dev || strlen(red_dev) == 0) {
+        red_dev = ipcop_ethernet.red_device[1];
+      }
+      if (red_dev && strlen(red_dev) > 0) {
+        fprintf(file, "  - interface: %s\n", red_dev);
+        fprintf(file, "    threads: auto\n");
+        fprintf(file, "    cluster-type: cluster_flow\n");
+        fprintf(file, "    defrag: yes\n");
+      }
     }
   }
 
@@ -256,12 +277,18 @@ void setup_iptables(NODEKV *suricata_kv) {
   }
 
   if (monitor_red && ipcop_ethernet.count[RED]) {
-    snprintf(buffer, STRING_SIZE,
-             "/usr/sbin/iptables -A SURICATA -i %s -j NFQUEUE --queue-num %d",
-             ipcop_ethernet.device[RED][1], queue);
-    safe_system(buffer);
-    verbose_printf(1, "  Added NFQUEUE rule for RED (%s) -> queue %d\n",
-                   ipcop_ethernet.device[RED][1], queue);
+    char *red_dev = ipcop_ethernet.device[RED][1];
+    if (!red_dev || strlen(red_dev) == 0) {
+      red_dev = ipcop_ethernet.red_device[1];
+    }
+    if (red_dev && strlen(red_dev) > 0) {
+      snprintf(buffer, STRING_SIZE,
+               "/usr/sbin/iptables -A SURICATA -i %s -j NFQUEUE --queue-num %d",
+               red_dev, queue);
+      safe_system(buffer);
+      verbose_printf(1, "  Added NFQUEUE rule for RED (%s) -> queue %d\n",
+                     red_dev, queue);
+    }
   }
 }
 

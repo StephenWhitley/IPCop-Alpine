@@ -170,11 +170,7 @@ int mysystem(char *command) {
   /* Execute command, redirecting output to /dev/null since we can't easily
    * append to an already-open FILE* from shell. The command itself may
    * have its own redirections. */
-
-  snprintf(mycommand, sizeof(mycommand), "( %s ) > /dev/null 2>&1", command);
-
-  /* snprintf(mycommand, STRING_SIZE_LARGE, "%s", command); */
-
+  snprintf(mycommand, STRING_SIZE_LARGE, "%s", command);
   result = system(mycommand);
 
   return result;
